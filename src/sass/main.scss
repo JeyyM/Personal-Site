@@ -72,20 +72,21 @@ body {
 .sect-1-main-text {
     font-family: 'Franklin Gothic Medium';
     font-size: 12rem;
-    color: #131B23;
+    color: #15283b;
     letter-spacing: -5px;
+    text-shadow: -5px 5px 0px #4a5c6e77;
 }
 
 .sect-1-sub-text {
     font-family: 'Franklin Gothic Medium';
     font-size: 6rem;
-    color: #131B23;
+    color: #15283b;
 }
 
 .sect-1-par-text {
     font-family: 'Lato';
     font-size: 3.5rem;
-    color: #131B23;
+    color: #1f3c5a;
     font-weight: 600;
 }
 
@@ -100,7 +101,7 @@ body {
       transparent 25%
     ),
     radial-gradient(circle at 5% 5%, #ff8400e2, #fccf3a, transparent 30%);
-    background-color:#E9F1F7;
+    background-color:#d8eeff;
     overflow: hidden;
     z-index: 2;
 }
@@ -312,6 +313,7 @@ body {
     filter: brightness(100%) drop-shadow(0px 0px 5px #375267);
     transition: all 0.2s;
     gap: 1rem;
+    cursor: pointer;
 }
 
 .sect-1-button-1:hover{
@@ -343,6 +345,7 @@ body {
     align-items: center;
     filter: brightness(100%) drop-shadow(0px 0px 5px #ff916a);
     transition: all 0.2s;
+    cursor: pointer;
 }
 
 .sect-1-button-2:hover{
@@ -386,7 +389,6 @@ body {
 .social-item{
     height: 12rem;
     width: 12rem;
-    background-color: coral;
 }
 
 .social-item-mailbox{
@@ -395,9 +397,10 @@ body {
     @include heading-logo(mailbox, 12rem, 12rem);
     background-image: linear-gradient(
         to right,
-        #131B23,
-        #131B23
+        #15283b,
+        #15283b
       );
+    cursor: pointer;
 }
 
 .social-item-github{
@@ -406,9 +409,10 @@ body {
     @include heading-logo(github, 12rem, 12rem);
     background-image: linear-gradient(
         to right,
-        #131B23,
-        #131B23
+        #15283b,
+        #15283b
       );
+      cursor: pointer;
 }
 
 .social-item-linkedin{
@@ -417,9 +421,10 @@ body {
     @include heading-logo(linkedin, 12rem, 12rem);
     background-image: linear-gradient(
         to right,
-        #131B23,
-        #131B23
+        #15283b,
+        #15283b
       );
+      cursor: pointer;
 }
 
 .sect-1-logo {
@@ -430,7 +435,15 @@ body {
     left: 0;
     margin: 3rem;
     border-radius: 50%;
-    filter: drop-shadow(0px 0px 5px #3a4d5c);}
+    filter: drop-shadow(0px 0px 5px #3a4d5c);
+  cursor: pointer;
+  transition: all 0.2s;
+  filter: brightness(100%);
+  }
+
+  .sect-1-logo:hover{
+    filter: brightness(110%);
+  }
 
 .sect-1-nav {
     position: absolute;
@@ -445,8 +458,9 @@ body {
 .sect-1-nav-text{
     font-family: 'Lato';
     font-size: 3rem;
-    color: #131B23;
+    color: #15283b;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .nav-text-1{
@@ -481,7 +495,7 @@ body {
 
 .nav-text-3{
     background-image: linear-gradient(
-        90deg, #f02fc2, #897af2
+        90deg, #52b1bd, #01b06d
       );
       background-clip: text;
     transition: all 0.2s;
@@ -498,24 +512,627 @@ body {
 
 .section-2{
     z-index: 0;
-    height: 100vh;
+    height: 115vh;
     width: 100%;
-    background-color: #E9F1F7;
+    background-color: #d8eeff;
     position: relative;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
-.section-2-item{
-    height: 20vh;
+.section-2-piece{
+    height: 25vh;
     width: 100%;
-    background-color: crimson;
-    filter: drop-shadow(0px 0px 20px #3a4d5c);
 }
+
+.section-2-piece-last{
+  height: 40vh;
+  width: 100%;
+}
+
+.section-2-item{
+  height: 25vh;
+  width: 100%;
+  position: absolute;
+  transition: all 0.5s;
+  display: flex;
+}
+
+.section-2-item-last{
+  height: 40vh;
+  width: 100%;
+  position: absolute;
+  transition: all 0.5s;
+  display: flex;
+  background-image: linear-gradient(to bottom right, #56bffc, #1d6bd9);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-2-a{
+  height: 100%;
+  width: 50%;
+  filter: drop-shadow(0px 5px 5px #0000002b);
+  transition: all 0.2s;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 2rem;
+}
+.section-2-b{
+  height: 100%;
+  width: 50%;
+  filter: drop-shadow(0px 5px 5px #0000002b);
+  transition: all 0.5s;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.section-2-text {
+  font-family: 'Franklin Gothic Medium';
+  font-size: 8rem;
+  color: #15283b;
+  text-shadow: -5px 5px 0px #4a5c6e77;
+}
+
+.section-2-text-small {
+  font-family: 'Franklin Gothic Medium';
+  font-size: 5rem;
+  color: #15283b;
+  text-shadow: -5px 5px 0px #4a5c6e77;
+}
+
+.made-row{
+  margin-top: 2rem;
+  display: flex;
+  height: auto;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  filter: drop-shadow(-5px 5px 0px #15283bae);
+}
+
+.feature-item-html{
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(html, 12rem, 12rem);
+  background-image: linear-gradient(
+      to right,
+      #15283b,
+      #15283b
+    );
+}
+
+.feature-item-css{
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(css, 12rem, 12rem);
+  background-image: linear-gradient(
+      to right,
+      #15283b,
+      #15283b
+    );
+}
+
+.feature-item-js{
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(js, 12rem, 12rem);
+  background-image: linear-gradient(
+      to right,
+      #15283b,
+      #15283b
+    );
+}
+
+.feature-item-sass{
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(sass, 12rem, 12rem);
+  background-image: linear-gradient(
+      to right,
+      #15283b,
+      #15283b
+    );
+}
+
+.feature-item-next{
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(next, 12rem, 12rem);
+  background-image: linear-gradient(
+      to right,
+      #15283b,
+      #15283b
+    );
+}
+
+.feature-item-vercel{
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(vercel, 12rem, 12rem);
+  background-image: linear-gradient(
+      to right,
+      #15283b,
+      #15283b
+    );
+}
+
+.feature-item-mongodb{
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(mongodb, 12rem, 12rem);
+  background-image: linear-gradient(
+      to right,
+      #15283b,
+      #15283b
+    );
+}
+
+.feature-item-framer{
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(framer, 12rem, 12rem);
+  background-image: linear-gradient(
+      to right,
+      #15283b,
+      #15283b
+    );
+}
+
+.feature-item-figma{
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(figma, 12rem, 12rem);
+  background-image: linear-gradient(
+      to right,
+      #15283b,
+      #15283b
+    );
+}
+
+.feature-annotation {
+  position: absolute;
+  height: 6rem;
+  width: 15rem;
+  border-radius: 15px;
+  background-color: white;
+  z-index: 2;
+  margin-top: -8rem;
+  margin-left: -1.5rem;
+  display: flex;
+  font-family: 'Lato';
+  font-size: 2rem;
+  color: #1f3c5a;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  transform: translateY(1rem);
+  opacity: 0;
+}
+
+.feature-annotation::before {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 1rem 1rem 0;
+  border-style: solid;
+  border-color: white transparent;
+}
+
+.made-container:hover .feature-annotation, .made-container:active .feature-annotation{
+  opacity: 1;
+  transform: translateY(-0rem);
+}
+
 
 .section-3{
     height: 100vh;
     width: 100%;
-    background-color: green;
+    background-color: #15283B;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-3-text {
+  font-family: 'Franklin Gothic Medium';
+  font-size: 12rem;
+  color:#15283b;
+  z-index: 3;
+  transition: all 0.5s;
+}
+
+.section-3-text-x {
+  position: absolute;
+  font-family: 'Franklin Gothic Medium';
+  font-size: 12rem;
+  color: #15283b;
+  z-index: 3;
+  transition: all 0.5s;
+  transform: rotate(45deg);
+}
+
+.section-3-a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  transition: all 0.8s;
+}
+
+.section-3-b {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  transition: all 0.8s;
+}
+
+.section-3-c {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.8s;
+  margin-right: -60vw;
+}
+
+.section-4{
+  height: 100vh;
+  width: 100%;
+  background-color: #d8eeff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.section-4-set {
+  width: 100%;
+  height: 300%;
+  background-color: #d8eeff;
+  display: flex;
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+.section-4-img {
+  height: 100%;
+  width: 25%;
+  object-fit: cover;
+  animation: scrollImage 60s linear infinite;
+  background-repeat: repeat;
+  transition: all 1s ease-in;
+}
+
+.section-4-img-b {
+  height: 100%;
+  width: 25%;
+  object-fit: cover;
+  animation: scrollImageReverse 60s linear infinite;
+  background-repeat: repeat;
+  transition: all 1s ease-in;
+}
+
+@keyframes scrollImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollImageReverse {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.section-4-text {
+  font-family: 'Franklin Gothic Medium';
+  font-size: 8rem;
+  color:#15283b;
+  z-index: 3;
+  transition: all 0.5s;
+  display: inline;
+  margin: 0 auto;
+}
+
+.section-5 {
+  width: 100%;
+  height: auto;
+  background-color: #d8eeff;
+  padding: 5rem 10rem;
+  position: relative;  
+  background: 
+  radial-gradient(circle at 100% 5%, #1450a3a4, #449dd1a0, transparent 30%), 
+  radial-gradient(circle at 5% 35%, #5fd0dfc0, #00cd7e97, transparent 30%), 
+    radial-gradient(circle at 100% 65%, #fe4a0979, #fccf3a98, transparent 30%),
+  radial-gradient(circle at 5% 100%, #1450a3a4, #449dd1a0, transparent 30%), 
+  ;
+}
+
+.section-5-circle {
+  height: 40rem;
+  width: 40rem;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  filter: drop-shadow(-10px 10px 10px #37526781);
+
+  border: solid 1.5rem transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(white, white),
+    linear-gradient(90deg, #0057FF, #7FC9FF);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.sect-5-cont {
+  position: relative;
+  margin: auto;
+  height: 40rem;
+  width: 40rem;
+}
+
+.section-5-img {
+  height: 80%;
+  width: 80%;
+  object-fit: contain;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.section-5-wave {
+  height: 90%;
+  width: 90%;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0057FF;
+  border-radius: 50%;
+}
+
+.section-5-desc {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin:auto;
+  margin-right: 0;
+  overflow: hidden;
+}
+
+.sect-5-heading-text {
+  font-family: 'Franklin Gothic Medium';
+  font-size: 6rem;
+  color: #15283b;
+  filter: drop-shadow(-5px 5px 0px #37526781);
+  margin-bottom: 1rem;
+}
+
+.sect-5-desc-text {
+  font-family: 'Lato';
+  font-size: 2.5rem;
+  color: #1f3c5a;
+  font-weight: 600;
+  white-space: pre-wrap;
+}
+
+.sect-5-col-heading {
+  font-family: 'Lato';
+  font-size: 3rem;
+  color: #15283b;
+  font-weight: 800;
+  white-space: pre-wrap;
+}
+
+.sect-5-col-p {
+  font-family: 'Lato';
+  font-size: 2rem;
+  color: #1f3c5a;
+  font-weight: 600;
+  white-space: pre-wrap;
+}
+
+.sect-5-desc-cols {
+  display: flex;
+  width: 100%;
+  gap: 3rem;
+}
+
+.sect-5-col{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.projects-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-top: 5rem;
+  width: 100%;
+  align-items: center;
+}
+
+.project-item-frame{
+  height: 45rem;
+  width: 70rem;
+  overflow: hidden;
+  transition: all 0.5s;
+  // filter: drop-shadow(-10px 10px 0px #3752679c);
+  border-radius: 15px;
+}
+
+.project-main{
+  height: 100%;
+  width: 100%;
+  background-color: #00cd7d;
+  transition: all 0.5s;
+  position: relative;
+  transition: all 0.76s ease-out;
+  cursor: pointer;
+}
+
+.proj-img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.whitesheet{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: linear-gradient(to bottom right, white, gray);
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+}
+
+.col-sheet-1{
+  height: 100%;
+  width: 0%;
+  position: absolute;
+  background-image: linear-gradient(to bottom right, #449DD1, #1450A3);
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  transition: all 0.5s;
+}
+
+.sect-5-proj-text {
+  font-family: 'Franklin Gothic Medium';
+  font-size: 4.5rem;
+  color: #15283b;
+  filter: drop-shadow(-5px 5px 0px #37526781);
+  transition: all 0.5s;
+}
+
+.proj-text-cont{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 1rem;
+  margin-left: 2rem;
+  width: 100%;
+  margin-bottom: -6.5rem;
+  transition: all 0.5s;
+}
+
+.proj-buttons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.proj-button{
+  height: 6rem;
+  background-image: linear-gradient(
+      90deg,
+      white,
+      white
+    );
+    border-radius: 20px;
+  width: 25rem;
+  border: solid 0px transparent;
+  font-family: 'Lato';
+  font-size: 2.5rem;
+  color: #15283b;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0px 0px 5px #375267);
+  transition: all 0.2s;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.icon-gh{
+  @include heading-logo(github, 3rem, 3rem);
+  background-image: linear-gradient(
+      to right,
+      #15283b,
+      #15283b
+    );
+}
+
+.icon-live{
+  @include heading-logo(live, 3rem, 3rem);
+  background-image: linear-gradient(
+      to right,
+      #15283b,
+      #15283b
+    );
+}
+
+.sect-5-proj-num {
+  font-family: 'Franklin Gothic Medium';
+  font-size: 10rem;
+  color: #15283b;
+  filter: drop-shadow(-5px 5px 0px #37526781);
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 2rem;
+  transition: all 0.5s;
+}
+
+.wipe-1{
+  height: 100%;
+  width: 150%;
+  position: absolute;
+  background-image: linear-gradient(to bottom right, #449DD1, #1450A3);
+  top: 0;
+  left: 0;
+  transition: all 1.22s ease-out;
 }
