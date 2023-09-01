@@ -178,8 +178,8 @@ function HomePage() {
 
   const colorArray = [
     "#00CD7D", "#30CFAE", "#5FD0DF", "#51B9D4",
-    "#3D96C4", "#2873B3", "#1450A3", "#544F79",
-    "#A94D41", "#FE4B09"
+    "#3D96C4", "#2873B3", "#1450A3", "#503595",
+    "#8D1B87", "#C90079"
   ];
 
   const [storyState, setStoryState] = useState(0)
@@ -195,6 +195,10 @@ function HomePage() {
   const [storyRef8, storyView8] = useInView({ threshold: 0.8 });
   const [storyRef9, storyView9] = useInView({ threshold: 0.8 });
   const [storyRef10, storyView10] = useInView({ threshold: 0.8 });
+
+  const [skillVisRef, visRef] = useInView({ threshold: 0.8 });
+
+  const [skillBottom, setSkillBottom] = useState("-100%");
 
   useEffect(() => {
     if (storyView1) {
@@ -220,29 +224,43 @@ function HomePage() {
     } else {
       if (!storyView) { setStoryState(0) }
     }
-  }, [storyView, storyView1, storyView2, storyView3, storyView4, storyView5, storyView6, storyView7, storyView8, storyView9, storyView10 ]);
+  }, [storyView, storyView1, storyView2, storyView3, storyView4, storyView5, storyView6, storyView7, storyView8, storyView9, storyView10]);
+
+  useEffect(() => {
+    setSkillBottom("-100%");
+    setTimeout(() => {
+      setSkillBottom("0%");
+    }, 300);
+  }, [storyState])
 
   const storyTextList = [
-    <p className="about-p">    My journey started on August 2022, I started off with <a href="#">Angela Yu's Python course</a> there I learned the basics of programming such as variables, functions, loops, etc. Though I don't use Python at the moment, I'm happy I learned it anyway since it set the foundations of my learning.</p>,
+    <p className="about-p">    My journey started on August 2022, I started off with <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Angela Yu's Python course</a> there I learned the basics of programming such as variables, functions, loops, etc. Though I don't use Python at the moment, I'm happy I learned it anyway since it set the foundations of my learning.</p>,
     <p className="about-p">    Along the Python journey I was introduced to web development through Flask. This part made me fall in love with web development when she made a simple blog website. It wasn't much, but the way the problems were solved and how the contents were structured were what gave me the drive to keep learning. Development was like a big and practical Rube Goldberg Machine with a purpose.</p>,
-    <p className="about-p">    Since it was a Python course, it didn't teach much CSS or Javascript so I picked up her <a href="#">Javascript Course</a> and it gave me the start I needed. It was a bit of a struggle after using Python for so long but eventually I finished it too though it would be a lie to say I didn't find Javascript extremely annoying. It showed me the horizons and hinted me to React.</p>,
-    <p className="about-p">    Because of how annoying JS was to me with all of the query selector nonsense, I didn't know where to go and what I wanted to do. Then I noticed <a href="#">Google's UI/UX Course</a> and it made me interested in web design. It taught me a seemingly common-sense perspective on how apps and sites should be made. The importance of accessibility, empathy, and what it means to make websites for other people. During this time I started to ideate what would become MyMart through Figma.</p>,
-    <p className="about-p">    I was eager to just jump in and get started in creating my project. To do so I decided to go with React through <a href="#">Academind's React Course</a>. This was a great decision because React to me was much easier, simpler, more fun, and less cumbersome compared to normal JS. I was also introduced to NextJS which made api use and routing straightforward.</p>,
-    <p className="about-p">    None of the courses so far focused on CSS, so I decided to try Jonas Schmedtmann's <a href="#">Fundamentals</a> and <a href="#">Advanced</a> Courses and it reignited my interest and passion for development. I was planning to just bruteforce things with Bootstrap but I'm so glad I didn't. Sky's the limit when you know the tools of the trade. It showed so many tricks and techniques I might have never found.</p>,
-    <p className="about-p">    In order to make sure I don't kill myself by accident, I made sure to learn Git and Github to keep saves and checkpoints through <a href="#">Colt Steele's Course</a>. It gave me what I needed to learn Git's version control and it has saved me on numerous occasions.</p>,
+    <p className="about-p">    Since it was a Python course, it didn't teach much CSS or Javascript so I picked up her <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Javascript Course</a> and it gave me the start I needed. It was a bit of a struggle after using Python for so long but eventually I finished it too. Though it would be a lie to say I didn't find Javascript extremely annoying. It showed me the horizons and hinted me to React.</p>,
+    <p className="about-p">    Because of how annoying JS was to me with all of the query selector nonsense, I didn't know where to go and what I wanted to do. Then I noticed <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Google's UI/UX Course</a> and it made me interested in web design. It taught me a seemingly common-sense perspective on how apps and sites should be made. The importance of accessibility, empathy, and what it means to make websites for other people. During this time I started to ideate what would become MyMart through Figma.</p>,
+    <p className="about-p">    I was eager to just jump in and get started in creating my project. To do so I decided to go with React through <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Academind's React Course</a>. This was a great decision because React to me was much easier, simpler, more fun, and less cumbersome compared to normal JS. I was also introduced to NextJS which made api use and routing straightforward.</p>,
+    <p className="about-p">    None of the courses so far focused on CSS, so I decided to try Jonas Schmedtmann's <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Fundamentals</a> and <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Advanced</a> Courses and it reignited my interest and passion for development. I was planning to just bruteforce things with Bootstrap but I'm so glad I didn't. Sky's the limit when you know the tools of the trade. It showed so many tricks and techniques I might have never found.</p>,
+    <p className="about-p">    In order to make sure I don't kill myself by accident, I made sure to learn Git and Github to keep saves and checkpoints through <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Colt Steele's Course</a>. It gave me what I needed to learn Git's version control and it has saved me on numerous occasions.</p>,
     <p className="about-p">    Now that my armory is set up, the tools are sharpened and ready, off I went to create MyMart. It was ambitious to try to make a fullstack website as my first project. But I decided that the collection of all the pages and their interactions would best constitute my portfolio.</p>,
     <p className="about-p">    Now that all was said and done, the project was finished and is now live. I applied everything from the ideating, designing, building, responsiveness, etc. all done solo. I got great practice of all the fundamentals and problem solving thought processes needed to succeed. As well as the grit needed to not give up in the face of heavy burnout.</p>,
-    <p className="about-p">    However, I did need ChatGPT's help in many parts especially towards API use. But generally I tried to direct it towards my path and used it mainly for debugging help. In total, the duration of the project was From March 1 to August 19, 2023 where in final, I wrote XXX lines of (relatively optimized) code per day. I want to bring that work ethic to -your company-. </p>,
+    <p className="about-p">    However, I did need ChatGPT's help in many parts especially towards API use. But generally I tried to direct it towards my path and used it mainly for debugging help. In total, the duration of the project was From March 1 to August 19, 2023, <span style={{ fontWeight: "800" }}>I wrote XXX lines</span> of (relatively optimized) code per day at final, not including comments and removed code. I want to bring that work ethic to <span style={{ fontWeight: "800" }}>your company</span>. </p>,
   ]
 
-  const iconItems = [["python", "turtle", "tkinter", "soup", "sql", "twilio", "oop"], ["html", "flask", "bootstrap", "jinja", "pandas", "seaborn", "colab",], 
+  const iconItems = [["python", "turtle", "tkinter", "soup", "sql", "twilio", "oop"], ["html", "flask", "bootstrap", "jinja", "pandas", "seaborn", "colab",],
   ["js", "jquery", "node", "express", "api", "mongodb"], ["ux", "ui", "responsive", "accessibility", "figma", "design", "wireframe"],
-["react", "localstorage", "firebase", "redux", "next", "serverside", "vercel", "framer"], ["css", "sass", "vscode"], ["git", "github", "terminal", "gitkraken"]]
+  ["react", "devtools", "firebase", "redux", "next", "vercel", "framer"], ["css", "sass", "vscode"], ["git", "github", "terminal", "gitkraken"]]
 
-const iconNames = [["Python", "Turtles", "Tkinter", "Beautiful Soup", "SQLite", "Twilio", "Object Oriented Programming"], ["HTML", "Flask", "Bootstrap", "Jinja", "Pandas", "Seaborn", "Colaboratory",], 
-["Javascript", "Jquery", "Node", "Express", "API", "MongoDB"], ["User Experience", "User Interface", "Responsive Design", "Accessibility", "Figma", "Web Design", "Wireframing"],
-["React", "Local Storage", "Firebase", "Redux", "NextJS", "Static & Serverside Rendering", "Vercel", "Framer Motion"], ["CSS", "SASS", "VSCode"], ["Git", "Github", "Terminal", "Git Kraken"]]
+  const iconNames = [["Python", "Turtles", "Tkinter", "Beautiful Soup", "SQLite", "Twilio", "Object Oriented Programming"], ["HTML", "Flask", "Bootstrap", "Jinja", "Pandas", "Seaborn", "Colaboratory",],
+  ["Javascript", "JQuery", "NodeJS", "Express", "API", "MongoDB"], ["User Experience", "User Interface", "Responsive Design", "Accessibility", "Figma", "Web Design", "Wireframing"],
+  ["React", "Developer Tools", "Firebase", "Redux", "NextJS", "Vercel", "Framer Motion"], ["CSS", "Sass", "VSCode"], ["Git", "Github", "Terminal", "Git Kraken"]]
 
+  const mainSkills = ["html", "js", "css", "react", "sass", "framer", "next", "mongodb", "git", "figma", "vscode", "vercel", "github", "ux", "ui", "responsive", "accessibility", "design", "wireframe", "api", "redux", "devtools", "gitkraken", "oop"]
+  const subSkills = ["python", "flask", "bootstrap", "jquery", "node", "express", "firebase", "jinja", "terminal"]
+  const famSkills = ["sql", "turtle", "tkinter", "soup", "pandas", "seaborn", "colab", "twilio"]
+
+  const mainNames = ["HTML", "Javascript", "CSS", "React", "Sass", "Framer Motion", "NextJS", "MongoDB", "Git", "Figma", "VSCode", "Vercel", "Github", "User Experience", "User Interface", "Responsive Design", "Accessibility", "Web Design", "Wireframing", "API", "Redux", "Developer Tools", "Git Kraken", "Object Oriented Programming"]
+  const subNames = ["Python", "Flask", "Bootstrap", "JQuery", "NodeJS", "Express", "Firebase", "Jinja", "Terminal"]
+  const famNames = ["SQLite", "Turtles", "Tkinter", "Beautiful Soup", "Pandas", "Seaborn", "Colaboratory", "Twilio"]
 
   return <Fragment>
     <Head>
@@ -260,39 +278,40 @@ const iconNames = [["Python", "Turtles", "Tkinter", "Beautiful Soup", "SQLite", 
 
     </nav>}
 
-    {storyView && <div className="section-7-main" style={{ backgroundColor: colorArray[storyState - 1] }}>
+    {storyView && <div className="section-7-main" style={{ backgroundColor: colorArray[storyState - 1], boxShadow: storyState === 10 ? "inset 0px -20px 30px -10px #18181882" : "inset 0px 0px 0px 0px #18181882" }}>
 
-    <motion.div
-          key={storyState}
-          className="story-piece"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          transition={{ duration: 0.5 }}
-        >
-          {storyTextList[storyState - 1]}
-        </motion.div>
-
-    <div className="story-piece">
-    <motion.img className="story-img" src="https://i.imgur.com/9kfJCyT.jpeg"
+      <motion.div
         key={storyState}
+        className="story-piece"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.5 }}
+      >
+        {storyTextList[storyState - 1]}
+      </motion.div>
+
+      <div className="story-piece">
+        <motion.img className="story-img" src="https://i.imgur.com/9kfJCyT.jpeg"
+          key={storyState}
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}></motion.img>
-    </div>
+      </div>
 
-    <div className="story-skill-list" style={{transform:`${(storyState > 0 && storyState < 8 ? "translateY(0%)" : "translateY(100%)")}`}}>
-        <div className="skill-row" style={{filter: `drop-shadow(-5px 5px 0px ${colorArray[storyState - 1]})`}}>
+      <div className="story-skill-list" style={{ transform: `${(storyState > 0 && storyState < 8 ? "translateY(0%)" : "translateY(100%)")}`, marginBottom: skillBottom }} ref={skillVisRef}>
+        <h2 className="skills-label" style={{ filter: `drop-shadow(-5px 5px 0px ${colorArray[storyState - 1]})` }}>New Skills</h2>
+        <div className="skill-row" style={{ filter: `drop-shadow(-5px 5px 0px ${colorArray[storyState - 1]})` }}>
           {(storyState > 0 && storyState < 8) && iconItems[storyState - 1].map((item, index) => {
 
-            return <motion.div className="skill-container" initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration:2}}>
-            <div className="feature-annotation">
-              {iconNames[storyState - 1][index]}
-            </div>
-            <div className={`skill-item-${item}`}>
-            </div>
-          </motion.div>
+            return <motion.div key={index} className="skill-container" initial={{ transform: "scale(0)" }} animate={{ transform: visRef ? "scale(1)" : "scale(0)" }} transition={{ duration: 0.3, delay: 0.1 * index }}>
+              <div className="feature-annotation">
+                {iconNames[storyState - 1][index]}
+              </div>
+              <div className={`skill-item-${item}`}>
+              </div>
+            </motion.div>
           })}
 
         </div>
@@ -711,6 +730,10 @@ const iconNames = [["Python", "Turtles", "Tkinter", "Beautiful Soup", "SQLite", 
       </div>
     </section>
 
+    <div className="more-soon">
+      <h2 className="section-2-text-small">More Coming Soon...</h2>
+    </div>
+
     <section className="section-6">
       <div className="about-text">
         <h2 className="about-heading">About Me</h2>
@@ -732,7 +755,7 @@ const iconNames = [["Python", "Turtles", "Tkinter", "Beautiful Soup", "SQLite", 
 
     <section className="section-7" ref={storyRef}>
       <div className="section-7-piece" style={{ backgroundColor: "#00CD7D" }} ref={storyRef1}>
-      <motion.div
+        <motion.div
           key={storyState}
           className="story-piece"
           initial={{ opacity: 1, y: 50 }}
@@ -743,29 +766,29 @@ const iconNames = [["Python", "Turtles", "Tkinter", "Beautiful Soup", "SQLite", 
           {storyTextList[0]}
         </motion.div>
 
-    <div className="story-piece">
-    <motion.img className="story-img" src="https://i.imgur.com/9kfJCyT.jpeg"
-        key={storyState}
-          initial={{ opacity: 1, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 1, y: 50 }}
-          transition={{ duration: 0.5 }}></motion.img>
-    </div>
-
-    <div className="story-skill-list" style={{transform:`${(storyState > 0 && storyState < 8 ? "translateY(0%)" : "translateY(100%)")}`}}>
-        <div className="skill-row" style={{filter: `drop-shadow(-5px 5px 0px ${colorArray[0]})`}}>
-          {(storyState > 0 && storyState < 8) &&  iconItems[0].map((item, index) => {
-            return <div className="skill-container">
-            <div className="feature-annotation">
-              {iconNames[0][index]}
-            </div>
-            <div className={`skill-item-${item}`}>
-            </div>
-          </div>
-          })}
-
+        <div className="story-piece">
+          <motion.img className="story-img" src="https://i.imgur.com/9kfJCyT.jpeg"
+            key={storyState}
+            initial={{ opacity: 1, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 1, y: 50 }}
+            transition={{ duration: 0.5 }}></motion.img>
         </div>
-      </div>
+
+        <div className="story-skill-list" style={{ transform: `${(storyState > 0 && storyState < 8 ? "translateY(0%)" : "translateY(100%)")}` }}>
+          <div className="skill-row" style={{ filter: `drop-shadow(-5px 5px 0px ${colorArray[0]})` }}>
+            {(storyState > 0 && storyState < 8) && iconItems[0].map((item, index) => {
+              return <div className="skill-container" key={index}>
+                <div className="feature-annotation">
+                  {iconNames[0][index]}
+                </div>
+                <div className={`skill-item-${item}`}>
+                </div>
+              </div>
+            })}
+
+          </div>
+        </div>
       </div>
       <div className="section-7-piece" style={{ backgroundColor: "#30CFAE" }} ref={storyRef2}>
 
@@ -786,15 +809,16 @@ const iconNames = [["Python", "Turtles", "Tkinter", "Beautiful Soup", "SQLite", 
       <div className="section-7-piece" style={{ backgroundColor: "#1450A3" }} ref={storyRef7}>
 
       </div>
-      <div className="section-7-piece" style={{ backgroundColor: "#544F79" }} ref={storyRef8}>
+      <div className="section-7-piece" style={{ backgroundColor: "#503595" }} ref={storyRef8}>
 
       </div>
 
-      <div className="section-7-piece" style={{ backgroundColor: "#A94D41" }} ref={storyRef9}>
+      <div className="section-7-piece" style={{ backgroundColor: "#8D1B87" }} ref={storyRef9}>
 
       </div>
-      <div className="section-7-piece" style={{ backgroundColor: "#FE4B09" }} ref={storyRef10}>
-      <motion.div
+      <div className="section-7-piece" style={{ backgroundColor: "#C90079", boxShadow: "inset 0px -20px 30px -10px #18181882" }} ref={storyRef10}>
+
+        <motion.div
           key={storyState}
           className="story-piece"
           initial={{ opacity: 1, y: 50 }}
@@ -805,69 +829,73 @@ const iconNames = [["Python", "Turtles", "Tkinter", "Beautiful Soup", "SQLite", 
           {storyTextList[9]}
         </motion.div>
 
-    <div className="story-piece">
-    <motion.img className="story-img" src="https://i.imgur.com/9kfJCyT.jpeg"
-        key={storyState}
-          initial={{ opacity: 1, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 1, y: 50 }}
-          transition={{ duration: 0.5 }}></motion.img>
-    </div>
+        <div className="story-piece">
+          <motion.img className="story-img" src="https://i.imgur.com/9kfJCyT.jpeg"
+            key={storyState}
+            initial={{ opacity: 1, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 1, y: 50 }}
+            transition={{ duration: 0.5 }}></motion.img>
+        </div>
       </div>
     </section>
-    <div className="section-7-piece">
+    <section className="section-8">
 
+      <div className="skill-half">
+        <h2 className="main-skill-text">Main Skillset</h2>
+
+        <div className="main-skillset">
+
+        {mainSkills.map((skill, index) => {
+          return <div className="final-container">
+            <div className="final-annotation">
+              {mainNames[index]}
+            </div>
+            <div className={`final-item-${skill}`}>
+            </div>
+          </div>
+          })}
+          </div>
+
+
+      </div>
+
+      <div className="skill-half">
+        <h2 className="sub-skill-text">Sub Skillset</h2>
+
+        <div className="sub-skillset">
+        {subSkills.map((skill, index) => {
+          return <div className="final-container-b">
+            <div className="final-annotation">
+              {subNames[index]}
+            </div>
+            <div className={`final-item-${skill}`}>
+            </div>
+          </div>
+          })}
+        </div>
+
+        <h2 className="fam-skill-text">Familiar With</h2>
+
+<div className="fam-skillset">
+{famSkills.map((skill, index) => {
+          console.log(famSkills)
+          return <div className="final-container-c">
+            <div className="final-annotation">
+              {famNames[index]}
+            </div>
+            <div className={`final-item-${skill}`}>
+            </div>
+          </div>
+          })}
 </div>
-    {/* <section className="section-6" style={{ height: "auto" }}>
-      <div className="about-text">
-        <h2 className="about-heading">Part 1</h2>
-        <p className="about-p">    My journey started on August 2022, I started off with <a href="#">Angela Yu's Python course</a> there I learned the basics of programming such as variables, functions, loops, etc. Though I don't use Python at the moment, I'm happy I learned it anyway since it set the foundations of my learning.</p>
-
-        <h1>Python Replit Pandas Seaborn Matplotlib, Turtle, Tkinter, Beautiful soup, SQLite, Jupyter?G Colaboratory, Twilio, OOP, Pycharm</h1>
-
-        <p className="about-p">    Along the Python journey I was introduced to web development through Flask. This part made me fall in love with web development when she made a simple blog website. It wasn't much, but the way the problems were solved and how the contents were structured were what gave me the drive to keep learning. Development was like a big and practical Rube Goldberg Machine with a purpose.</p>
-
-        <h1>HTML, Flask, Bootstrap, Jinja</h1>
-
-        <p className="about-p">    Since it was a Python course, it didn't teach much CSS or Javascript so I picked up her <a href="#">Javascript Course</a> and it gave me the start I needed. It was a bit of a struggle after using Python for so long but eventually I finished it too though it would be a lie to say I didn't find Javascript extremely annoying. It showed me the horizons and hinted me to React.</p>
-
-        <h1>JS, JQuery, Node, Express, NPM, API, MongoDB</h1>
-      </div>
-
-      <div className="about-text">
-        <h2 className="about-heading">Part 2</h2>
-        <p className="about-p">    Because of how annoying JS was to me with all of the query selector nonsense, I didn't know where to go and what I wanted to do. Then I noticed <a href="#">Google's UI/UX Course</a> and it made me interested in web design. It taught me a seemingly common-sense perspective on how apps and sites should be made. The importance of accessibility, empathy, and what it means to make websites for other people. During this time I started to ideate what would become MyMart through Figma.</p>
-
-        <h1>UI/UX, Responsive Design, Accessibility, Figma, Web Design, Design Sprints, UI/UX Research, WireFraming</h1>
-
-        <p className="about-p">    I was eager to just jump in and get started in creating my project. To do so I decided to go with React through <a href="#">Academind's React Course</a>. This was a great decision because React to me was much easier, simpler, more fun, and less cumbersome compared to normal JS. I was also introduced to NextJS which made api use and routing straightforward.</p>
-
-        <h1>React, Localstorage, Firebase, Redux, NextJS, ssr and static, Vercel, Framer</h1>
-
-        <p className="about-p">    None of the courses so far focused on CSS, so I decided to try Jonas Schmedtmann's <a href="#">Fundamentals</a> and <a href="#">Advanced</a> Courses and it reignited my interest and passion for development. I was planning to just bruteforce things with Bootstrap but I'm so glad I didn't. Sky's the limit when you know the tools of the trade. It showed so many tricks and techniques I might have never found.</p>
-
-        <h1>CSS, Sass, VSCode</h1>
-
-        <p className="about-p">    In order to make sure I don't kill myself by accident, I made sure to learn Git and Github to keep saves and checkpoints through <a href="#">Colt Steele's Course</a>. It gave me what I needed to learn Git's version control and it has saved me on numerous occasions.</p>
-
-        <h1>Git, Github, gitbash, git kraken, terminal</h1>
-
       </div>
 
     </section>
 
-    <section className="section-6" style={{ height: "auto" }}>
-      <div className="about-text">
-        <h2 className="about-heading">Part 3</h2>
-        <p className="about-p">    Now that my armory is set up, the tools are sharpened and ready, off I went to create MyMart. It was ambitious to try to make a fullstack website as my first project. But I decided that the collection of all the pages and their interactions would best constitute my portfolio.</p>
-
-        <p className="about-p">    Now that all was said and done, the project was finished and is now live. I applied everything from the ideating, designing, building, responsiveness, etc. all done solo. I got great practice of all the fundamentals and problem solving thought processes needed to succeed. As well as the grit needed to not give up in the face of heavy burnout.</p>
-
-        <p className="about-p">    However, I did need ChatGPT's help in many parts especially towards API use. But generally I tried to direct it towards my path and used it mainly for debugging help. In total, the duration of the project was From March 1 to August 19, 2023 where in final, I wrote XXX lines of (relatively optimized) code per day. I want to bring that work ethic to -your company-. </p>
-
-      </div>
-
-    </section> */}
+    <section className="section-9">
+        <img src="/sunset.png" className="sect-9-bg"></img>
+    </section>
   </Fragment>
 }
 
