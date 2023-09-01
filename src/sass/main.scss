@@ -278,6 +278,82 @@ body {
     }
   }
 
+  .home-navbar {
+    background-color: #181818;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    width: 100%;
+    transition: all 0.2s;
+    position: sticky;
+    margin-bottom: -10rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    gap: 2rem;
+  }
+
+  .home-nav-logo {
+  height: 8.5rem;
+  width: 8.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.home-nav-logo:hover {
+  filter: brightness(120%);
+}
+
+.main-nav-text{
+  font-family: 'Lato';
+  font-size: 3rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.main-nav-text:hover{
+  color: transparent;
+  filter: brightness(120%);
+}
+
+.main-nav-col{
+  background-image: linear-gradient(
+      90deg,
+      #1450A3,
+      #449DD1
+    );
+    background-clip: text;
+  transition: all 0.2s;
+}
+
+// .header-home-text {
+//   font-size: 3rem;
+//   color: white;
+//   font-family: "Roboto", sans-serif;
+//   line-height: 1;
+//   padding-bottom: 0.3rem;
+//   background-image: linear-gradient(0deg, #17ead9, #0057ff);
+//   -webkit-background-clip: text;
+//           background-clip: text;
+//   transition: all 0.3s;
+//   cursor: pointer;
+// }
+
+// .header-home-text:hover {
+//   color: transparent;
+// }
+
+  .nav-visible {
+    top: 0;
+  }
+
+  .nav-hidden {
+  transform: translateY(-100%);
+  transition: all 0.3s;
+}
+
 .sect-1-bg{
     height: 100%;
     width: 100%;
@@ -505,7 +581,18 @@ body {
     color: transparent;
 }
 
-
+.proj-text {
+  font-family: 'Franklin Gothic Medium';
+  font-size: 4.5rem;
+  color: #15283b;
+  filter: drop-shadow(-5px 5px 0px #37526781);
+  transition: all 0.5s;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 1rem;
+}
 
 
 
@@ -705,6 +792,7 @@ body {
 }
 
 .feature-annotation {
+  text-align: center;
   position: absolute;
   height: 6rem;
   width: 15rem;
@@ -881,12 +969,11 @@ body {
   background-color: #d8eeff;
   padding: 5rem 10rem;
   position: relative;  
-  background: 
-  radial-gradient(circle at 100% 5%, #1450a3a4, #449dd1a0, transparent 30%), 
-  radial-gradient(circle at 5% 35%, #5fd0dfc0, #00cd7e97, transparent 30%), 
-    radial-gradient(circle at 100% 65%, #fe4a0979, #fccf3a98, transparent 30%),
-  radial-gradient(circle at 5% 100%, #1450a3a4, #449dd1a0, transparent 30%), 
-  ;
+  // background: 
+  // radial-gradient(circle at 100% 5%, #1450a3a4, #449dd1a0, transparent 30%), 
+  // radial-gradient(circle at 5% 35%, #5fd0dfc0, #00cd7e97, transparent 30%), 
+  //   radial-gradient(circle at 100% 65%, #fe4a0979, #fccf3a98, transparent 30%),
+  // radial-gradient(circle at 5% 100%, #1450a3a4, #449dd1a0, transparent 30%);
 }
 
 .section-5-circle {
@@ -1136,3 +1223,639 @@ body {
   left: 0;
   transition: all 1.22s ease-out;
 }
+
+.portfolio-proj{
+  // background-color: #15283B;
+  background-color: #181818;
+  height: auto;
+  width: 100%;
+  padding: 2rem;
+}
+
+.port-text {
+  font-family: 'Franklin Gothic Medium';
+  font-size: 4.5rem;
+  color: white;
+  filter: drop-shadow(-5px 5px 0px #37526781);
+  transition: all 0.5s;
+}
+
+.section-6{
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom right,
+    #fccf3a,
+    #fe4b09
+  );
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-img {
+  width: 50%;
+  position: relative;
+}
+
+.about-heading {
+  font-family: 'Franklin Gothic Medium';
+  font-size: 7rem;
+  color: #181818;
+  filter: drop-shadow(-5px 5px 0px #6b6b6c81);
+  transition: all 0.5s;
+}
+
+.about-p {
+  font-family: 'Lato';
+  font-size: 2.5rem;
+  color: #181818dd;
+  font-weight: 600;
+  white-space: pre-wrap;
+  margin: 2rem 15%;
+}
+
+.about-web{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.section-7 {
+  height: auto;
+  width: 100%;
+}
+
+.section-7-piece {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.section-7-main {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background-color: #00CD7D;
+  z-index: 10;
+  transition: all 1s;
+  display: flex;
+}
+
+.story-piece {
+height: 100%;
+width: 50%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.story-img{
+  width: 80%;
+}
+
+.story-skill-list{
+  height: auto;
+  padding-bottom: 2rem;
+  width: 100%;
+  position: absolute;
+  transition: all 0.5s;
+  display: flex;
+  background-color: #18181888;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+}
+
+.skill-row{
+  margin-top: 2rem;
+  display: flex;
+  height: auto;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.skill-container:hover .feature-annotation, .skill-container:active .feature-annotation{
+  opacity: 1;
+  transform: translateY(-0rem);
+}
+
+.skill-item-python{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(python, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-turtle{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(turtle, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-tkinter{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(tkinter, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-sql{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(sql, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-soup{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(soup, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-twilio{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(twilio, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-oop{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(oop, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-html{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(html, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-flask{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(flask, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-bootstrap{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(bootstrap, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-jinja{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(jinja, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-pandas{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(pandas, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-seaborn{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(seaborn, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-colab{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(colab, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-js{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(js, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-jquery{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(jquery, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-node{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(node, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-express{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(express, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-api{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(api, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-mongodb{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(mongodb, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-ui{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(ui, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-ux{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(ux, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-responsive{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(responsive, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-accessibility{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(accessibility, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-figma{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(figma, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-design{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(design, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-wireframe{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(wireframe, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-react{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(react, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-localstorage{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(localstorage, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-firebase{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(firebase, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-redux{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(redux, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-next{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(next, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-serverside{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(serverside, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-vercel{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(vercel, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-framer{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(framer, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-css{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(css, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-sass{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(sass, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-vscode{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(vscode, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-git{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(git, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-github{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(github, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-terminal{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(terminal, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+.skill-item-gitkraken{
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  @include heading-logo(gitkraken, 10rem, 10rem);
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.687),
+      rgba(255, 255, 255, 0.687)
+          );
+}
+
+
