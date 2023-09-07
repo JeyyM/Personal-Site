@@ -452,7 +452,7 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(github, 12rem, 12rem);
-  background-image: linear-gradient(to right, #15283b, #15283b);
+  background-image: linear-gradient(to right, #40e9ff, #50febb);
   cursor: pointer;
 }
 
@@ -460,8 +460,52 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(linkedin, 12rem, 12rem);
+  background-image: linear-gradient(to right, #40e9ff, #50febb);
+  cursor: pointer;
+}
+
+.sect-1-socials {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 3rem;
+  z-index: 4;
+}
+
+.social-decoy {
+  height: 12rem;
+  width: 12rem;
+}
+
+.social-decoy-github {
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(github, 12rem, 12rem);
   background-image: linear-gradient(to right, #15283b, #15283b);
   cursor: pointer;
+  transition: all 0.5s;
+}
+
+.social-decoy-github:hover{
+  filter: brightness(120%);
+  opacity: 0;
+}
+
+.social-decoy-linkedin {
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(linkedin, 12rem, 12rem);
+  background-image: linear-gradient(to right, #15283b, #15283b);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.social-decoy-linkedin:hover{
+  filter: brightness(120%);
+  opacity: 0;
 }
 
 .sect-1-logo {
@@ -881,11 +925,11 @@ body {
   background-color: #d8eeff;
   padding: 5rem 10rem;
   position: relative;
-  // background:
-  // radial-gradient(circle at 100% 5%, #1450a3a4, #449dd1a0, transparent 30%),
-  // radial-gradient(circle at 5% 35%, #5fd0dfc0, #00cd7e97, transparent 30%),
-  //   radial-gradient(circle at 100% 65%, #fe4a0979, #fccf3a98, transparent 30%),
-  // radial-gradient(circle at 5% 100%, #1450a3a4, #449dd1a0, transparent 30%);
+  background:
+  radial-gradient(circle at 100% 5%, #1450a3a4, #449dd1a0, transparent 30%),
+  radial-gradient(circle at 5% 35%, #5fd0dfc0, #00cd7e97, transparent 30%),
+    radial-gradient(circle at 100% 65%, #fe4a0979, #fccf3a98, transparent 30%),
+  radial-gradient(circle at 5% 100%, #1450a3a4, #449dd1a0, transparent 30%);
 }
 
 .section-5-circle {
@@ -1804,7 +1848,7 @@ body {
   gap: 1rem;
 
   position: relative;
-  filter: drop-shadow(-10px 10px 10px #37526781) ;
+  filter: drop-shadow(-10px 10px 10px #37526781);
 
   border: solid 1.5rem transparent;
   background-image: linear-gradient(#bfe1fc, #a0d4fc),
@@ -1825,11 +1869,11 @@ body {
   gap: 1rem;
 
   position: relative;
-  filter: drop-shadow(-10px 10px 10px #37526781) ;
+  filter: drop-shadow(-10px 10px 10px #37526781);
 
   border: solid 1.5rem transparent;
   background-image: linear-gradient(#bfe1fc, #a0d4fc),
-      linear-gradient(90deg, #1450A3, #449DD1);
+    linear-gradient(90deg, #1450a3, #449dd1);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -1846,11 +1890,11 @@ body {
   gap: 1rem;
 
   position: relative;
-  filter: drop-shadow(-10px 10px 10px #37526781) ;
+  filter: drop-shadow(-10px 10px 10px #37526781);
 
   border: solid 1.5rem transparent;
   background-image: linear-gradient(#bfe1fc, #a0d4fc),
-      linear-gradient(90deg, #fe4b09, #fccf3a);
+    linear-gradient(90deg, #fe4b09, #fccf3a);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -1875,6 +1919,7 @@ body {
   transform: translateY(1rem) translateX(-50%);
   opacity: 0;
   left: 50%;
+  pointer-events: none;
 }
 
 .final-annotation::before {
@@ -1894,7 +1939,7 @@ body {
 }
 
 .final-container-b {
-  filter: drop-shadow(-5px 5px 0px #1450A3);
+  filter: drop-shadow(-5px 5px 0px #1450a3);
   position: relative;
 }
 
@@ -2290,6 +2335,43 @@ body {
   margin: 1rem auto;
 }
 
+
+.final-item-msoffice {
+  position: relative;
+  height: 8rem;
+  width: 8rem;
+  @include heading-logo(msoffice, 8rem, 8rem);
+  background-image: linear-gradient(to right, #ffffff, #ffffff);
+  margin: 1rem auto;
+}
+
+.final-item-premiere {
+  position: relative;
+  height: 8rem;
+  width: 8rem;
+  @include heading-logo(premiere, 8rem, 8rem);
+  background-image: linear-gradient(to right, #ffffff, #ffffff);
+  margin: 1rem auto;
+}
+
+.final-item-terminal {
+  position: relative;
+  height: 8rem;
+  width: 8rem;
+  @include heading-logo(terminal, 8rem, 8rem);
+  background-image: linear-gradient(to right, #ffffff, #ffffff);
+  margin: 1rem auto;
+}
+
+.final-item-oop {
+  position: relative;
+  height: 8rem;
+  width: 8rem;
+  @include heading-logo(oop, 8rem, 8rem);
+  background-image: linear-gradient(to right, #ffffff, #ffffff);
+  margin: 1rem auto;
+}
+
 .final-item-colab {
   position: relative;
   height: 8rem;
@@ -2308,15 +2390,145 @@ body {
   margin: 1rem auto;
 }
 
-.section-9{
-  height: 100vh;
+.section-9 {
+  height: 101vh;
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
 }
 
-.sect-9-bg{
+.sect-9-bg {
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: top;
+  position: absolute;
+  filter: brightness(110%);
+}
+
+.sect-9-headline {
+  font-family: "Franklin Gothic Medium";
+  font-size: 6.5rem;
+  color: #15283b;
+  filter: drop-shadow(-5px 5px 0px #fe4a097e);
+  transition: all 0.5s;
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+.sect-9-text {
+  font-family: "Lato";
+  font-size: 4rem;
+  color: #15283b;
+  filter: drop-shadow(-3px 3px 0px #fe4a097e) brightness(120%);
+  font-weight: 600;
+  z-index: 5;
+}
+
+.form-input {
+  width: 100%;
+  z-index: 5;
+  height: 8rem;
+  border: solid 8px transparent;
+  border-radius: 2rem;
+  background-image: linear-gradient(#f7f0e4, #f7f0e4),
+    linear-gradient(45deg, #fe4b09, rgb(255, 234, 113));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  padding: 0rem 2rem;
+  box-shadow: inset 0 0 0 2.2rem #f7f0e4, 0 0 0 2px transparent, 0 0 0 4px #f7f0e4;
+  outline-color: #fe4b09;
+  color: #15283b;
+  font-size: 2.5rem;
+  font-weight: 700;
+  transition: all 0.2s;
+    font-family: "Lato";
+    opacity: 0.8;
+}
+
+.form-input:focus {
+  filter: brightness(120%);
+}
+
+.form-area {
+  width: 100%;
+  z-index: 5;
+  height: 22rem;
+  border: solid 8px transparent;
+  border-radius: 2rem;
+  background-image: linear-gradient(#f7f0e4, #f7f0e4),
+    linear-gradient(45deg, #fe4b09, rgb(255, 234, 113));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  padding: 2rem 2rem;
+  box-shadow: inset 0 0 0 2.2rem #f7f0e4, 0 0 0 2px transparent, 0 0 0 4px #f7f0e4;
+  outline-color: #fe4b09;
+  color: #15283b;
+  font-size: 2.5rem;
+  font-weight: 700;
+  transition: all 0.2s;
+    font-family: "Lato";
+    opacity: 0.8;
+    resize: none;
+}
+
+.form-area:focus {
+  filter: brightness(120%);
+}
+
+.form-group{
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+}
+
+.form-label{
+  font-family: "Lato";
+  font-size: 3rem;
+  color: #15283b;
+  filter: drop-shadow(-3px 3px 0px #d8eeff) brightness(120%);
+  font-weight: 600;
+  z-index: 5;
+  margin: 1rem;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.form-label-2{
+  font-family: "Lato";
+  font-size: 3rem;
+  color: #d8eeff;
+  filter: drop-shadow(-3px 3px 0px #15283b) brightness(120%);
+  font-weight: 600;
+  z-index: 5;
+  margin: 1rem;
+  margin-left: 2rem;
+}
+
+.send-msg{
+  height: 8rem;
+  font-size: 3rem;
+  font-weight: 700;
+  background-image: linear-gradient(to bottom right, #fe4b09, rgb(255, 234, 113));
+    z-index: 5;
+  margin: 2rem;
+  width: 25rem;
+  border-radius: 5rem;
+    border: solid 0px transparent;
+      filter: drop-shadow(-5px 5px 0px #15283bb3);
+      transition: all 0.3s;
+}
+
+.send-msg:hover{
+  filter: drop-shadow(-1.5rem 1.5rem 0px #15283bb3);
+  transform: translate(1rem, -1rem);
+}
+
+.send-msg:active{
+  filter: drop-shadow(-0.3rem 0.3rem 0px #15283bb3) drop-shadow(0rem 0rem 5px rgb(255, 234, 113)) brightness(120%);
+  transform: translate(0rem, -0rem);
 }

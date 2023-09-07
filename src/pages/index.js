@@ -178,8 +178,8 @@ function HomePage() {
 
   const colorArray = [
     "#00CD7D", "#30CFAE", "#5FD0DF", "#51B9D4",
-    "#3D96C4", "#2873B3", "#1450A3", "#503595",
-    "#8D1B87", "#C90079"
+    "#3D96C4", "#2873B3", "#1450A3", "#5585C2",
+    "#97B9E0", "#d8eeff"
   ];
 
   const [storyState, setStoryState] = useState(0)
@@ -243,7 +243,7 @@ function HomePage() {
     <p className="about-p">    In order to make sure I don't kill myself by accident, I made sure to learn Git and Github to keep saves and checkpoints through <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Colt Steele's Course</a>. It gave me what I needed to learn Git's version control and it has saved me on numerous occasions.</p>,
     <p className="about-p">    Now that my armory is set up, the tools are sharpened and ready, off I went to create MyMart. It was ambitious to try to make a fullstack website as my first project. But I decided that the collection of all the pages and their interactions would best constitute my portfolio.</p>,
     <p className="about-p">    Now that all was said and done, the project was finished and is now live. I applied everything from the ideating, designing, building, responsiveness, etc. all done solo. I got great practice of all the fundamentals and problem solving thought processes needed to succeed. As well as the grit needed to not give up in the face of heavy burnout.</p>,
-    <p className="about-p">    However, I did need ChatGPT's help in many parts especially towards API use. But generally I tried to direct it towards my path and used it mainly for debugging help. In total, the duration of the project was From March 1 to August 19, 2023, <span style={{ fontWeight: "800" }}>I wrote XXX lines</span> of (relatively optimized) code per day at final, not including comments and removed code. I want to bring that work ethic to <span style={{ fontWeight: "800" }}>your company</span>. </p>,
+    <p className="about-p">    However, I did need ChatGPT's help in many parts especially towards API use. But generally I tried to direct it towards my path and used it mainly for debugging help. In total, the duration of the project was From March 1 to August 19, 2023, <span style={{ fontWeight: "800" }}>I wrote XXX lines</span> of (relatively optimized) code per day at final, not including comments and removed code. I want to bring that work ethic to <span style={{ fontWeight: "800" }}>your company</span>! </p>,
   ]
 
   const iconItems = [["python", "turtle", "tkinter", "soup", "sql", "twilio", "oop"], ["html", "flask", "bootstrap", "jinja", "pandas", "seaborn", "colab",],
@@ -254,28 +254,33 @@ function HomePage() {
   ["Javascript", "JQuery", "NodeJS", "Express", "API", "MongoDB"], ["User Experience", "User Interface", "Responsive Design", "Accessibility", "Figma", "Web Design", "Wireframing"],
   ["React", "Developer Tools", "Firebase", "Redux", "NextJS", "Vercel", "Framer Motion"], ["CSS", "Sass", "VSCode"], ["Git", "Github", "Terminal", "Git Kraken"]]
 
-  const mainSkills = ["html", "js", "css", "react", "sass", "framer", "next", "mongodb", "git", "figma", "vscode", "vercel", "github", "ux", "ui", "responsive", "accessibility", "design", "wireframe", "api", "redux", "devtools", "gitkraken", "oop"]
-  const subSkills = ["python", "flask", "bootstrap", "jquery", "node", "express", "firebase", "jinja", "terminal"]
+  const mainSkills = ["html", "js", "css", "react", "sass", "framer", "next", "mongodb", "git", "figma", "vscode", "vercel", "github", "ux", "ui", "responsive", "accessibility", "design", "wireframe", "api", "redux", "devtools", "gitkraken", "oop", "msoffice"]
+  const subSkills = ["python", "flask", "bootstrap", "jquery", "node", "express", "firebase", "jinja", "terminal", "premiere"]
   const famSkills = ["sql", "turtle", "tkinter", "soup", "pandas", "seaborn", "colab", "twilio"]
 
-  const mainNames = ["HTML", "Javascript", "CSS", "React", "Sass", "Framer Motion", "NextJS", "MongoDB", "Git", "Figma", "VSCode", "Vercel", "Github", "User Experience", "User Interface", "Responsive Design", "Accessibility", "Web Design", "Wireframing", "API", "Redux", "Developer Tools", "Git Kraken", "Object Oriented Programming"]
-  const subNames = ["Python", "Flask", "Bootstrap", "JQuery", "NodeJS", "Express", "Firebase", "Jinja", "Terminal"]
+  const mainNames = ["HTML", "Javascript", "CSS", "React", "Sass", "Framer Motion", "NextJS", "MongoDB", "Git", "Figma", "VSCode", "Vercel", "Github", "User Experience", "User Interface", "Responsive Design", "Accessibility", "Web Design", "Wireframing", "API", "Redux", "Developer Tools", "Git Kraken", "Object Oriented Programming", "Microsoft Office"]
+  const subNames = ["Python", "Flask", "Bootstrap", "JQuery", "NodeJS", "Express", "Firebase", "Jinja", "Terminal", "Adobe Premiere Pro"]
   const famNames = ["SQLite", "Turtles", "Tkinter", "Beautiful Soup", "Pandas", "Seaborn", "Colaboratory", "Twilio"]
+
+  const scrollToSection = (id) => {
+    const ref = document.getElementById(id);
+    ref.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return <Fragment>
     <Head>
-      <title>Hello</title>
+
+      <title>JM</title>
     </Head>
 
     {!navView && <nav className={`home-navbar ${isNavbarVisible ? 'nav-visible' : 'nav-hidden'}`}>
-      <img className="home-nav-logo" src="/logo1.png"></img>
+      <img onClick={() => scrollToSection('section-1')} className="home-nav-logo" src="/logo1.png"></img>
 
-      <p className="main-nav-text main-nav-col nav-text-1">My Projects</p>
-      <p className="main-nav-text main-nav-col nav-text-2">About</p>
-      <p className="main-nav-text main-nav-col nav-text-3">My Skills</p>
+      <a className="main-nav-text main-nav-col nav-text-1" onClick={() => scrollToSection('section-2')}>My Projects</a>
+      <p className="main-nav-text main-nav-col nav-text-2" onClick={() => scrollToSection('section-6')}>About</p>
+      <p className="main-nav-text main-nav-col nav-text-3" onClick={() => scrollToSection('section-8')}>My Skills</p>
       <p className="main-nav-text main-nav-col nav-text-1">Resume</p>
-      <p className="main-nav-text main-nav-col nav-text-2">Contact</p>
-
+      <p className="main-nav-text main-nav-col nav-text-2" onClick={() => scrollToSection('section-9')}>Contact</p>
     </nav>}
 
     {storyView && <div className="section-7-main" style={{ backgroundColor: colorArray[storyState - 1], boxShadow: storyState === 10 ? "inset 0px -20px 30px -10px #18181882" : "inset 0px 0px 0px 0px #18181882" }}>
@@ -319,20 +324,27 @@ function HomePage() {
     </div>}
 
 
-    <section className="section-1" ref={navRef}>
+    <section className="section-1" ref={navRef} id="section-1">
       <div className="sect-1-socials">
-        <div className="social-item-mailbox"></div>
+        {/* <div className="social-item-mailbox"></div> */}
         <div className="social-item-github"></div>
         <div className="social-item-linkedin"></div>
       </div>
 
-      <img src="/logo1.png" className="sect-1-logo">
+      <div className="sect-1-socials">
+        {/* <div className="social-item-mailbox"></div> */}
+        <div className="social-decoy-github"></div>
+        <div className="social-decoy-linkedin"></div>
+      </div>
+      
+
+      <img src="/logo1.png" className="sect-1-logo" onClick={() => scrollToSection('section-1')}>
       </img>
 
       <div className="sect-1-nav">
-        <p className="sect-1-nav-text nav-text-1">My Projects</p>
-        <p className="sect-1-nav-text nav-text-2">About</p>
-        <p className="sect-1-nav-text nav-text-3">My Skills</p>
+        <p className="sect-1-nav-text nav-text-1" onClick={() => scrollToSection('section-2')}>My Projects</p>
+        <p className="sect-1-nav-text nav-text-2" onClick={() => scrollToSection('section-6')}>About</p>
+        <p className="sect-1-nav-text nav-text-3" onClick={() => scrollToSection('section-8')}>My Skills</p>
       </div>
 
       <div className="sect-1-hero">
@@ -343,7 +355,7 @@ function HomePage() {
 
 
           <div className="sect-1-buttons">
-            <button className="sect-1-button-1">Contact Me
+            <button className="sect-1-button-1" onClick={() => scrollToSection('section-9')}>Contact Me
               <div className="icon-mail"></div>
             </button>
             <button className="sect-1-button-2">Resume
@@ -378,7 +390,7 @@ function HomePage() {
 
     </section>
 
-    <section className="section-2">
+    <section className="section-2" id="section-2">
       <div className="section-2-piece" ref={sect2Ref1}></div>
       <div className="section-2-piece" ref={sect2Ref2}></div>
       <div className="section-2-piece" ref={sect2Ref3}></div>
@@ -581,8 +593,8 @@ function HomePage() {
           </motion.div>
         </div>
 
-        <motion.div className="section-5-desc" initial={{ opacity: "0", width: "0rem", height: "40rem", margin: "0", marginRight: "0" }} animate={{ opacity: inViewD ? 1 : 0, width: inViewD ? "60%" : "0rem", height: inViewD ? "auto" : "40rem", margin: inViewD ? "auto" : "0", marginRight: "0" }} transition={{ duration: 1, delay: inViewD ? 2 : 0 }}>
-          {/* <motion.div className="section-5-desc" initial={{opacity:"0"}} animate={{opacity: inViewD ? 1 : 0}} transition={{duration: 1, delay: inViewD ? 2 : 0 }}> */}
+        {/* <motion.div className="section-5-desc" initial={{ opacity: "0", width: "0rem", height: "40rem", margin: "0", marginRight: "0" }} animate={{ opacity: inViewD ? 1 : 0, width: inViewD ? "60%" : "0rem", height: inViewD ? "auto" : "40rem", margin: inViewD ? "auto" : "0", marginRight: "0" }} transition={{ duration: 1, delay: inViewD ? 2 : 0 }}> */}
+          <motion.div className="section-5-desc" initial={{opacity:"0"}} animate={{opacity: inViewD ? 1 : 0}} transition={{duration: 1, delay: inViewD ? 2 : 0 }}>
 
           <h2 className="sect-5-heading-text">MyMart</h2>
           <h3 className="sect-5-desc-text" style={{ marginBottom: "2rem" }}>    MyMart is a an instant e-commerce store creator with both an admin and user side. Data is loaded dynamically based on the mart's link, allowing it to scale and create any number of marts and accounts.</h3>
@@ -734,7 +746,7 @@ function HomePage() {
       <h2 className="section-2-text-small">More Coming Soon...</h2>
     </div>
 
-    <section className="section-6">
+    <section className="section-6" id="section-6">
       <div className="about-text">
         <h2 className="about-heading">About Me</h2>
         <p className="about-p">    Hi! I'm JM Miranda, a web developer from the Philippines. I learned to code during my gap year on 2022. Since then I fell in love with the weaving and problem solving that developers do.
@@ -809,14 +821,14 @@ function HomePage() {
       <div className="section-7-piece" style={{ backgroundColor: "#1450A3" }} ref={storyRef7}>
 
       </div>
-      <div className="section-7-piece" style={{ backgroundColor: "#503595" }} ref={storyRef8}>
+      <div className="section-7-piece" style={{ backgroundColor: "#5585C2" }} ref={storyRef8}>
 
       </div>
 
-      <div className="section-7-piece" style={{ backgroundColor: "#8D1B87" }} ref={storyRef9}>
+      <div className="section-7-piece" style={{ backgroundColor: "#97B9E0" }} ref={storyRef9}>
 
       </div>
-      <div className="section-7-piece" style={{ backgroundColor: "#C90079", boxShadow: "inset 0px -20px 30px -10px #18181882" }} ref={storyRef10}>
+      <div className="section-7-piece" style={{ backgroundColor: "#D8EEFF", boxShadow: "inset 0px -20px 30px -10px #18181882" }} ref={storyRef10}>
 
         <motion.div
           key={storyState}
@@ -839,10 +851,10 @@ function HomePage() {
         </div>
       </div>
     </section>
-    <section className="section-8">
-
+    <section className="section-8" id="section-8">
+ 
       <div className="skill-half">
-        <h2 className="main-skill-text">Main Skillset</h2>
+        <h2 className="main-skill-text">Main Skillset:</h2>
 
         <div className="main-skillset">
 
@@ -861,7 +873,7 @@ function HomePage() {
       </div>
 
       <div className="skill-half">
-        <h2 className="sub-skill-text">Sub Skillset</h2>
+        <h2 className="sub-skill-text">Sub Skillset:</h2>
 
         <div className="sub-skillset">
         {subSkills.map((skill, index) => {
@@ -875,11 +887,10 @@ function HomePage() {
           })}
         </div>
 
-        <h2 className="fam-skill-text">Familiar With</h2>
+        <h2 className="fam-skill-text">Familiar With:</h2>
 
 <div className="fam-skillset">
 {famSkills.map((skill, index) => {
-          console.log(famSkills)
           return <div className="final-container-c">
             <div className="final-annotation">
               {famNames[index]}
@@ -893,8 +904,26 @@ function HomePage() {
 
     </section>
 
-    <section className="section-9">
+    <section className="section-9" id="section-9">
         <img src="/sunset.png" className="sect-9-bg"></img>
+        <h2 className="sect-9-headline">Contact Me</h2>
+        <h3 className="sect-9-text">Excited to hear from you!</h3>
+
+        <div className="form-group">
+        <label className="form-label">Name</label>
+        <input className="form-input" placeholder="Name"></input>
+        </div>
+        <div className="form-group">
+        <label className="form-label">Email</label>
+        <input className="form-input" placeholder="Email"></input>
+        </div>     
+        <div className="form-group">   
+        <label className="form-label-2">Message</label>
+
+        <textarea className="form-area" placeholder="Message"></textarea>
+        </div>
+
+        <button className="send-msg">Send Message</button>
     </section>
   </Fragment>
 }
