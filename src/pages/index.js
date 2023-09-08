@@ -246,6 +246,7 @@ function HomePage() {
     <p className="about-p" key={"10"}>    However, I did need ChatGPT&apos;s help in many parts especially towards API use. But generally I tried to direct it towards my path and used it mainly for debugging help. In total, the duration of the project was From March 1 to August 19, 2023, of the 95 days I was coding, I wrote <span style={{ fontWeight: "800" }}>I wrote 545 lines</span> of code on average at final not including comments and removed code totalling <span style={{fontWeight:"800"}}>51,850 lines of code</span>. I want to bring that work ethic to <span style={{ fontWeight: "800" }}>your company</span>! </p>,
   ]
 
+  
   const iconItems = [["python", "turtle", "tkinter", "soup", "sql", "twilio", "oop"], ["html", "flask", "bootstrap", "jinja", "pandas", "seaborn", "colab",],
   ["js", "jquery", "node", "express", "api", "mongodb"], ["ux", "ui", "responsive", "accessibility", "figma", "design", "wireframe"],
   ["react", "devtools", "firebase", "redux", "next", "vercel", "framer"], ["css", "sass", "vscode"], ["git", "github", "terminal", "gitkraken"]]
