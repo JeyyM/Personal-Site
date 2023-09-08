@@ -234,16 +234,16 @@ function HomePage() {
   }, [storyState])
 
   const storyTextList = [
-    <p className="about-p">    My journey started on August 2022, I started off with <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Angela Yu's Python course</a> there I learned the basics of programming such as variables, functions, loops, etc. Though I don't use Python at the moment, I'm happy I learned it anyway since it set the foundations of my learning.</p>,
-    <p className="about-p">    Along the Python journey I was introduced to web development through Flask. This part made me fall in love with web development when she made a simple blog website. It wasn't much, but the way the problems were solved and how the contents were structured were what gave me the drive to keep learning. Development was like a big and practical Rube Goldberg Machine with a purpose.</p>,
-    <p className="about-p">    Since it was a Python course, it didn't teach much CSS or Javascript so I picked up her <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Javascript Course</a> and it gave me the start I needed. It was a bit of a struggle after using Python for so long but eventually I finished it too. Though it would be a lie to say I didn't find Javascript extremely annoying. It showed me the horizons and hinted me to React.</p>,
-    <p className="about-p">    Because of how annoying JS was to me with all of the query selector nonsense, I didn't know where to go and what I wanted to do. Then I noticed <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Google's UI/UX Course</a> and it made me interested in web design. It taught me a seemingly common-sense perspective on how apps and sites should be made. The importance of accessibility, empathy, and what it means to make websites for other people. During this time I started to ideate what would become MyMart through Figma.</p>,
-    <p className="about-p">    I was eager to just jump in and get started in creating my project. To do so I decided to go with React through <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Academind's React Course</a>. This was a great decision because React to me was much easier, simpler, more fun, and less cumbersome compared to normal JS. I was also introduced to NextJS which made api use and routing straightforward.</p>,
-    <p className="about-p">    None of the courses so far focused on CSS, so I decided to try Jonas Schmedtmann's <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Fundamentals</a> and <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Advanced</a> Courses and it reignited my interest and passion for development. I was planning to just bruteforce things with Bootstrap but I'm so glad I didn't. Sky's the limit when you know the tools of the trade. It showed so many tricks and techniques I might have never found.</p>,
-    <p className="about-p">    In order to make sure I don't kill myself by accident, I made sure to learn Git and Github to keep saves and checkpoints through <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Colt Steele's Course</a>. It gave me what I needed to learn Git's version control and it has saved me on numerous occasions.</p>,
-    <p className="about-p">    Now that my armory is set up, the tools are sharpened and ready, off I went to create MyMart. It was ambitious to try to make a fullstack website as my first project. But I decided that the collection of all the pages and their interactions would best constitute my portfolio.</p>,
-    <p className="about-p">    Now that all was said and done, the project was finished and is now live. I applied everything from the ideating, designing, building, responsiveness, etc. all done solo. I got great practice of all the fundamentals and problem solving thought processes needed to succeed. As well as the grit needed to not give up in the face of heavy burnout.</p>,
-    <p className="about-p">    However, I did need ChatGPT's help in many parts especially towards API use. But generally I tried to direct it towards my path and used it mainly for debugging help. In total, the duration of the project was From March 1 to August 19, 2023, <span style={{ fontWeight: "800" }}>I wrote 301 lines</span> of (relatively optimized) code per day at final including days I didn't work on it, not including comments and removed code totalling <span style={{fontWeight:"800"}}>51,850 lines of code</span>. I want to bring that work ethic to <span style={{ fontWeight: "800" }}>your company</span>! </p>,
+    <p className="about-p" key={"1"}>    My journey started on August 2022, I started off with <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Angela Yu&apos;s Python course</a> there I learned the basics of programming such as variables, functions, loops, etc. Though I don&apos;t use Python at the moment, I&apos;m happy I learned it anyway since it set the foundations of my learning.</p>,
+    <p className="about-p" key={"2"}>    Along the Python journey I was introduced to web development through Flask. This part made me fall in love with web development when she made a simple blog website. It wasn&apos;t much, but the way the problems were solved and how the contents were structured were what gave me the drive to keep learning. Development was like a big and practical Rube Goldberg Machine with a purpose.</p>,
+    <p className="about-p" key={"3"}>    Since it was a Python course, it didn&apos;t teach much CSS or Javascript so I picked up her <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Javascript Course</a> and it gave me the start I needed. It was a bit of a struggle after using Python for so long but eventually I finished it too. Though it would be a lie to say I didn&apos;t find Javascript extremely annoying. It showed me the horizons and hinted me to React.</p>,
+    <p className="about-p" key={"4"}>    Because of how annoying JS was to me with all of the query selector nonsense, I didn&apos;t know where to go and what I wanted to do. Then I noticed <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Google&apos;s UI/UX Course</a> and it made me interested in web design. It taught me a seemingly common-sense perspective on how apps and sites should be made. The importance of accessibility, empathy, and what it means to make websites for other people. During this time I started to ideate what would become MyMart through Figma.</p>,
+    <p className="about-p" key={"5"}>    I was eager to just jump in and get started in creating my project. To do so I decided to go with React through <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Academind&apos;s React Course</a>. This was a great decision because React to me was much easier, simpler, more fun, and less cumbersome compared to normal JS. I was also introduced to NextJS which made api use and routing straightforward.</p>,
+    <p className="about-p" key={"6"}>    None of the courses so far focused on CSS, so I decided to try Jonas Schmedtmann&apos;s <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Fundamentals</a> and <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Advanced</a> Courses and it reignited my interest and passion for development. I was planning to just bruteforce things with Bootstrap but I&apos;m so glad I didn&apos;t. Sky&apos;s the limit when you know the tools of the trade. It showed so many tricks and techniques I might have never found.</p>,
+    <p className="about-p" key={"7"}>    In order to make sure I don&apos;t kill myself by accident, I made sure to learn Git and Github to keep saves and checkpoints through <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Colt Steele&apos;s Course</a>. It gave me what I needed to learn Git&apos;s version control and it has saved me on numerous occasions.</p>,
+    <p className="about-p" key={"8"}>    Now that my armory is set up, the tools are sharpened and ready, off I went to create MyMart. It was ambitious to try to make a fullstack website as my first project. But I decided that the collection of all the pages and their interactions would best constitute my portfolio.</p>,
+    <p className="about-p" key={"9"}>    Now that all was said and done, the project was finished and is now live. I applied everything from the ideating, designing, building, responsiveness, etc. all done solo. I got great practice of all the fundamentals and problem solving thought processes needed to succeed. As well as the grit needed to not give up in the face of heavy burnout.</p>,
+    <p className="about-p" key={"10"}>    However, I did need ChatGPT&apos;s help in many parts especially towards API use. But generally I tried to direct it towards my path and used it mainly for debugging help. In total, the duration of the project was From March 1 to August 19, 2023, <span style={{ fontWeight: "800" }}>I wrote 301 lines</span> of (relatively optimized) code per day at final including days I didn&apos;t work on it, not including comments and removed code totalling <span style={{fontWeight:"800"}}>51,850 lines of code</span>. I want to bring that work ethic to <span style={{ fontWeight: "800" }}>your company</span>! </p>,
   ]
 
   const iconItems = [["python", "turtle", "tkinter", "soup", "sql", "twilio", "oop"], ["html", "flask", "bootstrap", "jinja", "pandas", "seaborn", "colab",],
@@ -597,16 +597,16 @@ function HomePage() {
           <motion.div className="section-5-desc" initial={{opacity:"0"}} animate={{opacity: inViewD ? 1 : 0}} transition={{duration: 1, delay: inViewD ? 2 : 0 }}>
 
           <h2 className="sect-5-heading-text">MyMart</h2>
-          <h3 className="sect-5-desc-text" style={{ marginBottom: "2rem" }}>    MyMart is a an instant e-commerce store creator with both an admin and user side. Data is loaded dynamically based on the mart's link, allowing it to scale and create any number of marts and accounts.</h3>
+          <h3 className="sect-5-desc-text" style={{ marginBottom: "2rem" }}>    MyMart is a an instant e-commerce store creator with both an admin and user side. Data is loaded dynamically based on the mart&apos;s link, allowing it to scale and create any number of marts and accounts.</h3>
           <div className="sect-5-desc-cols">
             <div className="sect-5-col" style={{ marginLeft: "2rem" }}>
               <h3 className="sect-5-col-heading">Admin Side</h3>
               <ul>
                 <li className="sect-5-col-p">Create categories & products</li>
-                <li className="sect-5-col-p">Manage products' variations, stock, price, & profits</li>
+                <li className="sect-5-col-p">Manage products&apos; variations, stock, price, & profits</li>
                 <li className="sect-5-col-p">Customize details, colors, & fonts of your mart</li>
                 <li className="sect-5-col-p">Manage, deliver, & finish orders</li>
-                <li className="sect-5-col-p">View your mart's statistics in category & product performance as well as user data, & many more!</li>
+                <li className="sect-5-col-p">View your mart&apos;s statistics in category & product performance as well as user data, & many more!</li>
               </ul>
             </div>
             <div className="sect-5-col">
@@ -749,12 +749,12 @@ function HomePage() {
     <section className="section-6" id="section-6">
       <div className="about-text">
         <h2 className="about-heading">About Me</h2>
-        <p className="about-p">    Hi! I'm JM Miranda, a web developer from the Philippines. I learned to code during my gap year on 2022. Since then I fell in love with the weaving and problem solving that developers do.
+        <p className="about-p">    Hi! I&apos;m JM Miranda, a web developer from the Philippines. I learned to code during my gap year on 2022. Since then I fell in love with the weaving and problem solving that developers do.
           I adore the intricacies and cleverness that we take for granted in the tools and apps in our day to day life as internet users.</p>
 
         <p className="about-p">    After trying out languages such as Python then being introduced to HTML, CSS, and Javascript, I was intrigued by the horizon of possibilities within.
           Since then, I decided to become a web developer with React. I have spent a few months making my web app to get some experience, escape tutorial hell, and put a big project on my portfolio.
-          Now I'm excited to get my first real job and put my experience to work!
+          Now I&apos;m excited to get my first real job and put my experience to work!
         </p>
       </div>
       <div className="about-img">
@@ -859,7 +859,7 @@ function HomePage() {
         <div className="main-skillset">
 
         {mainSkills.map((skill, index) => {
-          return <div className="final-container">
+          return <div className="final-container" key={index}>
             <div className="final-annotation">
               {mainNames[index]}
             </div>
@@ -877,7 +877,7 @@ function HomePage() {
 
         <div className="sub-skillset">
         {subSkills.map((skill, index) => {
-          return <div className="final-container-b">
+          return <div className="final-container-b" key={index}>
             <div className="final-annotation">
               {subNames[index]}
             </div>
@@ -891,7 +891,7 @@ function HomePage() {
 
 <div className="fam-skillset">
 {famSkills.map((skill, index) => {
-          return <div className="final-container-c">
+          return <div className="final-container-c" key={index}>
             <div className="final-annotation">
               {famNames[index]}
             </div>
