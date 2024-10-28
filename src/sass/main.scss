@@ -157,15 +157,30 @@ body {
   animation: rotate-3 2s ease forwards;
 }
 
-.moving-hero {
-  position: absolute;
-  width: 40rem;
-  height: 40rem;
-  background-image: linear-gradient(to bottom right, #449dd1, #1450a3);
-  border-radius: 50%;
+// .moving-hero {
+//   position: absolute;
+//   width: 40rem;
+//   height: 40rem;
+//   background-image: linear-gradient(to bottom right, #449dd1, #1450a3);
+//   border-radius: 50%;
+//   animation: slide 3s ease forwards;
+//   font-size: 4rem;
+//   filter: drop-shadow(10px 10px 10px #37526781);
+// }
+
+.moving-container {
+  position: relative;
+  width: 50rem;
+  height: 50rem;
   animation: slide 3s ease forwards;
   font-size: 4rem;
   filter: drop-shadow(10px 10px 10px #37526781);
+}
+
+.moving-img {
+  animation: slide 3s ease forwards;
+  width: 40rem;
+  height: 40rem;
 }
 
 .moving-hero-2 {
@@ -870,7 +885,7 @@ body {
 .section-4-img {
   height: 100%;
   width: 25%;
-  object-fit: cover;
+  object-fit: contain;
   animation: scrollImage 60s linear infinite;
   background-repeat: repeat;
   transition: all 1s ease-in;

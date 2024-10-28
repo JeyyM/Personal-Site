@@ -3,6 +3,7 @@ import Head from "next/head"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
+import Image from "next/image";
 
 let previousScrollPos = 0;
 
@@ -270,7 +271,6 @@ function HomePage() {
 
   return <Fragment>
     <Head>
-
       <title>JM</title>
     </Head>
 
@@ -368,7 +368,9 @@ function HomePage() {
         <div className="hero-img">
           <motion.div style={{ position: "relative", zIndex: "3" }} initial={{ y: 0 }} animate={{ y: [0, 50, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}>
             <div className="hero-rotate">
-              <div className="moving-hero">A</div>
+              <div className="moving-container">
+              <Image src="/hero-img.webp" alt="Hero Image" fill style={{objectFit: 'contain', }}/>
+              </div>
             </div>
           </motion.div>
 
@@ -526,9 +528,9 @@ function HomePage() {
 
     <section className="section-3" ref={sect3Ref}>
 
-      <img src="https://picsum.photos/200/300" className="section-3-a" style={{ marginTop: `${inViewB ? "0rem" : "-60vh"}` }}></img>
-      <img src="https://picsum.photos/200/301" className="section-3-b" style={{ marginBottom: `${inViewB ? "0rem" : "-60vh"}` }}></img>
-      <img src="https://picsum.photos/400/500" className="section-3-c" style={{ marginRight: `${inViewB ? "0rem" : "-60vw"}` }}></img>
+      <img src="/site1.webp" className="section-3-a" style={{ marginTop: `${inViewB ? "0rem" : "-60vh"}` }}></img>
+      <img src="/site2.webp" className="section-3-b" style={{ marginBottom: `${inViewB ? "0rem" : "-60vh"}` }}></img>
+      <img src="/ui.webp" className="section-3-c" style={{ marginRight: `${inViewB ? "0rem" : "-60vw"}` }}></img>
 
 
       <motion.h2 className="section-3-text" initial={{ textShadow: "0px 0px 0px transparent" }} animate={{ textShadow: inViewB ? "-15px 15px 0px #4a5c6e77" : "0px 0px 0px transparent" }} transition={{ duration: 0.8, ease: "easeInOut", delay: inViewB ? 0.8 : 0 }}>Website</motion.h2>
@@ -538,7 +540,7 @@ function HomePage() {
 
     <section className="section-4" ref={sect4Ref}>
       <div className="section-4-set">
-        <img className="section-4-img" src="https://picsum.photos/400/1000" style={{ marginTop: `${inViewC ? "0%" : "200%"}` }}></img>
+        <img className="section-4-img" src="/group1.png" style={{ marginTop: `${inViewC ? "0%" : "100%"}` }}></img>
         <img className="section-4-img-b" src="https://picsum.photos/400/1001" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></img>
         <img className="section-4-img" src="https://picsum.photos/400/1002" style={{ marginTop: `${inViewC ? "0%" : "200%"}` }}></img>
         <img className="section-4-img-b" src="https://picsum.photos/400/1003" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></img>
@@ -762,11 +764,12 @@ function HomePage() {
         <img src="/web.png" className="about-web"></img>
       </div>
 
-      <h2 className="proj-text" style={{ color: "#181818" }}>My Story & Skills</h2>
+      {/* <h2 className="proj-text" style={{ color: "#181818" }}>My Story & Skills</h2> */}
+      <h2 className="proj-text" style={{ color: "#181818" }}>My Skills</h2>
 
     </section>
 
-    <section className="section-7" ref={storyRef}>
+    {/* <section className="section-7" ref={storyRef}>
       <div className="section-7-piece" style={{ backgroundColor: "#00CD7D" }} ref={storyRef1}>
         <motion.div
           key={storyState}
@@ -851,7 +854,7 @@ function HomePage() {
             transition={{ duration: 0.5 }}></motion.img>
         </div>
       </div>
-    </section>
+    </section> */}
     <section className="section-8" id="section-8">
  
       <div className="skill-half">
