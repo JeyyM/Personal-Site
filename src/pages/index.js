@@ -284,7 +284,7 @@ function HomePage() {
       <p className="main-nav-text main-nav-col nav-text-2" onClick={() => scrollToSection('section-9')}>Contact</p>
     </nav>}
 
-    {storyView && <div className="section-7-main" style={{ backgroundColor: colorArray[storyState - 1], boxShadow: storyState === 10 ? "inset 0px -20px 30px -10px #18181882" : "inset 0px 0px 0px 0px #18181882" }}>
+    {/* {storyView && <div className="section-7-main" style={{ backgroundColor: colorArray[storyState - 1], boxShadow: storyState === 10 ? "inset 0px -20px 30px -10px #18181882" : "inset 0px 0px 0px 0px #18181882" }}>
 
       <motion.div
         key={storyState}
@@ -322,7 +322,7 @@ function HomePage() {
 
         </div>
       </div>
-    </div>}
+    </div>} */}
 
 
     <section className="section-1" ref={navRef} id="section-1">
@@ -540,10 +540,11 @@ function HomePage() {
 
     <section className="section-4" ref={sect4Ref}>
       <div className="section-4-set">
-        <img className="section-4-img" src="/group1.png" style={{ marginTop: `${inViewC ? "0%" : "100%"}` }}></img>
-        <img className="section-4-img-b" src="https://picsum.photos/400/1001" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></img>
-        <img className="section-4-img" src="https://picsum.photos/400/1002" style={{ marginTop: `${inViewC ? "0%" : "200%"}` }}></img>
-        <img className="section-4-img-b" src="https://picsum.photos/400/1003" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></img>
+      <div className="scrolling-background-1" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></div>
+      <div className="scrolling-background-2" style={{ marginTop: `${inViewC ? "0%" : "200%"}` }}></div>
+      <div className="scrolling-background-3" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></div>
+      <div className="scrolling-background-4" style={{ marginTop: `${inViewC ? "0%" : "200%"}` }}></div>
+        {/* <img className="section-4-img-b" src="https://picsum.photos/400/1003" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></img> */}
       </div>
 
       <div style={{ zIndex: "4", width: "100%", display: "flex", flexDirection: "column" }}>
@@ -632,7 +633,7 @@ function HomePage() {
         <motion.div style={{ marginLeft: "10%" }} className="project-item-frame" initial={{ filter: "drop-shadow(-10px 10px 0px transparent)" }} animate={{ filter: inViewD1 ? "drop-shadow(-10px 10px 0px #3752679c)" : "drop-shadow(0px 0px 0px #3752679c)" }} transition={{ duration: 1, delay: inViewD1 ? 0.76 : 0 }} ref={sect5Ref1}
           onClick={handleActive1} onMouseEnter={Active1Hover} onMouseLeave={Active1Leave}>
           <div className="project-main" style={{ marginLeft: `${inViewD1 ? "0" : "-150%"}` }}>
-            <img className="proj-img" src="https://i.imgur.com/9kfJCyT.jpeg"></img>
+            <img className="proj-img" src="/pic1.webp"></img>
             <div className="whitesheet"></div>
             <div className="col-sheet-1" style={{ width: `${active1 ? "100%" : "0%"}` }}></div>
 
@@ -659,7 +660,7 @@ function HomePage() {
         <motion.div style={{ marginRight: "10%" }} className="project-item-frame" initial={{ filter: "drop-shadow(-10px 10px 0px transparent)" }} animate={{ filter: inViewD2 ? "drop-shadow(-10px 10px 0px #3752679c)" : "drop-shadow(0px 0px 0px #3752679c)" }} transition={{ duration: 1, delay: inViewD2 ? 0.76 : 0 }} ref={sect5Ref2}
           onClick={handleActive2} onMouseEnter={Active2Hover} onMouseLeave={Active2Leave}>
           <div className="project-main" style={{ marginLeft: `${inViewD2 ? "0" : "-150%"}` }}>
-            <img className="proj-img" src="https://i.imgur.com/9kfJCyT.jpeg"></img>
+            <img className="proj-img" src="/pic2.webp"></img>
             <div className="whitesheet"></div>
             <div className="col-sheet-1" style={{ width: `${active2 ? "100%" : "0%"}`, backgroundImage: "linear-gradient(to bottom right, #5fd0df, #00cd7d)" }}></div>
 
@@ -686,7 +687,7 @@ function HomePage() {
         <motion.div style={{ marginLeft: "10%" }} className="project-item-frame" initial={{ filter: "drop-shadow(-10px 10px 0px transparent)" }} animate={{ filter: inViewD3 ? "drop-shadow(-10px 10px 0px #3752679c)" : "drop-shadow(0px 0px 0px #3752679c)" }} transition={{ duration: 1, delay: inViewD3 ? 0.76 : 0 }} ref={sect5Ref3}
           onClick={handleActive3} onMouseEnter={Active3Hover} onMouseLeave={Active3Leave}>
           <div className="project-main" style={{ marginLeft: `${inViewD3 ? "0" : "-150%"}` }}>
-            <img className="proj-img" src="https://i.imgur.com/9kfJCyT.jpeg"></img>
+            <img className="proj-img" src="/pic3.webp"></img>
             <div className="whitesheet"></div>
             <div className="col-sheet-1" style={{ width: `${active3 ? "100%" : "0%"}`, backgroundImage: "linear-gradient(to bottom right, #fccf3a, #fe4b09)" }}></div>
 
@@ -719,7 +720,7 @@ function HomePage() {
         <motion.div className="project-item-frame" initial={{ filter: "drop-shadow(-10px 10px 0px transparent)" }} animate={{ filter: inViewD4 ? "drop-shadow(-10px 10px 0px #3752679c)" : "drop-shadow(0px 0px 0px #3752679c)" }} transition={{ duration: 1, delay: inViewD4 ? 0.76 : 0 }} ref={sect5Ref4}
           onClick={handleActive4} onMouseEnter={Active4Hover} onMouseLeave={Active4Leave}>
           <div className="project-main" style={{ marginLeft: `${inViewD4 ? "0" : "-150%"}` }}>
-            <img className="proj-img" src="https://i.imgur.com/9kfJCyT.jpeg"></img>
+            <img className="proj-img" src="/pic4.webp"></img>
             <div className="whitesheet"></div>
             <div className="col-sheet-1" style={{ width: `${active4 ? "100%" : "0%"}` }}></div>
 

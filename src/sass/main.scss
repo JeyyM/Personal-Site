@@ -882,13 +882,82 @@ body {
   position: absolute;
 }
 
+.image-container {
+  position: relative;
+  height: 100%;
+  width: 25%;
+  overflow: hidden;
+}
+
 .section-4-img {
   height: 100%;
   width: 25%;
   object-fit: contain;
-  animation: scrollImage 60s linear infinite;
+  // animation: scrollImage 120s linear infinite;
   background-repeat: repeat;
   transition: all 1s ease-in;
+}
+
+.scrolling-background-1 {
+  height: 200%;
+  width: 25%;
+  background-image: url('/group1.webp');
+  background-size: contain;
+  background-repeat: repeat-y;
+  background-position: top;
+  animation: scrollImage 120s linear infinite;
+  transition: all 2s ease-in;
+}
+
+.scrolling-background-2 {
+  height: 200%;
+  width: 25%;
+  background-image: url('/group2.webp');
+  background-size: contain;
+  background-repeat: repeat-y;
+  background-position: bottom;
+  animation: scrollImageReverse 120s linear infinite;
+  transition: all 2s ease-in;
+}
+
+.scrolling-background-3 {
+  height: 200%;
+  width: 25%;
+  background-image: url('/group3.webp');
+  background-size: contain;
+  background-repeat: repeat-y;
+  background-position: top;
+  animation: scrollImage 120s linear infinite;
+  transition: all 2s ease-in;
+}
+
+.scrolling-background-4 {
+  height: 200%;
+  width: 25%;
+  background-image: url('/group4.webp');
+  background-size: contain;
+  background-repeat: repeat-y;
+  background-position: bottom;
+  animation: scrollImageReverse 120s linear infinite;
+  transition: all 2s ease-in;
+}
+
+@keyframes scrollImage {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes scrollImageReverse {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0%;
+  }
 }
 
 .section-4-img-b {
@@ -900,29 +969,29 @@ body {
   transition: all 1s ease-in;
 }
 
-@keyframes scrollImage {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+// @keyframes scrollImage {
+//   0% {
+//     transform: translateY(0);
+//   }
+//   50% {
+//     transform: translateY(-100%);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
 
-@keyframes scrollImageReverse {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+// @keyframes scrollImageReverse {
+//   0% {
+//     transform: translateY(0);
+//   }
+//   50% {
+//     transform: translateY(100%);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
 
 .section-4-text {
   font-family: "Franklin Gothic Medium";
