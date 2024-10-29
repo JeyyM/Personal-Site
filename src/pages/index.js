@@ -762,7 +762,7 @@ function HomePage() {
         </p>
       </div>
       <div className="about-img">
-        <img src="/web.png" className="about-web"></img>
+        <img src="/spider.png" className="about-web"></img>
       </div>
 
       {/* <h2 className="proj-text" style={{ color: "#181818" }}>My Story & Skills</h2> */}
