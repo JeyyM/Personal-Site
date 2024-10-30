@@ -14,6 +14,7 @@ html {
 body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 @mixin navlogo-gradient($svg, $top, $size) {
@@ -301,6 +302,10 @@ body {
   gap: 2rem;
 }
 
+.home-navbar.hidden {
+  visibility: hidden;
+}
+
 .home-nav-logo {
   height: 8.5rem;
   width: 8.5rem;
@@ -370,7 +375,7 @@ body {
   display: flex;
   gap: 2rem;
   margin-top: 3rem;
-  z-index: 10;
+  z-index: 0;
 }
 
 .sect-1-button-1 {
@@ -606,7 +611,7 @@ body {
 
 .section-2 {
   z-index: 0;
-  height: 115vh;
+  min-height: 115vh;
   width: 100%;
   background-color: #d8eeff;
   position: relative;
@@ -730,6 +735,14 @@ body {
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
+.feature-item-react {
+  position: relative;
+  height: 12rem;
+  width: 12rem;
+  @include heading-logo(react, 12rem, 12rem);
+  background-image: linear-gradient(to right, #15283b, #15283b);
+}
+
 .feature-item-vercel {
   position: relative;
   height: 12rem;
@@ -818,6 +831,8 @@ body {
   color: #15283b;
   z-index: 3;
   transition: all 0.5s;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.642);
+
 }
 
 .section-3-text-x {
@@ -828,6 +843,7 @@ body {
   z-index: 3;
   transition: all 0.5s;
   transform: rotate(45deg);
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.642);
 }
 
 .section-3-a {
@@ -837,6 +853,7 @@ body {
   width: 50%;
   height: 50%;
   object-fit: cover;
+  object-position: 20%;
   transition: all 0.8s;
 }
 
@@ -847,6 +864,7 @@ body {
   width: 50%;
   height: 50%;
   object-fit: cover;
+  object-position: 20%;
   transition: all 0.8s;
 }
 
@@ -874,7 +892,7 @@ body {
 }
 
 .section-4-set {
-  width: 100%;
+  width: 110%;
   height: 300%;
   background-color: #d8eeff;
   display: flex;
@@ -1001,9 +1019,11 @@ body {
   transition: all 0.5s;
   display: inline;
   margin: 0 auto;
+  text-align: center;
 }
 
 .section-5 {
+  overflow: hidden;
   width: 100%;
   height: auto;
   background-color: #d8eeff;
@@ -1014,6 +1034,10 @@ body {
   radial-gradient(circle at 5% 35%, #5fd0dfc0, #00cd7e97, transparent 30%),
     radial-gradient(circle at 100% 65%, #fe4a0979, #fccf3a98, transparent 30%),
   radial-gradient(circle at 5% 100%, #1450a3a4, #449dd1a0, transparent 30%);
+}
+
+.section-5-container {
+  display: flex;
 }
 
 .section-5-circle {
@@ -1038,6 +1062,13 @@ body {
   margin: auto;
   height: 40rem;
   width: 40rem;
+}
+
+.sect-5-logo {
+  position: relative;
+  margin: auto;
+  height: auto;
+  width: auto;
 }
 
 .section-5-img {
@@ -1066,7 +1097,7 @@ body {
 .section-5-desc {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 90%;
   margin: auto;
   margin-right: 0;
   overflow: hidden;
@@ -1078,6 +1109,7 @@ body {
   color: #15283b;
   filter: drop-shadow(-5px 5px 0px #37526781);
   margin-bottom: 1rem;
+  margin-left: 2.5rem;
 }
 
 .sect-5-desc-text {
@@ -1114,6 +1146,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 50%;
+  margin-left: 2rem;
 }
 
 .projects-flex {
@@ -1160,6 +1193,16 @@ body {
   position: absolute;
   background-image: linear-gradient(to bottom right, white, gray);
   opacity: 0.4;
+  top: 0;
+  left: 0;
+}
+
+.whitesheet-2 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: linear-gradient(to bottom right, white, gray);
+  opacity: 1;
   top: 0;
   left: 0;
 }
@@ -1280,7 +1323,7 @@ body {
 }
 
 .section-6 {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(to bottom right, #fccf3a, #fe4b09);
   display: flex;
@@ -1907,7 +1950,7 @@ body {
 }
 
 .section-8 {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   position: relative;
   display: flex;
@@ -1918,6 +1961,8 @@ body {
     #d8eeff
   );
   padding: 3%;
+  padding-bottom: 6%;
+  overflow: hidden;
 }
 
 .main-skillset {
@@ -2615,4 +2660,245 @@ body {
 .send-msg:active{
   filter: drop-shadow(-0.3rem 0.3rem 0px #15283bb3) drop-shadow(0rem 0rem 5px rgb(255, 234, 113)) brightness(120%);
   transform: translate(0rem, -0rem);
+}
+
+.navbutton {
+  border-radius: 50%;
+  width: 7.5rem;
+  height: 7.5rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#181818), to(#181818)),
+    -webkit-gradient(linear, left top, right top, from(#181818), to(#181818));
+  background-image: -o-linear-gradient(#181818, #181818),
+    -o-linear-gradient(left, #181818, #181818);
+  background-image: linear-gradient(#181818, #181818),
+    linear-gradient(to right, #181818, #181818);
+  margin-left: 1rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  z-index: 99;
+  -webkit-filter: drop-shadow(-2px 2px 0px #181818);
+  filter: drop-shadow(-2px 2px 0px #181818);
+
+  /* Removes outline and border */
+  outline: none;
+  border: none;
+
+  &:hover {
+    -webkit-transform: translateY(-0.3rem) translateX(0.5rem);
+    -ms-transform: translateY(-0.3rem) translateX(0.5rem);
+    transform: translateY(-0.3rem) translateX(0.5rem);
+    -webkit-filter: drop-shadow(-4px 4px 0px #181818);
+    filter: drop-shadow(-4px 4px 0px #181818);
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    outline: none;
+    border: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    -webkit-transform: translateY(0rem) translateX(0rem);
+    -ms-transform: translateY(0rem) translateX(0rem);
+    transform: translateY(0rem) translateX(0rem);
+    -webkit-filter: drop-shadow(-1px 1px 0px #181818);
+    filter: drop-shadow(-1px 1px 0px #181818);
+    outline: none;
+  }
+}
+
+.navbutton__hr {
+  position: relative;
+  border-radius: 2px;
+  &,
+  &::before,
+  &::after {
+    width: 75%;
+    height: 5px;
+    background-color: #181818;
+    display: inline-block;
+
+    border-radius: 2px;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+
+  &::before {
+    bottom: -1.5rem;
+  }
+  &::after {
+    bottom: 1.5rem;
+  }
+
+  &-2{
+    position: relative;
+    border-radius: 2px;
+    &,
+    &::before,
+    &::after {
+      width: 75%;
+      height: 5px;
+      display: inline-block;
+      background-image: -webkit-gradient(linear, left top, right top, from(white), to(white));
+      background-image: -o-linear-gradient(left, white, white);
+      background-image: linear-gradient(to right, white, white);
+      border-radius: 2px;
+      border-bottom: none;
+      border-right: none;
+      border-left: none;
+      -webkit-transition: all 0.1s;
+      -o-transition: all 0.1s;
+      transition: all 0.1s;
+    }
+  
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+    }
+  
+    &::before {
+      bottom: -1.5rem;
+    }
+    &::after {
+      bottom: 1.5rem;
+    }
+  }
+}
+
+.navbutton:hover .navbutton__hr::after {
+  bottom: 1.7rem;
+}
+
+.navbutton:hover .navbutton__hr::before {
+  bottom: -1.7rem;
+}
+
+.navbutton:hover .navbutton__hr-2 {
+  position: relative;
+  border-radius: 2px;
+  background-image: -o-linear-gradient(#181818, #181818),
+    -o-linear-gradient(45deg, #181818, #181818);
+  background-image: linear-gradient(#181818, #181818),
+    linear-gradient(45deg, #181818, #181818);
+  & {
+    width: 75%;
+    height: 5px;
+    background-color: #181818;
+    display: inline-block;
+    border: none;
+    -webkit-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    transition: all 0.1s;
+  }
+  &::before,
+  &::after {
+    width: 75%;
+    height: 5px;
+    background-color: #181818;
+    display: inline-block;
+
+    border-radius: 2px;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+  }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      bottom: 0rem;
+      rotate: 315deg;
+    }
+    &::after {
+      bottom: 0rem;
+      rotate: -315deg;
+    }
+}
+
+.nav-menu {
+  height: 100vh;
+  width: 40vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #181818;
+  z-index: 90;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 13rem 3rem;
+  transition: all 0.5s;
+}
+
+.nav-menu.open {
+  left: 0;
+}
+
+.nav-menu.closed {
+  left: -40vh;
+}
+
+.whitesheet-menu {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-image: linear-gradient(to bottom right, white, gray);
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 80;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.whitesheet-menu.open {
+  opacity: 0.4;
+  pointer-events: auto;
+}
+
+.whitesheet-menu.closed {
+  opacity: 0;
+  pointer-events: none;
 }

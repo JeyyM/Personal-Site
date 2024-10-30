@@ -4,6 +4,7 @@ import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
 import Image from "next/image";
+import ProjectItem from "@/components/ProjectItem";
 
 let previousScrollPos = 0;
 
@@ -63,6 +64,21 @@ function HomePage() {
   });
 
   const [sect2Ref3, inView3] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [sect2Ref1s, inView5] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [sect2Ref2s, inView6] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [sect2Ref3s, inView7] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
@@ -201,6 +217,18 @@ function HomePage() {
 
   const [skillBottom, setSkillBottom] = useState("-100%");
 
+  const [aboutRef, setAboutRef] = useInView({ threshold: 0.8 });
+
+  const [menuStatus, setMenuStatus] = useState(false);
+  const [initalNavStatus, setInitialNavStatus] = useState(false);
+
+  useEffect(() => {
+    if (sect2Ref2) {
+      setInitialNavStatus(true);
+    }
+  }, [sect2Ref2])
+
+
   useEffect(() => {
     if (storyView1) {
       setStoryState(1);
@@ -244,10 +272,10 @@ function HomePage() {
     <p className="about-p" key={"7"}>    In order to make sure I don&apos;t kill myself by accident, I made sure to learn Git and Github to keep saves and checkpoints through <a href="#" style={{ color: "inherit", fontWeight: "800" }}>Colt Steele&apos;s Course</a>. It gave me what I needed to learn Git&apos;s version control and it has saved me on numerous occasions.</p>,
     <p className="about-p" key={"8"}>    Now that my armory is set up, the tools are sharpened and ready, off I went to create MyMart. It was ambitious to try to make a fullstack website as my first project. But I decided that the collection of all the pages and their interactions would best constitute my portfolio and skillset. It needed to contain features that would normally be included like database reading, signups, routing, interaction between two sites, and more.</p>,
     <p className="about-p" key={"9"}>    Now that all was said and done, the project was finished and is now live. I applied everything from the ideating, designing, building, responsiveness, etc. all done solo. I got great practice of all the fundamentals and problem solving thought processes needed to succeed. As well as the grit needed to not give up in the face of heavy burnout.</p>,
-    <p className="about-p" key={"10"}>    However, I did need ChatGPT&apos;s help in many parts especially towards API use. But generally I tried to direct it towards my path and used it mainly for debugging help. In total, the duration of the project was From March 1 to August 19, 2023, of the 95 days I was coding, I wrote <span style={{ fontWeight: "800" }}>I wrote 545 lines</span> of code on average at final not including comments and removed code totalling <span style={{fontWeight:"800"}}>51,850 lines of code</span>. I want to bring that work ethic to <span style={{ fontWeight: "800" }}>your company</span>! </p>,
+    <p className="about-p" key={"10"}>    However, I did need ChatGPT&apos;s help in many parts especially towards API use. But generally I tried to direct it towards my path and used it mainly for debugging help. In total, the duration of the project was From March 1 to August 19, 2023, of the 95 days I was coding, I wrote <span style={{ fontWeight: "800" }}>I wrote 545 lines</span> of code on average at final not including comments and removed code totalling <span style={{ fontWeight: "800" }}>51,850 lines of code</span>. I want to bring that work ethic to <span style={{ fontWeight: "800" }}>your company</span>! </p>,
   ]
 
-  
+
   const iconItems = [["python", "turtle", "tkinter", "soup", "sql", "twilio", "oop"], ["html", "flask", "bootstrap", "jinja", "pandas", "seaborn", "colab",],
   ["js", "jquery", "node", "express", "api", "mongodb"], ["ux", "ui", "responsive", "accessibility", "figma", "design", "wireframe"],
   ["react", "devtools", "firebase", "redux", "next", "vercel", "framer"], ["css", "sass", "vscode"], ["git", "github", "terminal", "gitkraken"]]
@@ -271,18 +299,38 @@ function HomePage() {
 
   return <Fragment>
     <Head>
-      <title>JM</title>
+
+    <link rel="preload" href="/hero-img.webp" as="image" type="image/webp" importance="high"/>
+
+      <title>{screenWidth}</title>
     </Head>
 
-    {!navView && <nav className={`home-navbar ${isNavbarVisible ? 'nav-visible' : 'nav-hidden'}`}>
-      <img onClick={() => scrollToSection('section-1')} className="home-nav-logo" src="/logo1.png"></img>
+    {(menuStatus || !navView) && <nav className={`home-navbar ${isNavbarVisible ? 'nav-visible' : 'nav-hidden'} ${initalNavStatus ? '' : 'hidden'}`}>
+      {screenWidth <= 600 && <button aria-label="Menu Button" className="navbutton x" onClick={() => { setMenuStatus(!menuStatus) }}>
+        <span className="navbutton__hr">&nbsp;</span>
+        <span className="navbutton__hr-2">&nbsp;</span>
+      </button>}
 
+      <img onClick={() => scrollToSection('section-1')} className="home-nav-logo" src="/logo1.webp"></img>
+
+      {screenWidth > 600 && <>
+        <a className="main-nav-text main-nav-col nav-text-1" onClick={() => scrollToSection('section-2')}>My Projects</a>
+        <p className="main-nav-text main-nav-col nav-text-2" onClick={() => scrollToSection('section-6')}>About</p>
+        <p className="main-nav-text main-nav-col nav-text-3" onClick={() => scrollToSection('section-8')}>My Skills</p>
+        <p className="main-nav-text main-nav-col nav-text-1">Resume</p>
+        <p className="main-nav-text main-nav-col nav-text-2" onClick={() => scrollToSection('section-9')}>Contact</p>
+      </>}
+    </nav>}
+
+    <div className={`nav-menu ${menuStatus ? 'open' : 'closed'}`}>
       <a className="main-nav-text main-nav-col nav-text-1" onClick={() => scrollToSection('section-2')}>My Projects</a>
       <p className="main-nav-text main-nav-col nav-text-2" onClick={() => scrollToSection('section-6')}>About</p>
       <p className="main-nav-text main-nav-col nav-text-3" onClick={() => scrollToSection('section-8')}>My Skills</p>
       <p className="main-nav-text main-nav-col nav-text-1">Resume</p>
       <p className="main-nav-text main-nav-col nav-text-2" onClick={() => scrollToSection('section-9')}>Contact</p>
-    </nav>}
+    </div>
+
+    <div className={`whitesheet-menu ${menuStatus ? 'open' : 'closed'}`} onClick={() => { setMenuStatus(false) }}></div>
 
     {/* {storyView && <div className="section-7-main" style={{ backgroundColor: colorArray[storyState - 1], boxShadow: storyState === 10 ? "inset 0px -20px 30px -10px #18181882" : "inset 0px 0px 0px 0px #18181882" }}>
 
@@ -337,9 +385,9 @@ function HomePage() {
         <div className="social-decoy-github"></div>
         <div className="social-decoy-linkedin"></div>
       </div>
-      
 
-      <img src="/logo1.png" className="sect-1-logo" onClick={() => scrollToSection('section-1')}>
+
+      <img src="/logo1.webp" className="sect-1-logo" onClick={() => scrollToSection('section-1')}>
       </img>
 
       <div className="sect-1-nav">
@@ -351,6 +399,39 @@ function HomePage() {
       <div className="sect-1-hero">
         <div className="sect-1-text">
           <h1 className="sect-1-main-text">JM Miranda</h1>
+
+          {screenWidth <= 850 && <div className="hero-img">
+            <motion.div style={{ position: "relative", zIndex: "3" }}
+              initial={{ y: 0 }}
+              animate={{ y: [0, 50, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}>
+              <div className="hero-rotate">
+                <div className="moving-container">
+                  <Image src="/hero-img.webp" alt="Hero Image" fill priority style={{ objectFit: 'contain', }} />
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div style={{ position: "relative", zIndex: "2" }}
+              initial={{ y: 0 }} animate={{ y: [0, 30, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
+              <div className="hero-rotate-2">
+                <div className="moving-hero-2"></div>
+              </div>
+            </motion.div>
+
+            <motion.div style={{ position: "relative", zIndex: "1" }}
+              initial={{ y: 0 }}
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
+              <div className="hero-rotate-3">
+                <div className="moving-hero-3"></div>
+              </div>
+            </motion.div>
+
+          </div>}
+
+
           <h1 className="sect-1-sub-text">Fullstack Web Developer</h1>
           <h3 className="sect-1-par-text" style={{ marginRight: "2rem" }}>Creating fully scaling web apps with React & NextJS.</h3>
 
@@ -365,28 +446,35 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="hero-img">
-          <motion.div style={{ position: "relative", zIndex: "3" }} initial={{ y: 0 }} animate={{ y: [0, 50, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}>
+        {screenWidth > 850 && <div className="hero-img">
+          <motion.div style={{ position: "relative", zIndex: "3" }}
+            initial={{ y: 0 }} animate={{ y: [0, 50, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}>
             <div className="hero-rotate">
               <div className="moving-container">
-              <Image src="/hero-img.webp" alt="Hero Image" fill style={{objectFit: 'contain', }}/>
+                <Image src="/hero-img.webp" alt="Hero Image" fill style={{ objectFit: 'contain', }} />
               </div>
             </div>
           </motion.div>
 
-          <motion.div style={{ position: "relative", zIndex: "2" }} initial={{ y: 0 }} animate={{ y: [0, 30, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
+          <motion.div style={{ position: "relative", zIndex: "2" }}
+            initial={{ y: 0 }} animate={{ y: [0, 30, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
             <div className="hero-rotate-2">
               <div className="moving-hero-2"></div>
             </div>
           </motion.div>
 
-          <motion.div style={{ position: "relative", zIndex: "1" }} initial={{ y: 0 }} animate={{ y: [0, 10, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
+          <motion.div style={{ position: "relative", zIndex: "1" }}
+            initial={{ y: 0 }}
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
             <div className="hero-rotate-3">
               <div className="moving-hero-3"></div>
             </div>
           </motion.div>
 
-        </div>
+        </div>}
       </div>
 
       <h2 className="proj-text">My Projects</h2>
@@ -397,9 +485,15 @@ function HomePage() {
       <div className="section-2-piece" ref={sect2Ref1}></div>
       <div className="section-2-piece" ref={sect2Ref2}></div>
       <div className="section-2-piece" ref={sect2Ref3}></div>
+
+      {screenWidth <= 1050 && <>
+        <div className="section-2-piece" ref={sect2Ref1s}></div>
+        <div className="section-2-piece" ref={sect2Ref2s}></div>
+        <div className="section-2-piece" ref={sect2Ref3s}></div>
+      </>}
       <div className="section-2-piece-last" ref={sect2Ref4}></div>
 
-      <div className="section-2-item" style={{ zIndex: "4", marginTop: `${inView1 ? "0vh" : "-30vh"}` }}>
+      <div className="section-2-item" style={{ zIndex: "10", marginTop: `${inView1 ? "0vh" : "-30vh"}` }}>
         <div className="section-2-a" style={{ backgroundColor: "#FFB238" }}>
           {letters1.map((letter, index) => (
             <p key={index} className="section-2-text">
@@ -407,15 +501,15 @@ function HomePage() {
             </p>
           ))}
         </div>
-        <div className="section-2-b" style={{ backgroundColor: "#4FD0CF", transform: `${inView1 ? "translateY(0rem)" : "translateY(-100rem)"}` }}>
+        {screenWidth > 1050 && <div className="section-2-b" style={{ backgroundColor: "#4FD0CF", transform: `${inView1 ? "translateY(0rem)" : "translateY(-100rem)"}` }}>
           {letters2.map((letter, index) => (
             <p key={index} className="section-2-text">
               {letter}
             </p>
           ))}
-        </div>
+        </div>}
       </div>
-      <div className="section-2-item" style={{ zIndex: "3", marginTop: `${inView2 ? "25vh" : "-30vh"}` }}>
+      <div className="section-2-item" style={{ zIndex: "9", marginTop: inView2 ? (screenWidth > 1050 ? "25vh" : "15vh") : "-30vh" }}>
         <div className="section-2-a" style={{ backgroundColor: "#FF7F21" }}>
           {letters3.map((letter, index) => (
             <p key={index} className="section-2-text">
@@ -423,15 +517,15 @@ function HomePage() {
             </p>
           ))}
         </div>
-        <div className="section-2-b" style={{ backgroundColor: "#30CFAE", transform: `${inView2 ? "translateY(0rem)" : "translateY(-100rem)"}` }}>
+        {screenWidth > 1050 && <div className="section-2-b" style={{ backgroundColor: "#30CFAE", transform: `${inView2 ? "translateY(0rem)" : "translateY(-100rem)"}` }}>
           {letters4.map((letter, index) => (
             <p key={index} className="section-2-text">
               {letter}
             </p>
           ))}
-        </div>
+        </div>}
       </div>
-      <div className="section-2-item" style={{ zIndex: "2", marginTop: `${inView3 ? "50vh" : "-30vh"}` }}>
+      <div className="section-2-item" style={{ zIndex: "8", marginTop: inView3 ? (screenWidth > 1050 ? "50vh" : "30vh") : "-30vh" }}>
         <div className="section-2-a" style={{ backgroundColor: "#FE5C11" }}>
           {letters5.map((letter, index) => (
             <p key={index} className="section-2-text">
@@ -439,15 +533,48 @@ function HomePage() {
             </p>
           ))}
         </div>
-        <div className="section-2-b" style={{ backgroundColor: "#10CE8D", transform: `${inView3 ? "translateY(0rem)" : "translateY(-100rem)"}` }}>
+        {screenWidth > 1050 && <div className="section-2-b" style={{ backgroundColor: "#10CE8D", transform: `${inView3 ? "translateY(0rem)" : "translateY(-100rem)"}` }}>
           {letters6.map((letter, index) => (
             <p key={index} className="section-2-text">
               {letter}
             </p>
           ))}
-        </div>
+        </div>}
       </div>
-      <div className="section-2-item-last" style={{ zIndex: "1", marginTop: `${inView4 ? "75vh" : "-50vh"}` }}>
+
+      {screenWidth <= 1050 && <>
+        <div className="section-2-item" style={{ zIndex: "7", marginTop: inView5 ? (screenWidth > 1050 ? "25vh" : "45vh") : "-30vh" }}>
+          <div className="section-2-a" style={{ backgroundColor: "#4FD0CF" }}>
+            {letters2.map((letter, index) => (
+              <p key={index} className="section-2-text">
+                {letter}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div className="section-2-item" style={{ zIndex: "6", marginTop: inView6 ? (screenWidth > 1050 ? "25vh" : "60vh") : "-30vh" }}>
+          <div className="section-2-a" style={{ backgroundColor: "#30CFAE" }}>
+            {letters4.map((letter, index) => (
+              <p key={index} className="section-2-text">
+                {letter}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div className="section-2-item" style={{ zIndex: "5", marginTop: inView7 ? (screenWidth > 1050 ? "25vh" : "75vh") : "-30vh" }}>
+          <div className="section-2-a" style={{ backgroundColor: "#10CE8D" }}>
+            {letters6.map((letter, index) => (
+              <p key={index} className="section-2-text">
+                {letter}
+              </p>
+            ))}
+          </div>
+        </div>
+      </>}
+
+      <div className="section-2-item-last" style={{ zIndex: "1", marginTop: inView4 ? (screenWidth > 1050 ? "75vh" : "90vh") : "-50vh" }}>
         <h2 className="section-2-text-small">MADE WITH:</h2>
         <div className="made-row">
 
@@ -475,27 +602,65 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="made-container">
-            <div className="feature-annotation">
-              Sass
+          {screenWidth > 500 && <>
+            <div className="made-container">
+              <div className="feature-annotation">
+                Sass
+              </div>
+              <div className="feature-item-sass">
+              </div>
             </div>
-            <div className="feature-item-sass">
-            </div>
-          </div>
 
+            <div className="made-container">
+              <div className="feature-annotation">
+                React
+              </div>
+              <div className="feature-item-react">
+              </div>
+            </div>
+          </>}
+
+          {screenWidth > 1050 && <>
+            <div className="made-container">
+              <div className="feature-annotation">
+                NextJS
+              </div>
+              <div className="feature-item-next">
+              </div>
+            </div>
+
+            <div className="made-container">
+              <div className="feature-annotation">
+                MongoDB
+              </div>
+              <div className="feature-item-mongodb">
+              </div>
+            </div>
+
+            <div className="made-container">
+              <div className="feature-annotation">
+                Framer Motion
+              </div>
+              <div className="feature-item-framer">
+              </div>
+            </div>
+
+            <div className="made-container">
+              <div className="feature-annotation">
+                Figma
+              </div>
+              <div className="feature-item-figma">
+              </div>
+            </div>
+          </>}
+        </div>
+
+        {screenWidth <= 1050 && screenWidth > 500 && <div className="made-row">
           <div className="made-container">
             <div className="feature-annotation">
               NextJS
             </div>
             <div className="feature-item-next">
-            </div>
-          </div>
-
-          <div className="made-container">
-            <div className="feature-annotation">
-              Vercel
-            </div>
-            <div className="feature-item-vercel">
             </div>
           </div>
 
@@ -522,36 +687,106 @@ function HomePage() {
             <div className="feature-item-figma">
             </div>
           </div>
-        </div>
+        </div>}
+
+        {screenWidth <= 500 && <>
+          <div className="made-row">
+            <div className="made-container">
+              <div className="feature-annotation">
+                Sass
+              </div>
+              <div className="feature-item-sass">
+              </div>
+            </div>
+
+            <div className="made-container">
+              <div className="feature-annotation">
+                React
+              </div>
+              <div className="feature-item-react">
+              </div>
+            </div>
+
+            <div className="made-container">
+              <div className="feature-annotation">
+                NextJS
+              </div>
+              <div className="feature-item-next">
+              </div>
+            </div>
+          </div>
+
+          <div className="made-row">
+            <div className="made-container">
+              <div className="feature-annotation">
+                MongoDB
+              </div>
+              <div className="feature-item-mongodb">
+              </div>
+            </div>
+
+            <div className="made-container">
+              <div className="feature-annotation">
+                Framer Motion
+              </div>
+              <div className="feature-item-framer">
+              </div>
+            </div>
+
+            <div className="made-container">
+              <div className="feature-annotation">
+                Figma
+              </div>
+              <div className="feature-item-figma">
+              </div>
+            </div>
+
+          </div>
+
+        </>}
+
       </div>
     </section>
 
     <section className="section-3" ref={sect3Ref}>
 
       <img src="/site1.webp" className="section-3-a" style={{ marginTop: `${inViewB ? "0rem" : "-60vh"}` }}></img>
-      <img src="/site2.webp" className="section-3-b" style={{ marginBottom: `${inViewB ? "0rem" : "-60vh"}` }}></img>
-      <img src="/ui.webp" className="section-3-c" style={{ marginRight: `${inViewB ? "0rem" : "-60vw"}` }}></img>
+
+      <img src="/site2.webp" className="section-3-b" style={{
+        marginBottom: screenWidth > 1100 ? `${inViewB ? "0rem" : "-60vh"}` : "0",
+        marginLeft: screenWidth <= 1100 ? `${inViewB ? "50vw" : "100vw"}` : "0"
+      }}></img>
+      <img src="/ui.webp" className="section-3-c" style={{
+        marginRight: screenWidth > 1100 ? `${inViewB ? "0rem" : "-60vw"}` : "0",
+        marginTop: screenWidth <= 1100 ? `${inViewB ? "50vh" : "100vh"}` : "0"
+      }}></img>
 
 
-      <motion.h2 className="section-3-text" initial={{ textShadow: "0px 0px 0px transparent" }} animate={{ textShadow: inViewB ? "-15px 15px 0px #4a5c6e77" : "0px 0px 0px transparent" }} transition={{ duration: 0.8, ease: "easeInOut", delay: inViewB ? 0.8 : 0 }}>Website</motion.h2>
-      <motion.h2 className="section-3-text-x" initial={{ transform: "scale(1)", textShadow: "0px 0px 0px transparent" }} animate={{ transform: inViewB ? "scale(1.5) rotate(45deg)" : "scale(1)", textShadow: inViewB ? "10px 15px 0px #4a5c6e77" : "0px 0px 0px transparent" }} transition={{ duration: 0.8, ease: "easeInOut", delay: inViewB ? 0.8 : 0 }}>+</motion.h2>
-      <motion.h2 className="section-3-text" initial={{ textShadow: "0px 0px 0px transparent" }} animate={{ textShadow: inViewB ? "-15px 15px 0px #4a5c6e77" : "0px 0px 0px transparent" }} transition={{ duration: 0.8, ease: "easeInOut", delay: inViewB ? 0.8 : 0 }}>Web App</motion.h2>
+      <motion.h2 className="section-3-text" initial={{ textShadow: "0px 0px 0px transparent" }}
+        animate={{ WebkitTextStroke: inViewB ? "2px rgba(255, 255, 255, 0.642)" : "0px rgba(255, 255, 255, 0)", textShadow: inViewB ? "-15px 15px 0px #4a5c6e77" : "0px 0px 0px transparent" }}
+        transition={{ duration: 0.8, ease: "easeInOut", delay: inViewB ? 0.8 : 0 }}>Website</motion.h2>
+      <motion.h2 className="section-3-text-x" initial={{ transform: "scale(1)", textShadow: "0px 0px 0px transparent" }}
+        animate={{ WebkitTextStroke: inViewB ? "2px rgba(255, 255, 255, 0.642)" : "0px rgba(255, 255, 255, 0)", transform: inViewB ? "scale(1.5) rotate(45deg)" : "scale(1)", textShadow: inViewB ? "10px 15px 0px #4a5c6e77" : "0px 0px 0px transparent" }}
+        transition={{ duration: 0.8, ease: "easeInOut", delay: inViewB ? 0.8 : 0 }}>+</motion.h2>
+      <motion.h2 className="section-3-text" initial={{ textShadow: "0px 0px 0px transparent" }}
+        animate={{ WebkitTextStroke: inViewB ? "2px rgba(255, 255, 255, 0.642)" : "0px rgba(255, 255, 255, 0)", textShadow: inViewB ? "-15px 15px 0px #4a5c6e77" : "0px 0px 0px transparent" }}
+        transition={{ duration: 0.8, ease: "easeInOut", delay: inViewB ? 0.8 : 0 }}>Web App</motion.h2>
     </section>
 
     <section className="section-4" ref={sect4Ref}>
       <div className="section-4-set">
-      <div className="scrolling-background-1" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></div>
-      <div className="scrolling-background-2" style={{ marginTop: `${inViewC ? "0%" : "200%"}` }}></div>
-      <div className="scrolling-background-3" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></div>
-      <div className="scrolling-background-4" style={{ marginTop: `${inViewC ? "0%" : "200%"}` }}></div>
-        {/* <img className="section-4-img-b" src="https://picsum.photos/400/1003" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></img> */}
+        <div className="scrolling-background-1" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></div>
+        <div className="scrolling-background-2" style={{ marginTop: `${inViewC ? "0%" : "200%"}` }}></div>
+        <div className="scrolling-background-3" style={{ marginTop: `${inViewC ? "0%" : "-200%"}` }}></div>
+        <div className="scrolling-background-4" style={{ marginTop: `${inViewC ? "0%" : "200%"}` }}></div>
       </div>
 
-      <div style={{ zIndex: "4", width: "100%", display: "flex", flexDirection: "column" }}>
+      <div style={{ zIndex: "4", width: "100%", display: "flex", flexDirection: "column", padding: "5rem" }}>
         <motion.h2
           className="section-4-text"
           initial={{ x: 0, y: 0, opacity: 0 }}
           animate={{
+            WebkitTextStroke: inViewC ? "2px rgba(255, 255, 255, 0.642)" : "0px rgba(255, 255, 255, 0)",
             x: inViewC ? [0, 50, 0] : 0,
             y: inViewC ? [0, -50, 0] : 0,
             opacity: inViewC ? [0, 1, 1] : 0,
@@ -570,6 +805,7 @@ function HomePage() {
           className="section-4-text"
           initial={{ x: 0, y: 0, opacity: 0 }}
           animate={{
+            WebkitTextStroke: inViewC ? "2px rgba(255, 255, 255, 0.642)" : "0px rgba(255, 255, 255, 0)",
             x: inViewC ? [0, 50, 0] : 0,
             y: inViewC ? [0, -50, 0] : 0,
             opacity: inViewC ? [0, 1, 1] : 0,
@@ -587,129 +823,90 @@ function HomePage() {
     </section>
 
     <section className="section-5">
-      <div style={{ display: "flex" }} ref={sect5Ref}>
+      <div className="section-5-container" ref={sect5Ref}>
 
-        <div className="sect-5-cont">
-          <motion.div initial={{ opacity: 0, height: "0%", width: "0%" }} animate={{ opacity: inViewD ? 0 : 1, height: inViewD ? "140%" : "0%", width: inViewD ? "140%" : "0%" }} transition={{ duration: 1.5, delay: inViewD ? 0.5 : 0 }} className="section-5-wave"></motion.div>
-          <motion.div className="section-5-circle" initial={{ opacity: 0, transform: "rotate(270deg) scale(50%)" }} animate={{ opacity: inViewD ? [0, 1, 1] : 0, transform: inViewD ? ["rotate(270deg) scale(50%)", "rotate(0deg) scale(130%)", "rotate(0deg) scale(100%)"] : "rotate(270deg) scale(50%)" }}
+        {screenWidth > 850 && <div className="sect-5-logo">
+          <motion.div initial={{ opacity: 0, height: "0%", width: "0%" }}
+            animate={{ opacity: inViewD ? 0 : 1, height: inViewD ? "140%" : "0%", width: inViewD ? "140%" : "0%" }}
+            transition={{ duration: 1.5, delay: inViewD ? 0.5 : 0 }} className="section-5-wave"></motion.div>
+          <motion.div className="section-5-circle"
+            initial={{ opacity: 0, transform: "rotate(270deg) scale(50%)" }}
+            animate={{ opacity: inViewD ? [0, 1, 1] : 0, transform: inViewD ? ["rotate(270deg) scale(50%)", "rotate(0deg) scale(130%)", "rotate(0deg) scale(100%)"] : "rotate(270deg) scale(50%)" }}
             transition={{ duration: 1, times: [0, 0.5, 1], ease: "easeInOut" }}>
-            <img src="/light-2.png" className="section-5-img"></img>
+            <img src="/light-2.webp" className="section-5-img"></img>
+          </motion.div>
+        </div>}
+
+        <div className="sect-5-resp">
+
+          {screenWidth > 850 && <motion.div className="section-5-desc"
+            initial={{ opacity: "0" }}
+            animate={{ opacity: inViewD ? 1 : 0 }}
+            transition={{ duration: 1, delay: inViewD ? 2 : 0 }}>
+            <h2 className="sect-5-heading-text">MyMart</h2>
+            <h3 className="sect-5-desc-text" style={{ marginBottom: "2rem" }}>    MyMart is a an instant e-commerce store creator with both an admin and user side. Data is loaded dynamically based on the mart&apos;s link, allowing it to scale and create any number of marts and accounts.</h3>
+          </motion.div>}
+
+          {screenWidth <= 850 && <div style={{ display: "flex", margin: "1rem 0 2rem" }}>
+            <div className="sect-5-logo">
+              <motion.div initial={{ opacity: 0, height: "0%", width: "0%" }}
+                animate={{ opacity: inViewD ? 0 : 1, height: inViewD ? "140%" : "0%", width: inViewD ? "140%" : "0%" }}
+                transition={{ duration: 1.5, delay: inViewD ? 0.5 : 0 }} className="section-5-wave"></motion.div>
+              <motion.div className="section-5-circle"
+                initial={{ opacity: 0, transform: "rotate(270deg) scale(50%)" }}
+                animate={{ opacity: inViewD ? [0, 1, 1] : 0, transform: inViewD ? ["rotate(270deg) scale(50%)", "rotate(0deg) scale(130%)", "rotate(0deg) scale(100%)"] : "rotate(270deg) scale(50%)" }}
+                transition={{ duration: 1, times: [0, 0.5, 1], ease: "easeInOut" }}>
+                <img src="/light-2.webp" className="section-5-img"></img>
+              </motion.div>
+            </div>
+
+            <motion.div className="section-5-desc"
+              initial={{ opacity: "0" }}
+              animate={{ opacity: inViewD ? 1 : 0 }}
+              transition={{ duration: 1, delay: inViewD ? 2 : 0 }}>
+              <h2 className="sect-5-heading-text">MyMart</h2>
+              <h3 className="sect-5-desc-text" style={{ marginBottom: "2rem" }}>    MyMart is a an instant e-commerce store creator with both an admin and user side. Data is loaded dynamically based on the mart&apos;s link, allowing it to scale and create any number of marts and accounts.</h3>
+            </motion.div>
+          </div>
+          }
+
+          <motion.div className="section-5-desc"
+            initial={{ opacity: "0" }}
+            animate={{ opacity: inViewD ? 1 : 0 }}
+            transition={{ duration: 1, delay: inViewD ? 2 : 0 }}>
+            <div className="sect-5-desc-cols">
+              <div className="sect-5-col">
+                <h3 className="sect-5-col-heading">Admin Side</h3>
+                <ul>
+                  <li className="sect-5-col-p">Create categories & products</li>
+                  <li className="sect-5-col-p">Manage products&apos; variations, stock, price, & profits</li>
+                  <li className="sect-5-col-p">Customize details, colors, & fonts of your mart</li>
+                  <li className="sect-5-col-p">Manage, deliver, & finish orders</li>
+                  <li className="sect-5-col-p">View your mart&apos;s statistics in category & product performance as well as user data, & many more!</li>
+                </ul>
+              </div>
+              <div className="sect-5-col">
+                <h3 className="sect-5-col-heading">User Side {screenWidth}</h3>
+                <ul>
+                  <li className="sect-5-col-p">Persisting cart system</li>
+                  <li className="sect-5-col-p">Signups & authentication</li>
+                  <li className="sect-5-col-p">Checkout & payment handling</li>
+                  <li className="sect-5-col-p">Order history, updates, and editing</li>
+                  <li className="sect-5-col-p">Product stock updates</li>
+                  <li className="sect-5-col-p">Product searching</li>
+                </ul>
+              </div>
+            </div>
           </motion.div>
         </div>
-
-        {/* <motion.div className="section-5-desc" initial={{ opacity: "0", width: "0rem", height: "40rem", margin: "0", marginRight: "0" }} animate={{ opacity: inViewD ? 1 : 0, width: inViewD ? "60%" : "0rem", height: inViewD ? "auto" : "40rem", margin: inViewD ? "auto" : "0", marginRight: "0" }} transition={{ duration: 1, delay: inViewD ? 2 : 0 }}> */}
-          <motion.div className="section-5-desc" initial={{opacity:"0"}} animate={{opacity: inViewD ? 1 : 0}} transition={{duration: 1, delay: inViewD ? 2 : 0 }}>
-
-          <h2 className="sect-5-heading-text">MyMart</h2>
-          <h3 className="sect-5-desc-text" style={{ marginBottom: "2rem" }}>    MyMart is a an instant e-commerce store creator with both an admin and user side. Data is loaded dynamically based on the mart&apos;s link, allowing it to scale and create any number of marts and accounts.</h3>
-          <div className="sect-5-desc-cols">
-            <div className="sect-5-col" style={{ marginLeft: "2rem" }}>
-              <h3 className="sect-5-col-heading">Admin Side</h3>
-              <ul>
-                <li className="sect-5-col-p">Create categories & products</li>
-                <li className="sect-5-col-p">Manage products&apos; variations, stock, price, & profits</li>
-                <li className="sect-5-col-p">Customize details, colors, & fonts of your mart</li>
-                <li className="sect-5-col-p">Manage, deliver, & finish orders</li>
-                <li className="sect-5-col-p">View your mart&apos;s statistics in category & product performance as well as user data, & many more!</li>
-              </ul>
-            </div>
-            <div className="sect-5-col">
-              <h3 className="sect-5-col-heading">User Side</h3>
-              <ul>
-                <li className="sect-5-col-p">Persisting cart system</li>
-                <li className="sect-5-col-p">Signups & authentication</li>
-                <li className="sect-5-col-p">Checkout & payment handling</li>
-                <li className="sect-5-col-p">Order history, updates, and editing</li>
-                <li className="sect-5-col-p">Product stock updates</li>
-                <li className="sect-5-col-p">Product searching</li>
-              </ul>
-            </div>
-          </div>
-        </motion.div>
-
       </div>
 
       <div className="projects-flex">
-        <motion.div style={{ marginLeft: "10%" }} className="project-item-frame" initial={{ filter: "drop-shadow(-10px 10px 0px transparent)" }} animate={{ filter: inViewD1 ? "drop-shadow(-10px 10px 0px #3752679c)" : "drop-shadow(0px 0px 0px #3752679c)" }} transition={{ duration: 1, delay: inViewD1 ? 0.76 : 0 }} ref={sect5Ref1}
-          onClick={handleActive1} onMouseEnter={Active1Hover} onMouseLeave={Active1Leave}>
-          <div className="project-main" style={{ marginLeft: `${inViewD1 ? "0" : "-150%"}` }}>
-            <img className="proj-img" src="/pic1.webp"></img>
-            <div className="whitesheet"></div>
-            <div className="col-sheet-1" style={{ width: `${active1 ? "100%" : "0%"}` }}></div>
-
-            <div className="proj-text-cont" style={{ marginBottom: `${active1 ? "2rem" : "-6.5rem"}` }}>
-              <h2 className="sect-5-proj-text" style={{ fontSize: `${active1 ? "5.5rem" : "4.5rem"}` }}>MyMart Landing Page</h2>
-
-              <div className="proj-buttons" onClick={(e) => { e.stopPropagation() }}>
-                <button className="proj-button" onClick={(e) => { e.stopPropagation() }}>Github
-                  <div className="icon-gh"></div>
-                </button>
-
-                <button className="proj-button">Live Site
-                  <div className="icon-live"></div>
-                </button>
-
-              </div>
-            </div>
-            <h2 className="sect-5-proj-num" style={{ fontSize: `${active1 ? "12rem" : "10rem"}`, marginRight: `${active1 ? "1rem" : "2rem"}`, marginTop: `${active1 ? "-1.5rem" : "0rem"}` }}>01</h2>
-            <div className="wipe-1" style={{ marginLeft: `${inViewD1 ? "150%" : "-110%"}` }}></div>
-
-          </div>
-        </motion.div>
-
-        <motion.div style={{ marginRight: "10%" }} className="project-item-frame" initial={{ filter: "drop-shadow(-10px 10px 0px transparent)" }} animate={{ filter: inViewD2 ? "drop-shadow(-10px 10px 0px #3752679c)" : "drop-shadow(0px 0px 0px #3752679c)" }} transition={{ duration: 1, delay: inViewD2 ? 0.76 : 0 }} ref={sect5Ref2}
-          onClick={handleActive2} onMouseEnter={Active2Hover} onMouseLeave={Active2Leave}>
-          <div className="project-main" style={{ marginLeft: `${inViewD2 ? "0" : "-150%"}` }}>
-            <img className="proj-img" src="/pic2.webp"></img>
-            <div className="whitesheet"></div>
-            <div className="col-sheet-1" style={{ width: `${active2 ? "100%" : "0%"}`, backgroundImage: "linear-gradient(to bottom right, #5fd0df, #00cd7d)" }}></div>
-
-            <div className="proj-text-cont" style={{ marginBottom: `${active2 ? "2rem" : "-6.5rem"}` }}>
-              <h2 className="sect-5-proj-text" style={{ fontSize: `${active2 ? "5.5rem" : "4.5rem"}` }}>MyMart Customer Sites</h2>
-
-              <div className="proj-buttons" onClick={(e) => { e.stopPropagation() }}>
-                <button className="proj-button" onClick={(e) => { e.stopPropagation() }}>Github
-                  <div className="icon-gh"></div>
-                </button>
-
-                <button className="proj-button">Live Site
-                  <div className="icon-live"></div>
-                </button>
-
-              </div>
-            </div>
-            <h2 className="sect-5-proj-num" style={{ fontSize: `${active2 ? "12rem" : "10rem"}`, marginRight: `${active2 ? "1rem" : "2rem"}`, marginTop: `${active2 ? "-1.5rem" : "0rem"}` }}>02</h2>
-            <div className="wipe-1" style={{ marginLeft: `${inViewD2 ? "150%" : "-110%"}`, backgroundImage: "linear-gradient(to bottom right, #5fd0df, #00cd7d)" }}></div>
-
-          </div>
-        </motion.div>
-
-        <motion.div style={{ marginLeft: "10%" }} className="project-item-frame" initial={{ filter: "drop-shadow(-10px 10px 0px transparent)" }} animate={{ filter: inViewD3 ? "drop-shadow(-10px 10px 0px #3752679c)" : "drop-shadow(0px 0px 0px #3752679c)" }} transition={{ duration: 1, delay: inViewD3 ? 0.76 : 0 }} ref={sect5Ref3}
-          onClick={handleActive3} onMouseEnter={Active3Hover} onMouseLeave={Active3Leave}>
-          <div className="project-main" style={{ marginLeft: `${inViewD3 ? "0" : "-150%"}` }}>
-            <img className="proj-img" src="/pic3.webp"></img>
-            <div className="whitesheet"></div>
-            <div className="col-sheet-1" style={{ width: `${active3 ? "100%" : "0%"}`, backgroundImage: "linear-gradient(to bottom right, #fccf3a, #fe4b09)" }}></div>
-
-            <div className="proj-text-cont" style={{ marginBottom: `${active3 ? "2rem" : "-6.5rem"}` }}>
-              <h2 className="sect-5-proj-text" style={{ fontSize: `${active3 ? "5.5rem" : "4.5rem"}` }}>MyMart Admin</h2>
-
-              <div className="proj-buttons" onClick={(e) => { e.stopPropagation() }}>
-                <button className="proj-button" onClick={(e) => { e.stopPropagation() }}>Github
-                  <div className="icon-gh"></div>
-                </button>
-
-                <button className="proj-button">Live Site
-                  <div className="icon-live"></div>
-                </button>
-
-              </div>
-            </div>
-            <h2 className="sect-5-proj-num" style={{ fontSize: `${active3 ? "12rem" : "10rem"}`, marginRight: `${active1 ? "1rem" : "2rem"}`, marginTop: `${active1 ? "-1.5rem" : "0rem"}` }}>03</h2>
-            <div className="wipe-1" style={{ marginLeft: `${inViewD3 ? "150%" : "-110%"}`, backgroundImage: "linear-gradient(to bottom right, #fccf3a, #fe4b09)" }}></div>
-
-          </div>
-        </motion.div>
+        <ProjectItem screenWidth={screenWidth} projectName="MyMart Landing Page" projectNum="01" projectImage={"/pic1.webp"} color1="#449dd1" color2="#1450a3" githubLink="https://github.com/example/repo" siteLink="https://mymart.com" />
+        <div style={{ marginRight: "10%" }}>
+          <ProjectItem screenWidth={screenWidth} projectName="MyMart Customer" projectNum="02" projectImage={"/pic2.webp"} color1="#5fd0df" color2="#00cd7d" githubLink="https://github.com/example/repo" siteLink="https://mymart.com" />
+        </div>
+        <ProjectItem screenWidth={screenWidth} projectName="MyMart Admin" projectNum="03" projectImage={"/pic3.webp"} color1="#fccf3a" color2="#fe4b09" githubLink="https://github.com/example/repo" siteLink="https://mymart.com" />
       </div>
     </section>
 
@@ -717,32 +914,7 @@ function HomePage() {
       <h2 className="port-text" style={{ color: "white", textAlign: "center" }}>Portfolio Website</h2>
 
       <div className="projects-flex" style={{ margin: "1.5rem 0" }}>
-        <motion.div className="project-item-frame" initial={{ filter: "drop-shadow(-10px 10px 0px transparent)" }} animate={{ filter: inViewD4 ? "drop-shadow(-10px 10px 0px #3752679c)" : "drop-shadow(0px 0px 0px #3752679c)" }} transition={{ duration: 1, delay: inViewD4 ? 0.76 : 0 }} ref={sect5Ref4}
-          onClick={handleActive4} onMouseEnter={Active4Hover} onMouseLeave={Active4Leave}>
-          <div className="project-main" style={{ marginLeft: `${inViewD4 ? "0" : "-150%"}` }}>
-            <img className="proj-img" src="/pic4.webp"></img>
-            <div className="whitesheet"></div>
-            <div className="col-sheet-1" style={{ width: `${active4 ? "100%" : "0%"}` }}></div>
-
-            <div className="proj-text-cont" style={{ marginBottom: `${active4 ? "2rem" : "-6.5rem"}` }}>
-              <h2 className="sect-5-proj-text" style={{ fontSize: `${active4 ? "5.5rem" : "4.5rem"}` }}>Personal Site</h2>
-
-              <div className="proj-buttons" onClick={(e) => { e.stopPropagation() }}>
-                <button className="proj-button" onClick={(e) => { e.stopPropagation() }}>Github
-                  <div className="icon-gh"></div>
-                </button>
-
-                <button className="proj-button">Live Site
-                  <div className="icon-live"></div>
-                </button>
-
-              </div>
-            </div>
-            <h2 className="sect-5-proj-num" style={{ fontSize: `${active4 ? "12rem" : "10rem"}`, marginRight: `${active4 ? "1rem" : "2rem"}`, marginTop: `${active4 ? "-1.5rem" : "0rem"}` }}>04</h2>
-            <div className="wipe-1" style={{ marginLeft: `${inViewD4 ? "150%" : "-110%"}` }}></div>
-
-          </div>
-        </motion.div>
+        <ProjectItem screenWidth={screenWidth} projectName="Personal Site" projectNum="04" projectImage={"/pic4.webp"} color1="#449dd1" color2="#1450a3" githubLink="https://github.com/example/repo" siteLink="https://mymart.com" />
       </div>
     </section>
 
@@ -756,14 +928,44 @@ function HomePage() {
         <p className="about-p">    Hi! I&apos;m JM Miranda, a web developer from the Philippines. I learned to code during my gap year on 2022. Since then I fell in love with the weaving and problem solving that developers do.
           I adore the intricacies and cleverness that we take for granted in the tools and apps in our day to day life as internet users.</p>
 
+        {screenWidth <= 800 && <motion.div
+          className="about-img"
+          ref={aboutRef}
+          initial={{ scale: 0 }}
+          animate={
+            setAboutRef && {
+              scale: [0, 1.2, 1],
+              transition: {
+                duration: 0.8,
+                times: [0, 0.7, 1],
+                ease: 'easeInOut'
+              }
+            }
+          }>
+          <img src="/spider.webp" className="about-web" alt="Spider" />
+        </motion.div>}
+
         <p className="about-p">    After trying out languages such as Python then being introduced to HTML, CSS, and Javascript, I was intrigued by the horizon of possibilities within.
           Since then, I decided to become a web developer with React. I have spent a few months making my web app to get some experience, escape tutorial hell, and put a big project on my portfolio.
           Now I&apos;m excited to get my first real job and put my experience to work!
         </p>
       </div>
-      <div className="about-img">
-        <img src="/spider.png" className="about-web"></img>
-      </div>
+      {screenWidth > 800 && <motion.div
+        className="about-img"
+        ref={aboutRef}
+        initial={{ scale: 0 }}
+        animate={
+          setAboutRef && {
+            scale: [0, 1.2, 1],
+            transition: {
+              duration: 0.8,
+              times: [0, 0.7, 1],
+              ease: 'easeInOut'
+            }
+          }
+        }>
+        <img src="/spider.webp" className="about-web" alt="Spider" />
+      </motion.div>}
 
       {/* <h2 className="proj-text" style={{ color: "#181818" }}>My Story & Skills</h2> */}
       <h2 className="proj-text" style={{ color: "#181818" }}>My Skills</h2>
@@ -857,78 +1059,76 @@ function HomePage() {
       </div>
     </section> */}
     <section className="section-8" id="section-8">
- 
+
       <div className="skill-half">
         <h2 className="main-skill-text">Main Skillset:</h2>
 
         <div className="main-skillset">
 
-        {mainSkills.map((skill, index) => {
-          return <div className="final-container" key={index}>
-            <div className="final-annotation">
-              {mainNames[index]}
+          {mainSkills.map((skill, index) => {
+            return <div className="final-container" key={index}>
+              <div className="final-annotation">
+                {mainNames[index]}
+              </div>
+              <div className={`final-item-${skill}`}>
+              </div>
             </div>
-            <div className={`final-item-${skill}`}>
-            </div>
-          </div>
           })}
-          </div>
-
-
+        </div>
       </div>
 
       <div className="skill-half">
         <h2 className="sub-skill-text">Sub Skillset:</h2>
 
         <div className="sub-skillset">
-        {subSkills.map((skill, index) => {
-          return <div className="final-container-b" key={index}>
-            <div className="final-annotation">
-              {subNames[index]}
+          {subSkills.map((skill, index) => {
+            return <div className="final-container-b" key={index}>
+              <div className="final-annotation">
+                {subNames[index]}
+              </div>
+              <div className={`final-item-${skill}`}>
+              </div>
             </div>
-            <div className={`final-item-${skill}`}>
-            </div>
-          </div>
           })}
         </div>
 
         <h2 className="fam-skill-text">Familiar With:</h2>
 
-<div className="fam-skillset">
-{famSkills.map((skill, index) => {
-          return <div className="final-container-c" key={index}>
-            <div className="final-annotation">
-              {famNames[index]}
+        <div className="fam-skillset">
+          {famSkills.map((skill, index) => {
+            return <div className="final-container-c" key={index}>
+              <div className="final-annotation">
+                {famNames[index]}
+              </div>
+              <div className={`final-item-${skill}`}>
+              </div>
             </div>
-            <div className={`final-item-${skill}`}>
-            </div>
-          </div>
           })}
-</div>
+        </div>
       </div>
 
     </section>
 
     <section className="section-9" id="section-9">
-        <img src="/sunset.png" className="sect-9-bg"></img>
-        <h2 className="sect-9-headline">Contact Me</h2>
-        <h3 className="sect-9-text">Excited to hear from you!</h3>
+      <img src="/sunset.webp" className="sect-9-bg"></img>
+      <h2 className="sect-9-headline">Contact Me</h2>
+      <h3 className="sect-9-text">Excited to hear from you!</h3>
 
-        <div className="form-group">
+      <div className="form-group">
         <label className="form-label">Name</label>
         <input className="form-input" placeholder="Name"></input>
-        </div>
-        <div className="form-group">
-        <label className="form-label">Email</label>
+      </div>
+      <div className="form-group">
+        <label className="form-label-2">Email</label>
         <input className="form-input" placeholder="Email"></input>
-        </div>     
-        <div className="form-group">   
+      </div>
+      <div className="form-group">
         <label className="form-label-2">Message</label>
 
         <textarea className="form-area" placeholder="Message"></textarea>
-        </div>
+      </div>
 
-        <button className="send-msg">Send Message</button>
+      <button className="send-msg">Send Message</button>
     </section>
   </Fragment>
 }
