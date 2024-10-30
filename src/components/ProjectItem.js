@@ -66,11 +66,11 @@ const ProjectItem = ({ screenWidth, projectName, projectNum, projectImage, color
                     <h2 className="sect-5-proj-text" style={{ fontSize: active1 ? fontActive : fontInactive }}>{projectName}</h2>
 
                     <div className="proj-buttons" onClick={(e) => { e.stopPropagation(); }}>
-                        <button className="proj-button" onClick={(e) => { e.stopPropagation(); }}>Github
+                        <button className="proj-button" onClick={(e) => { e.stopPropagation(); window.open(githubLink, '_blank')}}>Github
                             <div className="icon-gh"></div>
                         </button>
 
-                        <button className="proj-button">Live Site
+                        <button className="proj-button" onClick={(e) => { e.stopPropagation(); window.open(siteLink, '_blank')}}>Live Site
                             <div className="icon-live"></div>
                         </button>
                     </div>

@@ -316,7 +316,7 @@ function HomePage() {
         <a className="main-nav-text main-nav-col nav-text-1" onClick={() => scrollToSection('section-2')}>My Projects</a>
         <p className="main-nav-text main-nav-col nav-text-2" onClick={() => scrollToSection('section-6')}>About</p>
         <p className="main-nav-text main-nav-col nav-text-3" onClick={() => scrollToSection('section-8')}>My Skills</p>
-        <p className="main-nav-text main-nav-col nav-text-1">Resume</p>
+        <p className="main-nav-text main-nav-col nav-text-1" onClick={() => window.open('Miranda, JM Resume.pdf', '_blank', 'noopener,noreferrer')}>Resume</p>
         <p className="main-nav-text main-nav-col nav-text-2" onClick={() => scrollToSection('section-9')}>Contact</p>
       </>}
     </nav>}
@@ -325,7 +325,7 @@ function HomePage() {
       <a className="main-nav-text main-nav-col nav-text-1" onClick={() => scrollToSection('section-2')}>My Projects</a>
       <p className="main-nav-text main-nav-col nav-text-2" onClick={() => scrollToSection('section-6')}>About</p>
       <p className="main-nav-text main-nav-col nav-text-3" onClick={() => scrollToSection('section-8')}>My Skills</p>
-      <p className="main-nav-text main-nav-col nav-text-1">Resume</p>
+      <p className="main-nav-text main-nav-col nav-text-1" onClick={() => window.open('Miranda, JM Resume.pdf', '_blank', 'noopener,noreferrer')}>Resume</p>
       <p className="main-nav-text main-nav-col nav-text-2" onClick={() => scrollToSection('section-9')}>Contact</p>
     </div>
 
@@ -375,14 +375,14 @@ function HomePage() {
     <section className="section-1" ref={navRef} id="section-1">
       <div className="sect-1-socials">
         {/* <div className="social-item-mailbox"></div> */}
-        <div className="social-item-github"></div>
+        <div className="social-item-github" onClick={() => window.open('https://github.com/JeyyM', '_blank')}></div>
         <div className="social-item-linkedin"></div>
       </div>
 
       <div className="sect-1-socials">
         {/* <div className="social-item-mailbox"></div> */}
-        <div className="social-decoy-github"></div>
-        <div className="social-decoy-linkedin"></div>
+        <div className="social-decoy-github" onClick={() => window.open('https://github.com/JeyyM', '_blank')}></div>
+        <div className="social-decoy-linkedin" onClick={() => window.open('https://www.linkedin.com/in/juan-miguel-miranda-a946a9329/', '_blank')}></div>
       </div>
 
 
@@ -439,7 +439,7 @@ function HomePage() {
             <button className="sect-1-button-1" onClick={() => scrollToSection('section-9')}>Contact Me
               <div className="icon-mail"></div>
             </button>
-            <button className="sect-1-button-2">Resume
+            <button className="sect-1-button-2" onClick={() => window.open('Miranda, JM Resume.pdf', '_blank', 'noopener,noreferrer')}>Resume
               <div className="icon-resume"></div>
             </button>
           </div>
@@ -885,7 +885,7 @@ function HomePage() {
                 </ul>
               </div>
               <div className="sect-5-col">
-                <h3 className="sect-5-col-heading">User Side {screenWidth}</h3>
+                <h3 className="sect-5-col-heading">User Side</h3>
                 <ul>
                   <li className="sect-5-col-p">Persisting cart system</li>
                   <li className="sect-5-col-p">Signups & authentication</li>
@@ -901,11 +901,11 @@ function HomePage() {
       </div>
 
       <div className="projects-flex">
-        <ProjectItem screenWidth={screenWidth} projectName="MyMart Landing Page" projectNum="01" projectImage={"/pic1.webp"} color1="#449dd1" color2="#1450a3" githubLink="https://github.com/example/repo" siteLink="https://mymart.com" />
+        <ProjectItem screenWidth={screenWidth} projectName="MyMart Landing Page" projectNum="01" projectImage={"/pic1.webp"} color1="#449dd1" color2="#1450a3" githubLink="https://github.com/JeyyM/mymart-buyer/blob/main/src/pages/index.js" siteLink="https://mymart-user-eo18zxe3c-jeyym.vercel.app/" />
         <div style={{ marginRight: "10%" }}>
-          <ProjectItem screenWidth={screenWidth} projectName="MyMart Customer" projectNum="02" projectImage={"/pic2.webp"} color1="#5fd0df" color2="#00cd7d" githubLink="https://github.com/example/repo" siteLink="https://mymart.com" />
+          <ProjectItem screenWidth={screenWidth} projectName="MyMart Customer" projectNum="02" projectImage={"/pic2.webp"} color1="#5fd0df" color2="#00cd7d" githubLink="https://github.com/JeyyM/mymart-buyer" siteLink="https://mymart-user-o2xvrkg54-jeyyms-projects.vercel.app/64c84adf0cac7b00a22be359" />
         </div>
-        <ProjectItem screenWidth={screenWidth} projectName="MyMart Admin" projectNum="03" projectImage={"/pic3.webp"} color1="#fccf3a" color2="#fe4b09" githubLink="https://github.com/example/repo" siteLink="https://mymart.com" />
+        <ProjectItem screenWidth={screenWidth} projectName="MyMart Admin" projectNum="03" projectImage={"/pic3.webp"} color1="#fccf3a" color2="#fe4b09" githubLink="https://github.com/JeyyM/mymart-seller" siteLink="https://mymart-admin-2s6arc6bl-jeyyms-projects.vercel.app/" />
       </div>
     </section>
 
@@ -913,7 +913,7 @@ function HomePage() {
       <h2 className="port-text" style={{ color: "white", textAlign: "center" }}>Portfolio Website</h2>
 
       <div className="projects-flex" style={{ margin: "1.5rem 0" }}>
-        <ProjectItem screenWidth={screenWidth} projectName="Personal Site" projectNum="04" projectImage={"/pic4.webp"} color1="#449dd1" color2="#1450a3" githubLink="https://github.com/example/repo" siteLink="https://mymart.com" />
+        <ProjectItem screenWidth={screenWidth} projectName="Personal Site" projectNum="04" projectImage={"/pic4.webp"} color1="#449dd1" color2="#1450a3" githubLink="https://github.com/JeyyM/Personal-Site" siteLink="https://personal-site-swart-nine-21.vercel.app/?vercelToolbarCode=3SuX7_eDttipGkg" />
       </div>
     </section>
 
@@ -1127,7 +1127,7 @@ function HomePage() {
         <textarea className="form-area" placeholder="Message"></textarea>
       </div>
 
-      <button className="send-msg">Send Message</button>
+      <button className="send-msg" onClick={() => {alert("Currently set to be closed, feel free to contact me through my resume details")}}>Send Message</button>
     </section>
   </Fragment>
 }
