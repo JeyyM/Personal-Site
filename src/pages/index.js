@@ -300,7 +300,7 @@ function HomePage() {
   return <Fragment>
     <Head>
 
-    <link rel="preload" href="/hero-img.webp" as="image" type="image/webp" importance="high"/>
+      <link rel="preload" href="/hero-img.webp" as="image" type="image/webp" importance="high" />
 
       <title>{screenWidth}</title>
     </Head>

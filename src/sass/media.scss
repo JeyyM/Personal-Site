@@ -8,6 +8,8 @@
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(black));
+  background-image: -o-linear-gradient(left, black, black);
   background-image: linear-gradient(to right, black, black);
   height: $top;
   fill: transparent;
@@ -41,11 +43,15 @@
 
   .icon-mail {
     @include heading-logo(mail, 3.5rem, 3.5rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(white), to(white));
+    background-image: -o-linear-gradient(left, white, white);
     background-image: linear-gradient(to right, white, white);
   }
 
   .icon-resume {
     @include heading-logo(resume, 4rem, 3rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(white), to(white));
+    background-image: -o-linear-gradient(left, white, white);
     background-image: linear-gradient(to right, white, white);
   }
 
@@ -65,15 +71,30 @@
   }
 
   .hero-img {
-    transform: translateX(5rem);
+    -webkit-transform: translateX(5rem);
+        -ms-transform: translateX(5rem);
+            transform: translateX(5rem);
+  }
+
+  @-webkit-keyframes rotate-3 {
+    0% {
+      -webkit-transform: rotate(70deg);
+              transform: rotate(70deg);
+    }
+    100% {
+      -webkit-transform: rotate(130deg) translateX(6rem);
+              transform: rotate(130deg) translateX(6rem);
+    }
   }
 
   @keyframes rotate-3 {
     0% {
-      transform: rotate(70deg);
+      -webkit-transform: rotate(70deg);
+              transform: rotate(70deg);
     }
     100% {
-      transform: rotate(130deg) translateX(6rem);
+      -webkit-transform: rotate(130deg) translateX(6rem);
+              transform: rotate(130deg) translateX(6rem);
     }
   }
 
@@ -88,7 +109,8 @@
 
   .sect-5-heading-text {
     font-size: 5rem;
-    filter: drop-shadow(-3px 3px 0px #37526781);
+    -webkit-filter: drop-shadow(-3px 3px 0px #37526781);
+            filter: drop-shadow(-3px 3px 0px #37526781);
   }
 
   .sect-5-desc-text {
@@ -111,16 +133,15 @@
     font-size: 5.5rem;
   }
 
-  
-.about-p {
-  font-size: 2.2rem;
-  text-align: justify;
-  margin: 1.5rem 8%;
-}
+  .about-p {
+    font-size: 2.2rem;
+    text-align: justify;
+    margin: 1.5rem 8%;
+  }
 
-.about-img {
-  width: 45%;
-}
+  .about-img {
+    width: 45%;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -143,7 +164,9 @@
   }
 
   .hero-img {
-    transform: translateX(10rem);
+    -webkit-transform: translateX(10rem);
+        -ms-transform: translateX(10rem);
+            transform: translateX(10rem);
   }
 
   .section-2-text {
@@ -151,29 +174,12 @@
   }
 
   .section-3 {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
-//   .section-3-a {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 50%;
-//     height: 50%;
-//     object-fit: cover;
-//     transition: all 0.8s;
-//   }
-  
-//   .section-3-b {
-//     position: absolute;
-//     bottom: top;
-//     left: 0;
-//     width: 50%;
-//     height: 50%;
-//     object-fit: cover;
-//     transition: all 0.8s;
-//   }
-  
   .section-3-c {
     width: 100%;
     height: 50%;
@@ -191,46 +197,64 @@
 
 @media (max-width: 1050px) {
   .final-container {
-    filter: drop-shadow(-3px 3px 0px rgb(0, 155, 175));
+    -webkit-filter: drop-shadow(-3px 3px 0px rgb(0, 155, 175));
+            filter: drop-shadow(-3px 3px 0px rgb(0, 155, 175));
   }
 
   .final-container-b {
-    filter: drop-shadow(-3px 3px 0px #1450a3);
+    -webkit-filter: drop-shadow(-3px 3px 0px #1450a3);
+            filter: drop-shadow(-3px 3px 0px #1450a3);
   }
 
   .final-container-c {
-    filter: drop-shadow(-3px 3px 0px #fe4b09);
+    -webkit-filter: drop-shadow(-3px 3px 0px #fe4b09);
+            filter: drop-shadow(-3px 3px 0px #fe4b09);
     position: relative;
   }
 
   .about-heading {
-    filter: drop-shadow(-3px 3px 0px #6b6b6c81);
+    -webkit-filter: drop-shadow(-3px 3px 0px #6b6b6c81);
+            filter: drop-shadow(-3px 3px 0px #6b6b6c81);
   }
 
   .port-text {
-    filter: drop-shadow(-3px 3px 0px #37526781);
+    -webkit-filter: drop-shadow(-3px 3px 0px #37526781);
+            filter: drop-shadow(-3px 3px 0px #37526781);
   }
 
   .proj-text {
-    filter: drop-shadow(-3px 3px 0px #37526781);
+    -webkit-filter: drop-shadow(-3px 3px 0px #37526781);
+            filter: drop-shadow(-3px 3px 0px #37526781);
   }
 
   .section-2-item {
     height: 15vh;
     width: 100%;
     position: absolute;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transition: all 0.5s;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 
   .section-2-a {
     height: 100%;
     width: 100%;
-    filter: drop-shadow(0px 5px 5px #0000002b);
+    -webkit-filter: drop-shadow(0px 5px 5px #0000002b);
+            filter: drop-shadow(0px 5px 5px #0000002b);
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
     transition: all 0.2s;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 0 2rem;
   }
   .section-2-piece {
@@ -246,71 +270,91 @@
     height: 10rem;
     width: 10rem;
     @include heading-logo(html, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
-  
+
   .feature-item-css {
     height: 10rem;
     width: 10rem;
     @include heading-logo(css, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
-  
+
   .feature-item-js {
     height: 10rem;
     width: 10rem;
     @include heading-logo(js, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
-  
+
   .feature-item-sass {
     height: 10rem;
     width: 10rem;
     @include heading-logo(sass, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
-  
+
   .feature-item-next {
     height: 10rem;
     width: 10rem;
     @include heading-logo(next, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
-  
+
   .feature-item-react {
     height: 10rem;
     width: 10rem;
     @include heading-logo(react, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
-  
+
   .feature-item-vercel {
     height: 10rem;
     width: 10rem;
     @include heading-logo(vercel, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
-  
+
   .feature-item-mongodb {
     height: 10rem;
     width: 10rem;
     @include heading-logo(mongodb, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
-  
+
   .feature-item-framer {
     height: 10rem;
     width: 10rem;
     @include heading-logo(framer, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
-  
+
   .feature-item-figma {
     height: 10rem;
     width: 10rem;
     @include heading-logo(figma, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
-  }  
+  }
 
   .project-item-frame {
     height: 40rem;
@@ -319,7 +363,8 @@
 
   .sect-5-proj-num {
     font-size: 8rem;
-    filter: drop-shadow(-3px 3px 0px #37526781);
+    -webkit-filter: drop-shadow(-3px 3px 0px #37526781);
+            filter: drop-shadow(-3px 3px 0px #37526781);
   }
 
   .proj-button {
@@ -327,393 +372,499 @@
     height: 5.5rem;
     border-radius: 17px;
     width: 20rem;
-    filter: drop-shadow(0px 0px 3px #375267);
+    -webkit-filter: drop-shadow(0px 0px 3px #375267);
+            filter: drop-shadow(0px 0px 3px #375267);
   }
 
   .icon-gh {
     @include heading-logo(github, 2.7rem, 2.7rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
 
   .icon-live {
     @include heading-logo(live, 2.7rem, 2.7rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
 
-  .main-skill-text, .sub-skill-text, .fam-skill-text{
+  .main-skill-text,
+  .sub-skill-text,
+  .fam-skill-text {
     font-size: 6rem;
   }
 
   .main-skill-text {
-    filter: drop-shadow(-3px 3px 0px #00cd7e8c);
+    -webkit-filter: drop-shadow(-3px 3px 0px #00cd7e8c);
+            filter: drop-shadow(-3px 3px 0px #00cd7e8c);
   }
 
   .sub-skill-text {
-    filter: drop-shadow(-3px 3px 0px #449dd17f);
+    -webkit-filter: drop-shadow(-3px 3px 0px #449dd17f);
+            filter: drop-shadow(-3px 3px 0px #449dd17f);
   }
 
   .fam-skill-text {
-    filter: drop-shadow(-3px 3px 0px #fe4a097e);
+    -webkit-filter: drop-shadow(-3px 3px 0px #fe4a097e);
+            filter: drop-shadow(-3px 3px 0px #fe4a097e);
   }
 
   .sect-5-proj-text {
-    filter: drop-shadow(-3px 3px 0px #37526781);
+    -webkit-filter: drop-shadow(-3px 3px 0px #37526781);
+            filter: drop-shadow(-3px 3px 0px #37526781);
   }
-  
+
   .sect-9-headline {
-    filter: drop-shadow(-3px 3px 0px #fe4a097e);
+    -webkit-filter: drop-shadow(-3px 3px 0px #fe4a097e);
+            filter: drop-shadow(-3px 3px 0px #fe4a097e);
   }
-  
+
   .sect-9-text {
-    filter: drop-shadow(-2px 2px 0px #fe4a097e) brightness(120%);
+    -webkit-filter: drop-shadow(-2px 2px 0px #fe4a097e) brightness(120%);
+            filter: drop-shadow(-2px 2px 0px #fe4a097e) brightness(120%);
   }
 
-  .form-label{
-    filter: drop-shadow(-2px 2px 0px #d8eeff) brightness(120%);
-  }
-  
-  .form-label-2{
-    filter: drop-shadow(-2px 2px 0px #15283b) brightness(120%);
+  .form-label {
+    -webkit-filter: drop-shadow(-2px 2px 0px #d8eeff) brightness(120%);
+            filter: drop-shadow(-2px 2px 0px #d8eeff) brightness(120%);
   }
 
-  .send-msg{
-        filter: drop-shadow(-3px 3px 0px #15283bb3);
+  .form-label-2 {
+    -webkit-filter: drop-shadow(-2px 2px 0px #15283b) brightness(120%);
+            filter: drop-shadow(-2px 2px 0px #15283b) brightness(120%);
+  }
+
+  .send-msg {
+    -webkit-filter: drop-shadow(-3px 3px 0px #15283bb3);
+            filter: drop-shadow(-3px 3px 0px #15283bb3);
   }
 
   .final-item-html {
     height: 6rem;
     width: 6rem;
     @include heading-logo(html, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-js {
     height: 6rem;
     width: 6rem;
     @include heading-logo(js, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-css {
     height: 6rem;
     width: 6rem;
     @include heading-logo(css, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-react {
     height: 6rem;
     width: 6rem;
     @include heading-logo(react, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-sass {
     height: 6rem;
     width: 6rem;
     @include heading-logo(sass, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-framer {
     height: 6rem;
     width: 6rem;
     @include heading-logo(framer, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-next {
     height: 6rem;
     width: 6rem;
     @include heading-logo(next, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-mongodb {
     height: 6rem;
     width: 6rem;
     @include heading-logo(mongodb, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-git {
     height: 6rem;
     width: 6rem;
     @include heading-logo(git, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-figma {
     height: 6rem;
     width: 6rem;
     @include heading-logo(figma, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-vscode {
     height: 6rem;
     width: 6rem;
     @include heading-logo(vscode, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-vercel {
     height: 6rem;
     width: 6rem;
     @include heading-logo(vercel, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-github {
     height: 6rem;
     width: 6rem;
     @include heading-logo(github, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-ux {
     height: 6rem;
     width: 6rem;
     @include heading-logo(ux, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-ui {
     height: 6rem;
     width: 6rem;
     @include heading-logo(ui, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-responsive {
     height: 6rem;
     width: 6rem;
     @include heading-logo(responsive, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-accessibility {
     height: 6rem;
     width: 6rem;
     @include heading-logo(accessibility, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-design {
     height: 6rem;
     width: 6rem;
     @include heading-logo(design, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-wireframe {
     height: 6rem;
     width: 6rem;
     @include heading-logo(wireframe, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-api {
     height: 6rem;
     width: 6rem;
     @include heading-logo(api, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-redux {
     height: 6rem;
     width: 6rem;
     @include heading-logo(redux, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-devtools {
     height: 6rem;
     width: 6rem;
     @include heading-logo(devtools, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-gitkraken {
     height: 6rem;
     width: 6rem;
     @include heading-logo(gitkraken, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-python {
     height: 6rem;
     width: 6rem;
     @include heading-logo(python, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-flask {
     height: 6rem;
     width: 6rem;
     @include heading-logo(flask, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-bootstrap {
     height: 6rem;
     width: 6rem;
     @include heading-logo(bootstrap, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-jquery {
     height: 6rem;
     width: 6rem;
     @include heading-logo(jquery, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-node {
     height: 6rem;
     width: 6rem;
     @include heading-logo(node, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-express {
     height: 6rem;
     width: 6rem;
     @include heading-logo(express, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-firebase {
     height: 6rem;
     width: 6rem;
     @include heading-logo(firebase, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-jinja {
     height: 6rem;
     width: 6rem;
     @include heading-logo(jinja, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-sql {
     height: 6rem;
     width: 6rem;
     @include heading-logo(sql, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-turtle {
     height: 6rem;
     width: 6rem;
     @include heading-logo(turtle, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-tkinter {
     height: 6rem;
     width: 6rem;
     @include heading-logo(tkinter, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-soup {
     height: 6rem;
     width: 6rem;
     @include heading-logo(soup, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-pandas {
     height: 6rem;
     width: 6rem;
     @include heading-logo(pandas, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-seaborn {
     height: 6rem;
     width: 6rem;
     @include heading-logo(seaborn, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
-  
+
   .final-item-msoffice {
     height: 6rem;
     width: 6rem;
     @include heading-logo(msoffice, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-premiere {
     height: 6rem;
     width: 6rem;
     @include heading-logo(premiere, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-terminal {
     height: 6rem;
     width: 6rem;
     @include heading-logo(terminal, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-oop {
     height: 6rem;
     width: 6rem;
     @include heading-logo(oop, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-colab {
     height: 6rem;
     width: 6rem;
     @include heading-logo(colab, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
-  
+
   .final-item-twilio {
     height: 6rem;
     width: 6rem;
     @include heading-logo(twilio, 6rem, 6rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+    background-image: -o-linear-gradient(left, #ffffff, #ffffff);
     background-image: linear-gradient(to right, #ffffff, #ffffff);
   }
 }
 
 .made-row {
-  filter: drop-shadow(-3px 3px 0px #15283bae);
+  -webkit-filter: drop-shadow(-3px 3px 0px #15283bae);
+          filter: drop-shadow(-3px 3px 0px #15283bae);
 }
 
 @media (max-width: 950px) {
-    .section-4-set {
-        width: 150%;
-      }
+  .section-4-set {
+    width: 150%;
+  }
 
-    .section-5-desc {
-      width: 100%;
-      padding: 0 1.5rem;
-    }
+  .section-5-desc {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
 }
 
 @media (max-width: 950px) {
   .main-skillset {
+    -ms-grid-columns: (1fr)[4];
     grid-template-columns: repeat(4, 1fr);
-    filter: drop-shadow(-7px 7px 7px #37526781);
+    -webkit-filter: drop-shadow(-7px 7px 7px #37526781);
+            filter: drop-shadow(-7px 7px 7px #37526781);
   }
 
   .sub-skillset {
+    -ms-grid-columns: (1fr)[4];
     grid-template-columns: repeat(4, 1fr);
-    filter: drop-shadow(-7px 7px 7px #37526781);
+    -webkit-filter: drop-shadow(-7px 7px 7px #37526781);
+            filter: drop-shadow(-7px 7px 7px #37526781);
   }
 
   .fam-skillset {
-    filter: drop-shadow(-7px 7px 7px #37526781);
+    -webkit-filter: drop-shadow(-7px 7px 7px #37526781);
+            filter: drop-shadow(-7px 7px 7px #37526781);
   }
 }
-
 
 @media (max-width: 850px) {
   .sect-1-main-text {
@@ -737,10 +888,11 @@
   }
 
   .hero-img {
-    transform: translateX(0rem);
+    -webkit-transform: translateX(0rem);
+        -ms-transform: translateX(0rem);
+            transform: translateX(0rem);
     height: auto;
     width: 100%;
-    // margin: auto;
     position: relative;
   }
 
@@ -748,7 +900,9 @@
     height: 30%;
     width: 100%;
     margin: 10%;
-    transform: translateX(-10rem) translateY(-12rem);
+    -webkit-transform: translateX(-10rem) translateY(-12rem);
+        -ms-transform: translateX(-10rem) translateY(-12rem);
+            transform: translateX(-10rem) translateY(-12rem);
   }
 
   .sect-1-text {
@@ -777,6 +931,14 @@
   }
 
   .section-1 {
+    background: -o-radial-gradient(
+        95% 95%,
+        circle,
+        #1450a3bb,
+        #449dd1b5,
+        transparent 25%
+      ),
+      -o-radial-gradient(5% 5%, circle, #ff8400e2, #fccf3a, transparent 25%);
     background: radial-gradient(
         circle at 95% 95%,
         #1450a3bb,
@@ -784,16 +946,22 @@
         transparent 25%
       ),
       radial-gradient(circle at 5% 5%, #ff8400e2, #fccf3a, transparent 25%);
-      background-color: #d8eeff;
+    background-color: #d8eeff;
   }
 
   .section-5-circle {
     height: 32rem;
     width: 32rem;
 
-    filter: drop-shadow(-7px 7px 7px #37526781);
+    -webkit-filter: drop-shadow(-7px 7px 7px #37526781);
+
+            filter: drop-shadow(-7px 7px 7px #37526781);
 
     border: solid 1.5rem transparent;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)),
+      -webkit-gradient(linear, left top, right top, from(#0057ff), to(#7fc9ff));
+    background-image: -o-linear-gradient(white, white),
+      -o-linear-gradient(left, #0057ff, #7fc9ff);
     background-image: linear-gradient(white, white),
       linear-gradient(90deg, #0057ff, #7fc9ff);
   }
@@ -804,7 +972,10 @@
   }
 
   .section-5-container {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .section-5-circle {
@@ -812,7 +983,13 @@
     width: 25rem;
     border: solid 1rem transparent;
 
-    filter: drop-shadow(-5px 5px 5px #37526781);
+    -webkit-filter: drop-shadow(-5px 5px 5px #37526781);
+
+            filter: drop-shadow(-5px 5px 5px #37526781);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)),
+      -webkit-gradient(linear, left top, right top, from(#0057ff), to(#7fc9ff));
+    background-image: -o-linear-gradient(white, white),
+      -o-linear-gradient(left, #0057ff, #7fc9ff);
     background-image: linear-gradient(white, white),
       linear-gradient(90deg, #0057ff, #7fc9ff);
   }
@@ -820,8 +997,11 @@
 
 @media (max-width: 750px) {
   .section-5-container {
-      flex-direction: column;
-    }
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 
   .project-item-frame {
     height: 35rem;
@@ -831,24 +1011,33 @@
 }
 
 @media (max-width: 700px) {
-  .main-skill-text, .sub-skill-text, .fam-skill-text{
+  .main-skill-text,
+  .sub-skill-text,
+  .fam-skill-text {
     font-size: 5rem;
   }
 
-  .main-skillset, .sub-skillset, .fam-skillset {
+  .main-skillset,
+  .sub-skillset,
+  .fam-skillset {
+    -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 650px) {
   .hero-img {
-    transform: translateX(-7rem) translateY(-12rem);
+    -webkit-transform: translateX(-7rem) translateY(-12rem);
+        -ms-transform: translateX(-7rem) translateY(-12rem);
+            transform: translateX(-7rem) translateY(-12rem);
   }
 }
 
 @media (max-width: 550px) {
   .hero-img {
-    transform: translateX(-4rem) translateY(-10rem);
+    -webkit-transform: translateX(-4rem) translateY(-10rem);
+        -ms-transform: translateX(-4rem) translateY(-10rem);
+            transform: translateX(-4rem) translateY(-10rem);
   }
 
   .sect-1-nav {
@@ -873,6 +1062,8 @@
     height: 10rem;
     width: 10rem;
     @include heading-logo(github, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#40e9ff), to(#50febb));
+    background-image: -o-linear-gradient(left, #40e9ff, #50febb);
     background-image: linear-gradient(to right, #40e9ff, #50febb);
     cursor: pointer;
   }
@@ -881,6 +1072,8 @@
     height: 10rem;
     width: 10rem;
     @include heading-logo(linkedin, 10rem, 10rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#40e9ff), to(#50febb));
+    background-image: -o-linear-gradient(left, #40e9ff, #50febb);
     background-image: linear-gradient(to right, #40e9ff, #50febb);
     cursor: pointer;
   }
@@ -905,7 +1098,7 @@
     width: 50rem;
   }
 
-  .form-group{
+  .form-group {
     width: 80%;
   }
 }
@@ -927,19 +1120,25 @@
 
   .proj-button {
     height: 5rem;
+    background-image: -webkit-gradient(linear, left top, right top, from(white), to(white));
+    background-image: -o-linear-gradient(left, white, white);
     background-image: linear-gradient(90deg, white, white);
     border-radius: 14px;
     width: 17rem;
-    margin-bottom: 0.5rem
+    margin-bottom: 0.5rem;
   }
 
   .icon-gh {
     @include heading-logo(github, 2rem, 2rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
 
   .icon-live {
     @include heading-logo(live, 2rem, 2rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
 
@@ -948,15 +1147,15 @@
     width: 40rem;
   }
 
-  .form-group{
+  .form-group {
     width: 90%;
   }
 }
 
 @media (max-width: 500px) {
   .section-2 {
-      min-height: 135vh;
-    }
+    min-height: 135vh;
+  }
 
   .section-2-text {
     font-size: 5.5rem;
@@ -985,7 +1184,10 @@
   }
 
   .section-8 {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .skill-half {
@@ -993,7 +1195,10 @@
     height: auto;
   }
 
-  .main-skillset, .sub-skillset, .fam-skillset {
+  .main-skillset,
+  .sub-skillset,
+  .fam-skillset {
+    -ms-grid-columns: (1fr)[5];
     grid-template-columns: repeat(5, 1fr);
   }
 
@@ -1005,13 +1210,15 @@
 
 @media (max-width: 475px) {
   .sect-5-desc-cols {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .sect-5-col {
     width: 100%;
   }
-  
 }
 
 @media (max-width: 450px) {
@@ -1031,7 +1238,9 @@
   }
 
   .hero-img {
-    transform: translateX(-0rem) translateY(-10rem);
+    -webkit-transform: translateX(-0rem) translateY(-10rem);
+        -ms-transform: translateX(-0rem) translateY(-10rem);
+            transform: translateX(-0rem) translateY(-10rem);
   }
 
   .sect-1-logo {
@@ -1054,19 +1263,25 @@
 
   .proj-button {
     height: 4.5rem;
+    background-image: -webkit-gradient(linear, left top, right top, from(white), to(white));
+    background-image: -o-linear-gradient(left, white, white);
     background-image: linear-gradient(90deg, white, white);
     border-radius: 10px;
     width: 14rem;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
   }
 
   .icon-gh {
     @include heading-logo(github, 1.8rem, 1.8rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
 
   .icon-live {
     @include heading-logo(live, 1.8rem, 1.8rem);
+    background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+    background-image: -o-linear-gradient(left, #15283b, #15283b);
     background-image: linear-gradient(to right, #15283b, #15283b);
   }
 
@@ -1090,7 +1305,10 @@
     }
 
     .sect-1-buttons {
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       width: auto;
     }
 
@@ -1099,28 +1317,32 @@
       width: 8rem;
       @include heading-logo(github, 8rem, 8rem);
     }
-  
+
     .social-decoy-linkedin {
       height: 8rem;
       width: 8rem;
       @include heading-logo(linkedin, 8rem, 8rem);
     }
-  
+
     .social-item-github {
       height: 8rem;
       width: 8rem;
       @include heading-logo(github, 8rem, 8rem);
+      background-image: -webkit-gradient(linear, left top, right top, from(#40e9ff), to(#50febb));
+      background-image: -o-linear-gradient(left, #40e9ff, #50febb);
       background-image: linear-gradient(to right, #40e9ff, #50febb);
       cursor: pointer;
     }
-  
+
     .social-item-linkedin {
       height: 8rem;
       width: 8rem;
       @include heading-logo(linkedin, 8rem, 8rem);
+      background-image: -webkit-gradient(linear, left top, right top, from(#40e9ff), to(#50febb));
+      background-image: -o-linear-gradient(left, #40e9ff, #50febb);
       background-image: linear-gradient(to right, #40e9ff, #50febb);
       cursor: pointer;
-    }  
+    }
 
     .sect-1-nav-text {
       font-size: 2.7rem;
@@ -1139,5 +1361,4 @@
       padding: 1rem 2rem;
     }
   }
-
 }

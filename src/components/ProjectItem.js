@@ -24,7 +24,7 @@ const ProjectItem = ({ screenWidth, projectName, projectNum, projectImage, color
 
     const [fontInactive, setFontInactive] = useState('4.5rem');
     const [fontActive, setFontActive] = useState('5.5rem');
-  
+
     useEffect(() => {
         if (screenWidth <= 450) {
             setFontInactive('3rem');
@@ -36,14 +36,14 @@ const ProjectItem = ({ screenWidth, projectName, projectNum, projectImage, color
             setFontInactive('3rem');
             setFontActive('3.7rem');
         } else if (screenWidth <= 1050) {
-        setFontInactive('3.5rem');
-        setFontActive('4.2rem');
-      } else {
-        setFontInactive('4.5rem');
-        setFontActive('5.5rem');
-      }
+            setFontInactive('3.5rem');
+            setFontActive('4.2rem');
+        } else {
+            setFontInactive('4.5rem');
+            setFontActive('5.5rem');
+        }
     }, [screenWidth]);
-  
+
 
     return (
         <motion.div
@@ -58,7 +58,7 @@ const ProjectItem = ({ screenWidth, projectName, projectNum, projectImage, color
             onMouseLeave={Active1Leave}
         >
             <div className="project-main" style={{ marginLeft: `${inViewD1 ? "0" : "-150%"}` }}>
-                <img className="proj-img" src={projectImage} alt="Project"/>
+                <img className="proj-img" src={projectImage} alt="Project" />
                 <div className="whitesheet"></div>
                 <div className="col-sheet-1" style={{ width: `${active1 ? "100%" : "0%"}`, backgroundImage: `linear-gradient(to bottom right, ${color1}, ${color2})` }}></div>
 
@@ -67,7 +67,7 @@ const ProjectItem = ({ screenWidth, projectName, projectNum, projectImage, color
 
                     <div className="proj-buttons" onClick={(e) => { e.stopPropagation(); }}>
                         <button className="proj-button" onClick={(e) => { e.stopPropagation(); }}>Github
-                        <div className="icon-gh"></div>
+                            <div className="icon-gh"></div>
                         </button>
 
                         <button className="proj-button">Live Site

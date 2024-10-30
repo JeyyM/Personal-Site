@@ -27,6 +27,8 @@ body {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(black));
+  background-image: -o-linear-gradient(left, black, black);
   background-image: linear-gradient(to right, black, black);
   height: $top;
   fill: transparent;
@@ -87,7 +89,17 @@ body {
 .section-1 {
   height: 100vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  background: -o-radial-gradient(
+      95% 95%,
+      circle,
+      #1450a3bb,
+      #449dd1b5,
+      transparent 25%
+    ),
+    -o-radial-gradient(5% 5%, circle, #ff8400e2, #fccf3a, transparent 30%);
   background: radial-gradient(
       circle at 95% 95%,
       #1450a3bb,
@@ -103,12 +115,19 @@ body {
 .sect-1-hero {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .sect-1-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-top: 20rem;
   margin-left: 10rem;
   height: auto;
@@ -131,7 +150,8 @@ body {
   right: 0;
   margin-top: 20%;
   margin-right: 30%;
-  animation: rotate 3s ease forwards;
+  -webkit-animation: rotate 3s ease forwards;
+          animation: rotate 3s ease forwards;
 }
 
 .hero-rotate-2 {
@@ -143,7 +163,8 @@ body {
   right: 0;
   margin-top: 20%;
   margin-right: 25%;
-  animation: rotate-2 2.5s ease forwards;
+  -webkit-animation: rotate-2 2.5s ease forwards;
+          animation: rotate-2 2.5s ease forwards;
 }
 
 .hero-rotate-3 {
@@ -155,31 +176,24 @@ body {
   right: 0;
   margin-top: 20%;
   margin-right: 35%;
-  animation: rotate-3 2s ease forwards;
+  -webkit-animation: rotate-3 2s ease forwards;
+          animation: rotate-3 2s ease forwards;
 }
-
-// .moving-hero {
-//   position: absolute;
-//   width: 40rem;
-//   height: 40rem;
-//   background-image: linear-gradient(to bottom right, #449dd1, #1450a3);
-//   border-radius: 50%;
-//   animation: slide 3s ease forwards;
-//   font-size: 4rem;
-//   filter: drop-shadow(10px 10px 10px #37526781);
-// }
 
 .moving-container {
   position: relative;
   width: 50rem;
   height: 50rem;
-  animation: slide 3s ease forwards;
+  -webkit-animation: slide 3s ease forwards;
+          animation: slide 3s ease forwards;
   font-size: 4rem;
-  filter: drop-shadow(10px 10px 10px #37526781);
+  -webkit-filter: drop-shadow(10px 10px 10px #37526781);
+          filter: drop-shadow(10px 10px 10px #37526781);
 }
 
 .moving-img {
-  animation: slide 3s ease forwards;
+  -webkit-animation: slide 3s ease forwards;
+          animation: slide 3s ease forwards;
   width: 40rem;
   height: 40rem;
 }
@@ -188,112 +202,243 @@ body {
   position: absolute;
   width: 25rem;
   height: 25rem;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fccf3a), to(#fe4b09));
+  background-image: -o-linear-gradient(top left, #fccf3a, #fe4b09);
   background-image: linear-gradient(to bottom right, #fccf3a, #fe4b09);
   border-radius: 50%;
-  animation: slide-2 3s ease forwards;
+  -webkit-animation: slide-2 3s ease forwards;
+          animation: slide-2 3s ease forwards;
   font-size: 4rem;
-  filter: drop-shadow(5px 5px 5px #fe4a0975);
+  -webkit-filter: drop-shadow(5px 5px 5px #fe4a0975);
+          filter: drop-shadow(5px 5px 5px #fe4a0975);
 }
 
 .moving-hero-3 {
   position: absolute;
   width: 10rem;
   height: 10rem;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#5fd0df), to(#00cd7d));
+  background-image: -o-linear-gradient(top left, #5fd0df, #00cd7d);
   background-image: linear-gradient(to bottom right, #5fd0df, #00cd7d);
   border-radius: 50%;
-  animation: slide-3 3s ease forwards;
+  -webkit-animation: slide-3 3s ease forwards;
+          animation: slide-3 3s ease forwards;
   font-size: 4rem;
-  filter: drop-shadow(3px 3px 3px #00cd7e8b);
+  -webkit-filter: drop-shadow(3px 3px 3px #00cd7e8b);
+          filter: drop-shadow(3px 3px 3px #00cd7e8b);
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(70deg);
+            transform: rotate(70deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
 }
 
 @keyframes rotate {
   0% {
-    transform: rotate(70deg);
+    -webkit-transform: rotate(70deg);
+            transform: rotate(70deg);
   }
   100% {
-    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+@-webkit-keyframes rotate-2 {
+  0% {
+    -webkit-transform: rotate(70deg);
+            transform: rotate(70deg);
+  }
+  100% {
+    -webkit-transform: rotate(200deg);
+            transform: rotate(200deg);
   }
 }
 
 @keyframes rotate-2 {
   0% {
-    transform: rotate(70deg);
+    -webkit-transform: rotate(70deg);
+            transform: rotate(70deg);
   }
   100% {
-    transform: rotate(200deg);
+    -webkit-transform: rotate(200deg);
+            transform: rotate(200deg);
+  }
+}
+
+@-webkit-keyframes rotate-3 {
+  0% {
+    -webkit-transform: rotate(70deg);
+            transform: rotate(70deg);
+  }
+  100% {
+    -webkit-transform: rotate(130deg);
+            transform: rotate(130deg);
   }
 }
 
 @keyframes rotate-3 {
   0% {
-    transform: rotate(70deg);
+    -webkit-transform: rotate(70deg);
+            transform: rotate(70deg);
   }
   100% {
-    transform: rotate(130deg);
+    -webkit-transform: rotate(130deg);
+            transform: rotate(130deg);
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: translateY(-20rem) rotate(-70deg);
+            transform: translateY(-20rem) rotate(-70deg);
+  }
+  100% {
+    -webkit-transform: translateY(0rem) rotate(-270deg);
+            transform: translateY(0rem) rotate(-270deg);
   }
 }
 
 @keyframes slide {
   0% {
-    transform: translateY(-20rem) rotate(-70deg);
+    -webkit-transform: translateY(-20rem) rotate(-70deg);
+            transform: translateY(-20rem) rotate(-70deg);
   }
   100% {
-    transform: translateY(0rem) rotate(-270deg);
+    -webkit-transform: translateY(0rem) rotate(-270deg);
+            transform: translateY(0rem) rotate(-270deg);
+  }
+}
+
+@-webkit-keyframes slide-2 {
+  0% {
+    -webkit-transform: rotate(-70deg);
+            transform: rotate(-70deg);
+  }
+  100% {
+    -webkit-transform: rotate(-200deg);
+            transform: rotate(-200deg);
   }
 }
 
 @keyframes slide-2 {
   0% {
-    transform: rotate(-70deg);
+    -webkit-transform: rotate(-70deg);
+            transform: rotate(-70deg);
   }
   100% {
-    transform: rotate(-200deg);
+    -webkit-transform: rotate(-200deg);
+            transform: rotate(-200deg);
+  }
+}
+
+@-webkit-keyframes slide-3 {
+  0% {
+    -webkit-transform: rotate(-70deg);
+            transform: rotate(-70deg);
+  }
+  100% {
+    -webkit-transform: rotate(-130deg);
+            transform: rotate(-130deg);
   }
 }
 
 @keyframes slide-3 {
   0% {
-    transform: rotate(-70deg);
+    -webkit-transform: rotate(-70deg);
+            transform: rotate(-70deg);
   }
   100% {
-    transform: rotate(-130deg);
+    -webkit-transform: rotate(-130deg);
+            transform: rotate(-130deg);
+  }
+}
+
+@-webkit-keyframes hoverAnimation {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-3rem);
+            transform: translateX(-3rem);
   }
 }
 
 @keyframes hoverAnimation {
   0% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   100% {
-    transform: translateX(-3rem);
+    -webkit-transform: translateX(-3rem);
+            transform: translateX(-3rem);
+  }
+}
+
+@-webkit-keyframes hoverAnimation2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-2rem);
+            transform: translateX(-2rem);
   }
 }
 
 @keyframes hoverAnimation2 {
   0% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   100% {
-    transform: translateX(-2rem);
+    -webkit-transform: translateX(-2rem);
+            transform: translateX(-2rem);
+  }
+}
+
+@-webkit-keyframes hoverAnimation3 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
   }
 }
 
 @keyframes hoverAnimation3 {
   0% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   100% {
-    transform: translateX(-1rem);
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
   }
 }
 
 .home-navbar {
   background-color: #181818;
   height: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 100;
   width: 100%;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
   position: sticky;
   margin-bottom: -10rem;
@@ -309,13 +454,16 @@ body {
 .home-nav-logo {
   height: 8.5rem;
   width: 8.5rem;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
   cursor: pointer;
   margin-right: auto;
 }
 
 .home-nav-logo:hover {
-  filter: brightness(120%);
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
 }
 
 .main-nav-text {
@@ -328,50 +476,46 @@ body {
 
 .main-nav-text:hover {
   color: transparent;
-  filter: brightness(120%);
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
 }
 
 .main-nav-col {
+  background-image: -webkit-gradient(linear, left top, right top, from(#1450a3), to(#449dd1));
+  background-image: -o-linear-gradient(left, #1450a3, #449dd1);
   background-image: linear-gradient(90deg, #1450a3, #449dd1);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
-
-// .header-home-text {
-//   font-size: 3rem;
-//   color: white;
-//   font-family: "Roboto", sans-serif;
-//   line-height: 1;
-//   padding-bottom: 0.3rem;
-//   background-image: linear-gradient(0deg, #17ead9, #0057ff);
-//   -webkit-background-clip: text;
-//           background-clip: text;
-//   transition: all 0.3s;
-//   cursor: pointer;
-// }
-
-// .header-home-text:hover {
-//   color: transparent;
-// }
 
 .nav-visible {
   top: 0;
 }
 
 .nav-hidden {
-  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 .sect-1-bg {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: absolute;
   z-index: -1;
 }
 
 .sect-1-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 2rem;
   margin-top: 3rem;
@@ -380,6 +524,8 @@ body {
 
 .sect-1-button-1 {
   height: 7rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#1450a3), to(#449dd1));
+  background-image: -o-linear-gradient(left, #1450a3, #449dd1);
   background-image: linear-gradient(90deg, #1450a3, #449dd1);
   border-radius: 20px;
   width: 25rem;
@@ -388,10 +534,19 @@ body {
   font-size: 3rem;
   color: #ffffff;
   font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  filter: brightness(100%) drop-shadow(0px 0px 5px #375267);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-filter: brightness(100%) drop-shadow(0px 0px 5px #375267);
+          filter: brightness(100%) drop-shadow(0px 0px 5px #375267);
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
   gap: 1rem;
   cursor: pointer;
@@ -399,16 +554,20 @@ body {
 
 .sect-1-button-1:hover {
   gap: 2rem;
-  filter: brightness(150%) drop-shadow(0px 0px 5px #1450a3);
+  -webkit-filter: brightness(150%) drop-shadow(0px 0px 5px #1450a3);
+          filter: brightness(150%) drop-shadow(0px 0px 5px #1450a3);
 }
 
 .sect-1-button-1:active {
-  box-shadow: 0 0 0 2px white, 0 0 0 4px #1450a3;
+  -webkit-box-shadow: 0 0 0 2px white, 0 0 0 4px #1450a3;
+          box-shadow: 0 0 0 2px white, 0 0 0 4px #1450a3;
 }
 
 .sect-1-button-2 {
   gap: 1rem;
   height: 7rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#fe4b09), to(#ffb238));
+  background-image: -o-linear-gradient(left, #fe4b09, #ffb238);
   background-image: linear-gradient(90deg, #fe4b09, #ffb238);
   border-radius: 20px;
   width: 25rem;
@@ -417,39 +576,59 @@ body {
   font-size: 3rem;
   color: #ffffff;
   font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  filter: brightness(100%) drop-shadow(0px 0px 5px #ff916a);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-filter: brightness(100%) drop-shadow(0px 0px 5px #ff916a);
+          filter: brightness(100%) drop-shadow(0px 0px 5px #ff916a);
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
   cursor: pointer;
 }
 
 .sect-1-button-2:hover {
   gap: 2rem;
-  filter: brightness(120%) drop-shadow(0px 0px 5px #fe4b09);
+  -webkit-filter: brightness(120%) drop-shadow(0px 0px 5px #fe4b09);
+          filter: brightness(120%) drop-shadow(0px 0px 5px #fe4b09);
 }
 
 .sect-1-button-2:active {
-  box-shadow: 0 0 0 2px white, 0 0 0 4px #fe4b09;
+  -webkit-box-shadow: 0 0 0 2px white, 0 0 0 4px #fe4b09;
+          box-shadow: 0 0 0 2px white, 0 0 0 4px #fe4b09;
 }
 
 .icon-mail {
   @include heading-logo(mail, 4rem, 4rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(white), to(white));
+  background-image: -o-linear-gradient(left, white, white);
   background-image: linear-gradient(to right, white, white);
 }
 
 .icon-resume {
   @include heading-logo(resume, 4rem, 3rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(white), to(white));
+  background-image: -o-linear-gradient(left, white, white);
   background-image: linear-gradient(to right, white, white);
 }
 
 .sect-1-socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   bottom: 0;
   right: 0;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 3rem;
   margin: 3rem;
   z-index: 4;
@@ -464,6 +643,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(mailbox, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
   cursor: pointer;
 }
@@ -472,6 +653,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(github, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#40e9ff), to(#50febb));
+  background-image: -o-linear-gradient(left, #40e9ff, #50febb);
   background-image: linear-gradient(to right, #40e9ff, #50febb);
   cursor: pointer;
 }
@@ -480,16 +663,23 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(linkedin, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#40e9ff), to(#50febb));
+  background-image: -o-linear-gradient(left, #40e9ff, #50febb);
   background-image: linear-gradient(to right, #40e9ff, #50febb);
   cursor: pointer;
 }
 
 .sect-1-socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   bottom: 0;
   right: 0;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 3rem;
   margin: 3rem;
   z-index: 4;
@@ -504,13 +694,18 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(github, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
   cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.social-decoy-github:hover{
-  filter: brightness(120%);
+.social-decoy-github:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
   opacity: 0;
 }
 
@@ -518,13 +713,18 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(linkedin, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
   cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.social-decoy-linkedin:hover{
-  filter: brightness(120%);
+.social-decoy-linkedin:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
   opacity: 0;
 }
 
@@ -536,14 +736,19 @@ body {
   left: 0;
   margin: 3rem;
   border-radius: 50%;
-  filter: drop-shadow(0px 0px 5px #3a4d5c);
+  -webkit-filter: drop-shadow(0px 0px 5px #3a4d5c);
+          filter: drop-shadow(0px 0px 5px #3a4d5c);
   cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
-  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
 }
 
 .sect-1-logo:hover {
-  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
 }
 
 .sect-1-nav {
@@ -551,6 +756,8 @@ body {
   top: 0;
   right: 0;
   margin: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 3rem;
   z-index: 4;
@@ -565,30 +772,47 @@ body {
 }
 
 .nav-text-1 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#1450a3), to(#449dd1));
+  background-image: -o-linear-gradient(left, #1450a3, #449dd1);
   background-image: linear-gradient(90deg, #1450a3, #449dd1);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 
 .nav-text-1:hover {
   color: transparent;
-  filter: brightness(120%);
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
 }
 
 .nav-text-2 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#fe4b09), to(#ffb238));
+  background-image: -o-linear-gradient(left, #fe4b09, #ffb238);
   background-image: linear-gradient(90deg, #fe4b09, #ffb238);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 
 .nav-text-2:hover {
   color: transparent;
-  filter: brightness(120%);
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
 }
 
 .nav-text-3 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#52b1bd), to(#01b06d));
+  background-image: -o-linear-gradient(left, #52b1bd, #01b06d);
   background-image: linear-gradient(90deg, #52b1bd, #01b06d);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 
@@ -600,12 +824,17 @@ body {
   font-family: "Franklin Gothic Medium";
   font-size: 4.5rem;
   color: #15283b;
-  filter: drop-shadow(-5px 5px 0px #37526781);
+  -webkit-filter: drop-shadow(-5px 5px 0px #37526781);
+          filter: drop-shadow(-5px 5px 0px #37526781);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   margin-bottom: 1rem;
 }
 
@@ -615,8 +844,13 @@ body {
   width: 100%;
   background-color: #d8eeff;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
 }
 
@@ -634,7 +868,11 @@ body {
   height: 25vh;
   width: 100%;
   position: absolute;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -642,32 +880,61 @@ body {
   height: 40vh;
   width: 100%;
   position: absolute;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#56bffc), to(#1d6bd9));
+  background-image: -o-linear-gradient(top left, #56bffc, #1d6bd9);
   background-image: linear-gradient(to bottom right, #56bffc, #1d6bd9);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .section-2-a {
   height: 100%;
   width: 50%;
-  filter: drop-shadow(0px 5px 5px #0000002b);
+  -webkit-filter: drop-shadow(0px 5px 5px #0000002b);
+          filter: drop-shadow(0px 5px 5px #0000002b);
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 2rem;
 }
 .section-2-b {
   height: 100%;
   width: 50%;
-  filter: drop-shadow(0px 5px 5px #0000002b);
+  -webkit-filter: drop-shadow(0px 5px 5px #0000002b);
+          filter: drop-shadow(0px 5px 5px #0000002b);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 2rem;
 }
 
@@ -687,12 +954,18 @@ body {
 
 .made-row {
   margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: auto;
   width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  filter: drop-shadow(-5px 5px 0px #15283bae);
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-filter: drop-shadow(-5px 5px 0px #15283bae);
+          filter: drop-shadow(-5px 5px 0px #15283bae);
 }
 
 .feature-item-html {
@@ -700,6 +973,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(html, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
@@ -708,6 +983,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(css, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
@@ -716,6 +993,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(js, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
@@ -724,6 +1003,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(sass, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
@@ -732,6 +1013,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(next, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
@@ -740,6 +1023,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(react, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
@@ -748,6 +1033,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(vercel, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
@@ -756,6 +1043,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(mongodb, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
@@ -764,6 +1053,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(framer, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
@@ -772,6 +1063,8 @@ body {
   height: 12rem;
   width: 12rem;
   @include heading-logo(figma, 12rem, 12rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
@@ -785,15 +1078,25 @@ body {
   z-index: 2;
   margin-top: -8rem;
   margin-left: -1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-family: "Lato";
   font-size: 2rem;
   color: #1f3c5a;
   font-weight: 600;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
-  transform: translateY(1rem);
+  -webkit-transform: translateY(1rem);
+      -ms-transform: translateY(1rem);
+          transform: translateY(1rem);
   opacity: 0;
 }
 
@@ -802,7 +1105,9 @@ body {
   position: absolute;
   bottom: -1rem;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   border-width: 1rem 1rem 0;
   border-style: solid;
   border-color: white transparent;
@@ -811,16 +1116,23 @@ body {
 .made-container:hover .feature-annotation,
 .made-container:active .feature-annotation {
   opacity: 1;
-  transform: translateY(-0rem);
+  -webkit-transform: translateY(-0rem);
+      -ms-transform: translateY(-0rem);
+          transform: translateY(-0rem);
 }
 
 .section-3 {
   height: 100vh;
   width: 100%;
   background-color: #15283b;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   overflow: hidden;
 }
@@ -830,9 +1142,10 @@ body {
   font-size: 12rem;
   color: #15283b;
   z-index: 3;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.642);
-
 }
 
 .section-3-text-x {
@@ -841,8 +1154,12 @@ body {
   font-size: 12rem;
   color: #15283b;
   z-index: 3;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.642);
 }
 
@@ -852,8 +1169,12 @@ body {
   left: 0;
   width: 50%;
   height: 50%;
-  object-fit: cover;
-  object-position: 20%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 20%;
+     object-position: 20%;
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
   transition: all 0.8s;
 }
 
@@ -863,8 +1184,12 @@ body {
   left: 0;
   width: 50%;
   height: 50%;
-  object-fit: cover;
-  object-position: 20%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 20%;
+     object-position: 20%;
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
   transition: all 0.8s;
 }
 
@@ -874,7 +1199,10 @@ body {
   right: 0;
   width: 50%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
   transition: all 0.8s;
   margin-right: -60vw;
 }
@@ -883,20 +1211,32 @@ body {
   height: 100vh;
   width: 100%;
   background-color: #d8eeff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   overflow: hidden;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .section-4-set {
   width: 110%;
   height: 300%;
   background-color: #d8eeff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
   position: absolute;
 }
 
@@ -910,54 +1250,77 @@ body {
 .section-4-img {
   height: 100%;
   width: 25%;
-  object-fit: contain;
-  // animation: scrollImage 120s linear infinite;
+  -o-object-fit: contain;
+     object-fit: contain;
   background-repeat: repeat;
+  -webkit-transition: all 1s ease-in;
+  -o-transition: all 1s ease-in;
   transition: all 1s ease-in;
 }
 
 .scrolling-background-1 {
   height: 200%;
   width: 25%;
-  background-image: url('/group1.webp');
+  background-image: url("/group1.webp");
   background-size: contain;
   background-repeat: repeat-y;
   background-position: top;
-  animation: scrollImage 120s linear infinite;
+  -webkit-animation: scrollImage 120s linear infinite;
+          animation: scrollImage 120s linear infinite;
+  -webkit-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
   transition: all 2s ease-in;
 }
 
 .scrolling-background-2 {
   height: 200%;
   width: 25%;
-  background-image: url('/group2.webp');
+  background-image: url("/group2.webp");
   background-size: contain;
   background-repeat: repeat-y;
   background-position: bottom;
-  animation: scrollImageReverse 120s linear infinite;
+  -webkit-animation: scrollImageReverse 120s linear infinite;
+          animation: scrollImageReverse 120s linear infinite;
+  -webkit-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
   transition: all 2s ease-in;
 }
 
 .scrolling-background-3 {
   height: 200%;
   width: 25%;
-  background-image: url('/group3.webp');
+  background-image: url("/group3.webp");
   background-size: contain;
   background-repeat: repeat-y;
   background-position: top;
-  animation: scrollImage 120s linear infinite;
+  -webkit-animation: scrollImage 120s linear infinite;
+          animation: scrollImage 120s linear infinite;
+  -webkit-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
   transition: all 2s ease-in;
 }
 
 .scrolling-background-4 {
   height: 200%;
   width: 25%;
-  background-image: url('/group4.webp');
+  background-image: url("/group4.webp");
   background-size: contain;
   background-repeat: repeat-y;
   background-position: bottom;
-  animation: scrollImageReverse 120s linear infinite;
+  -webkit-animation: scrollImageReverse 120s linear infinite;
+          animation: scrollImageReverse 120s linear infinite;
+  -webkit-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
   transition: all 2s ease-in;
+}
+
+@-webkit-keyframes scrollImage {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
 }
 
 @keyframes scrollImage {
@@ -966,6 +1329,15 @@ body {
   }
   100% {
     background-position: 0 100%;
+  }
+}
+
+@-webkit-keyframes scrollImageReverse {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0%;
   }
 }
 
@@ -981,41 +1353,23 @@ body {
 .section-4-img-b {
   height: 100%;
   width: 25%;
-  object-fit: cover;
-  animation: scrollImageReverse 60s linear infinite;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation: scrollImageReverse 60s linear infinite;
+          animation: scrollImageReverse 60s linear infinite;
   background-repeat: repeat;
+  -webkit-transition: all 1s ease-in;
+  -o-transition: all 1s ease-in;
   transition: all 1s ease-in;
 }
-
-// @keyframes scrollImage {
-//   0% {
-//     transform: translateY(0);
-//   }
-//   50% {
-//     transform: translateY(-100%);
-//   }
-//   100% {
-//     transform: translateY(0);
-//   }
-// }
-
-// @keyframes scrollImageReverse {
-//   0% {
-//     transform: translateY(0);
-//   }
-//   50% {
-//     transform: translateY(100%);
-//   }
-//   100% {
-//     transform: translateY(0);
-//   }
-// }
 
 .section-4-text {
   font-family: "Franklin Gothic Medium";
   font-size: 8rem;
   color: #15283b;
   z-index: 3;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
   display: inline;
   margin: 0 auto;
@@ -1029,14 +1383,30 @@ body {
   background-color: #d8eeff;
   padding: 5rem 10rem;
   position: relative;
-  background:
-  radial-gradient(circle at 100% 5%, #1450a3a4, #449dd1a0, transparent 30%),
-  radial-gradient(circle at 5% 35%, #5fd0dfc0, #00cd7e97, transparent 30%),
+  background: -o-radial-gradient(
+      100% 5%,
+      circle,
+      #1450a3a4,
+      #449dd1a0,
+      transparent 30%
+    ),
+    -o-radial-gradient(5% 35%, circle, #5fd0dfc0, #00cd7e97, transparent 30%),
+    -o-radial-gradient(100% 65%, circle, #fe4a0979, #fccf3a98, transparent 30%),
+    -o-radial-gradient(5% 100%, circle, #1450a3a4, #449dd1a0, transparent 30%);
+  background: radial-gradient(
+      circle at 100% 5%,
+      #1450a3a4,
+      #449dd1a0,
+      transparent 30%
+    ),
+    radial-gradient(circle at 5% 35%, #5fd0dfc0, #00cd7e97, transparent 30%),
     radial-gradient(circle at 100% 65%, #fe4a0979, #fccf3a98, transparent 30%),
-  radial-gradient(circle at 5% 100%, #1450a3a4, #449dd1a0, transparent 30%);
+    radial-gradient(circle at 5% 100%, #1450a3a4, #449dd1a0, transparent 30%);
 }
 
 .section-5-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -1047,10 +1417,15 @@ body {
   border-radius: 50%;
   position: relative;
   margin: auto;
-  filter: drop-shadow(-10px 10px 10px #37526781);
+  -webkit-filter: drop-shadow(-10px 10px 10px #37526781);
+          filter: drop-shadow(-10px 10px 10px #37526781);
 
   border: solid 1.5rem transparent;
   border-radius: 50%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)),
+    -webkit-gradient(linear, left top, right top, from(#0057ff), to(#7fc9ff));
+  background-image: -o-linear-gradient(white, white),
+    -o-linear-gradient(left, #0057ff, #7fc9ff);
   background-image: linear-gradient(white, white),
     linear-gradient(90deg, #0057ff, #7fc9ff);
   background-origin: border-box;
@@ -1074,12 +1449,15 @@ body {
 .section-5-img {
   height: 80%;
   width: 80%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   position: absolute;
   margin: auto;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .section-5-wave {
@@ -1089,14 +1467,21 @@ body {
   margin: auto;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-color: #0057ff;
   border-radius: 50%;
 }
 
 .section-5-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 90%;
   margin: auto;
   margin-right: 0;
@@ -1107,7 +1492,8 @@ body {
   font-family: "Franklin Gothic Medium";
   font-size: 6rem;
   color: #15283b;
-  filter: drop-shadow(-5px 5px 0px #37526781);
+  -webkit-filter: drop-shadow(-5px 5px 0px #37526781);
+          filter: drop-shadow(-5px 5px 0px #37526781);
   margin-bottom: 1rem;
   margin-left: 2.5rem;
 }
@@ -1137,34 +1523,51 @@ body {
 }
 
 .sect-5-desc-cols {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   gap: 3rem;
 }
 
 .sect-5-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 50%;
   margin-left: 2rem;
 }
 
 .projects-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 4rem;
   margin-top: 5rem;
   width: 100%;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .project-item-frame {
   height: 45rem;
   width: 70rem;
   overflow: hidden;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
-  // filter: drop-shadow(-10px 10px 0px #3752679c);
   border-radius: 15px;
 }
 
@@ -1172,14 +1575,19 @@ body {
   height: 100%;
   width: 100%;
   background-color: #00cd7d;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
   position: relative;
+  -webkit-transition: all 0.76s ease-out;
+  -o-transition: all 0.76s ease-out;
   transition: all 0.76s ease-out;
   cursor: pointer;
 }
 
 .proj-img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -1191,6 +1599,8 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(gray));
+  background-image: -o-linear-gradient(top left, white, gray);
   background-image: linear-gradient(to bottom right, white, gray);
   opacity: 0.4;
   top: 0;
@@ -1201,6 +1611,8 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(gray));
+  background-image: -o-linear-gradient(top left, white, gray);
   background-image: linear-gradient(to bottom right, white, gray);
   opacity: 1;
   top: 0;
@@ -1211,10 +1623,14 @@ body {
   height: 100%;
   width: 0%;
   position: absolute;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#449dd1), to(#1450a3));
+  background-image: -o-linear-gradient(top left, #449dd1, #1450a3);
   background-image: linear-gradient(to bottom right, #449dd1, #1450a3);
   top: 0;
   left: 0;
   opacity: 0.8;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -1222,7 +1638,10 @@ body {
   font-family: "Franklin Gothic Medium";
   font-size: 4.5rem;
   color: #15283b;
-  filter: drop-shadow(-5px 5px 0px #37526781);
+  -webkit-filter: drop-shadow(-5px 5px 0px #37526781);
+          filter: drop-shadow(-5px 5px 0px #37526781);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -1234,18 +1653,27 @@ body {
   margin-left: 2rem;
   width: 100%;
   margin-bottom: -6.5rem;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 .proj-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 1rem;
 }
 
 .proj-button {
   height: 6rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(white), to(white));
+  background-image: -o-linear-gradient(left, white, white);
   background-image: linear-gradient(90deg, white, white);
   border-radius: 20px;
   width: 25rem;
@@ -1254,10 +1682,19 @@ body {
   font-size: 2.5rem;
   color: #15283b;
   font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  filter: drop-shadow(0px 0px 5px #375267);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-filter: drop-shadow(0px 0px 5px #375267);
+          filter: drop-shadow(0px 0px 5px #375267);
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
   gap: 1rem;
   cursor: pointer;
@@ -1265,11 +1702,15 @@ body {
 
 .icon-gh {
   @include heading-logo(github, 3rem, 3rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
 .icon-live {
   @include heading-logo(live, 3rem, 3rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#15283b), to(#15283b));
+  background-image: -o-linear-gradient(left, #15283b, #15283b);
   background-image: linear-gradient(to right, #15283b, #15283b);
 }
 
@@ -1277,11 +1718,14 @@ body {
   font-family: "Franklin Gothic Medium";
   font-size: 10rem;
   color: #15283b;
-  filter: drop-shadow(-5px 5px 0px #37526781);
+  -webkit-filter: drop-shadow(-5px 5px 0px #37526781);
+          filter: drop-shadow(-5px 5px 0px #37526781);
   position: absolute;
   top: 0;
   right: 0;
   margin-right: 2rem;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -1289,14 +1733,17 @@ body {
   height: 100%;
   width: 150%;
   position: absolute;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#449dd1), to(#1450a3));
+  background-image: -o-linear-gradient(top left, #449dd1, #1450a3);
   background-image: linear-gradient(to bottom right, #449dd1, #1450a3);
   top: 0;
   left: 0;
+  -webkit-transition: all 1.22s ease-out;
+  -o-transition: all 1.22s ease-out;
   transition: all 1.22s ease-out;
 }
 
 .portfolio-proj {
-  // background-color: #15283B;
   background-color: #181818;
   height: auto;
   width: 100%;
@@ -1306,11 +1753,22 @@ body {
 .more-soon {
   height: 20vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#00cd7d), to(#5fd0df));
+  background-image: -o-linear-gradient(top left, #00cd7d, #5fd0df);
   background-image: linear-gradient(to bottom right, #00cd7d, #5fd0df);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 10;
 }
 
@@ -1318,14 +1776,21 @@ body {
   font-family: "Franklin Gothic Medium";
   font-size: 4.5rem;
   color: white;
-  filter: drop-shadow(-5px 5px 0px #37526781);
+  -webkit-filter: drop-shadow(-5px 5px 0px #37526781);
+          filter: drop-shadow(-5px 5px 0px #37526781);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 .section-6 {
   min-height: 100vh;
   width: 100%;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fccf3a), to(#fe4b09));
+  background-image: -o-linear-gradient(top left, #fccf3a, #fe4b09);
   background-image: linear-gradient(to bottom right, #fccf3a, #fe4b09);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -1333,10 +1798,19 @@ body {
 
 .about-text {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .about-img {
@@ -1348,7 +1822,10 @@ body {
   font-family: "Franklin Gothic Medium";
   font-size: 7rem;
   color: #181818;
-  filter: drop-shadow(-5px 5px 0px #6b6b6c81);
+  -webkit-filter: drop-shadow(-5px 5px 0px #6b6b6c81);
+          filter: drop-shadow(-5px 5px 0px #6b6b6c81);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -1365,7 +1842,9 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 100%;
 }
 
@@ -1378,6 +1857,8 @@ body {
   height: 100vh;
   width: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -1387,17 +1868,30 @@ body {
   position: fixed;
   background-color: #00cd7d;
   z-index: 10;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .story-piece {
   height: 100%;
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .story-img {
@@ -1409,33 +1903,53 @@ body {
   padding-bottom: 2rem;
   width: 100%;
   position: absolute;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: #18181888;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   bottom: 0;
   transition: all 0.5s;
 }
 
 .skill-row {
   margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: auto;
   width: 100%;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .skill-container {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 .skill-container:hover .feature-annotation,
 .skill-container:active .feature-annotation {
   opacity: 1;
-  transform: translateY(-0rem);
+  -webkit-transform: translateY(-0rem);
+      -ms-transform: translateY(-0rem);
+          transform: translateY(-0rem);
 }
 
 .skill-item-python {
@@ -1443,6 +1957,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(python, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1455,6 +1980,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(turtle, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1467,6 +2003,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(tkinter, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1479,6 +2026,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(sql, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1491,6 +2049,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(soup, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1503,6 +2072,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(twilio, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1515,6 +2095,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(oop, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1527,6 +2118,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(html, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1539,6 +2141,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(flask, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1551,6 +2164,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(bootstrap, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1563,6 +2187,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(jinja, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1575,6 +2210,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(pandas, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1587,6 +2233,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(seaborn, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1599,6 +2256,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(colab, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1611,6 +2279,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(js, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1623,6 +2302,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(jquery, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1635,6 +2325,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(node, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1647,6 +2348,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(express, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1659,6 +2371,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(api, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1671,6 +2394,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(mongodb, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1683,6 +2417,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(ui, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1695,6 +2440,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(ux, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1707,6 +2463,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(responsive, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1719,6 +2486,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(accessibility, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1731,6 +2509,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(figma, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1743,6 +2532,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(design, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1755,6 +2555,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(wireframe, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1767,6 +2578,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(react, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1779,6 +2601,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(devtools, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1791,6 +2624,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(firebase, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1803,6 +2647,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(redux, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1815,6 +2670,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(next, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1827,6 +2693,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(serverside, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1839,6 +2716,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(vercel, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1851,6 +2739,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(framer, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1863,6 +2762,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(css, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1875,6 +2785,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(sass, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1887,6 +2808,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(vscode, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1899,6 +2831,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(git, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1911,6 +2854,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(github, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1923,6 +2877,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(terminal, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1935,6 +2900,17 @@ body {
   height: 10rem;
   width: 10rem;
   @include heading-logo(gitkraken, 10rem, 10rem);
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(255, 255, 255, 0.687)),
+    to(rgba(255, 255, 255, 0.687))
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.687),
+    rgba(255, 255, 255, 0.687)
+  );
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.687),
@@ -1953,7 +2929,22 @@ body {
   min-height: 100vh;
   width: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  background-image: -webkit-gradient(
+    linear,
+    left top, right bottom,
+    from(#db19537a),
+    color-stop(#fe4a099a),
+    to(#d8eeff)
+  );
+  background-image: -o-linear-gradient(
+    top left,
+    #db19537a,
+    #fe4a099a,
+    #d8eeff
+  );
   background-image: linear-gradient(
     to bottom right,
     #db19537a,
@@ -1972,14 +2963,21 @@ body {
   height: 100%;
   border-radius: 30px;
   height: auto;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 
   position: relative;
-  filter: drop-shadow(-10px 10px 10px #37526781);
+  -webkit-filter: drop-shadow(-10px 10px 10px #37526781);
+          filter: drop-shadow(-10px 10px 10px #37526781);
 
   border: solid 1.5rem transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#bfe1fc), to(#a0d4fc)),
+    -webkit-gradient(linear, left top, right top, from(#00cd7d), to(#5fd0df));
+  background-image: -o-linear-gradient(#bfe1fc, #a0d4fc),
+    -o-linear-gradient(left, #00cd7d, #5fd0df);
   background-image: linear-gradient(#bfe1fc, #a0d4fc),
     linear-gradient(90deg, #00cd7d, #5fd0df);
   background-origin: border-box;
@@ -1993,14 +2991,21 @@ body {
   height: 100%;
   border-radius: 30px;
   height: auto;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 
   position: relative;
-  filter: drop-shadow(-10px 10px 10px #37526781);
+  -webkit-filter: drop-shadow(-10px 10px 10px #37526781);
+          filter: drop-shadow(-10px 10px 10px #37526781);
 
   border: solid 1.5rem transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#bfe1fc), to(#a0d4fc)),
+    -webkit-gradient(linear, left top, right top, from(#1450a3), to(#449dd1));
+  background-image: -o-linear-gradient(#bfe1fc, #a0d4fc),
+    -o-linear-gradient(left, #1450a3, #449dd1);
   background-image: linear-gradient(#bfe1fc, #a0d4fc),
     linear-gradient(90deg, #1450a3, #449dd1);
   background-origin: border-box;
@@ -2014,14 +3019,21 @@ body {
   height: 100%;
   border-radius: 30px;
   height: auto;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr 1rem 1fr;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 
   position: relative;
-  filter: drop-shadow(-10px 10px 10px #37526781);
+  -webkit-filter: drop-shadow(-10px 10px 10px #37526781);
+          filter: drop-shadow(-10px 10px 10px #37526781);
 
   border: solid 1.5rem transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#bfe1fc), to(#a0d4fc)),
+    -webkit-gradient(linear, left top, right top, from(#fe4b09), to(#fccf3a));
+  background-image: -o-linear-gradient(#bfe1fc, #a0d4fc),
+    -o-linear-gradient(left, #fe4b09, #fccf3a);
   background-image: linear-gradient(#bfe1fc, #a0d4fc),
     linear-gradient(90deg, #fe4b09, #fccf3a);
   background-origin: border-box;
@@ -2037,15 +3049,25 @@ body {
   background-color: white;
   z-index: 2;
   margin-top: -7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-family: "Lato";
   font-size: 2rem;
   color: #1f3c5a;
   font-weight: 600;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
-  transform: translateY(1rem) translateX(-50%);
+  -webkit-transform: translateY(1rem) translateX(-50%);
+      -ms-transform: translateY(1rem) translateX(-50%);
+          transform: translateY(1rem) translateX(-50%);
   opacity: 0;
   left: 50%;
   pointer-events: none;
@@ -2056,59 +3078,82 @@ body {
   position: absolute;
   bottom: -1rem;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   border-width: 1rem 1rem 0;
   border-style: solid;
   border-color: white transparent;
 }
 
 .final-container {
-  filter: drop-shadow(-5px 5px 0px rgb(0, 155, 175));
+  -webkit-filter: drop-shadow(-5px 5px 0px rgb(0, 155, 175));
+          filter: drop-shadow(-5px 5px 0px rgb(0, 155, 175));
   position: relative;
 }
 
 .final-container-b {
-  filter: drop-shadow(-5px 5px 0px #1450a3);
+  -webkit-filter: drop-shadow(-5px 5px 0px #1450a3);
+          filter: drop-shadow(-5px 5px 0px #1450a3);
   position: relative;
 }
 
 .final-container-c {
-  filter: drop-shadow(-5px 5px 0px #fe4b09);
+  -webkit-filter: drop-shadow(-5px 5px 0px #fe4b09);
+          filter: drop-shadow(-5px 5px 0px #fe4b09);
   position: relative;
 }
 
 .final-container:hover .final-annotation,
 .final-container:active .final-annotation {
   opacity: 1;
-  transform: translateY(-0rem) translateX(-50%);
+  -webkit-transform: translateY(-0rem) translateX(-50%);
+      -ms-transform: translateY(-0rem) translateX(-50%);
+          transform: translateY(-0rem) translateX(-50%);
 }
 
 .final-container-b:hover .final-annotation,
 .final-container-b:active .final-annotation {
   opacity: 1;
-  transform: translateY(-0rem) translateX(-50%);
+  -webkit-transform: translateY(-0rem) translateX(-50%);
+      -ms-transform: translateY(-0rem) translateX(-50%);
+          transform: translateY(-0rem) translateX(-50%);
 }
 
 .final-container-c:hover .final-annotation,
 .final-container-c:active .final-annotation {
   opacity: 1;
-  transform: translateY(-0rem) translateX(-50%);
+  -webkit-transform: translateY(-0rem) translateX(-50%);
+      -ms-transform: translateY(-0rem) translateX(-50%);
+          transform: translateY(-0rem) translateX(-50%);
 }
 
 .skill-half {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-skill-text {
   font-family: "Franklin Gothic Medium";
   font-size: 6.5rem;
   color: #15283b;
-  filter: drop-shadow(-5px 5px 0px #00cd7e8c);
+  -webkit-filter: drop-shadow(-5px 5px 0px #00cd7e8c);
+          filter: drop-shadow(-5px 5px 0px #00cd7e8c);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
   margin: 1rem;
 }
@@ -2117,7 +3162,10 @@ body {
   font-family: "Franklin Gothic Medium";
   font-size: 6.5rem;
   color: #15283b;
-  filter: drop-shadow(-5px 5px 0px #449dd17f);
+  -webkit-filter: drop-shadow(-5px 5px 0px #449dd17f);
+          filter: drop-shadow(-5px 5px 0px #449dd17f);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
   margin: 1rem;
 }
@@ -2126,7 +3174,10 @@ body {
   font-family: "Franklin Gothic Medium";
   font-size: 6.5rem;
   color: #15283b;
-  filter: drop-shadow(-5px 5px 0px #fe4a097e);
+  -webkit-filter: drop-shadow(-5px 5px 0px #fe4a097e);
+          filter: drop-shadow(-5px 5px 0px #fe4a097e);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
   margin: 1rem;
 }
@@ -2136,6 +3187,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(html, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2145,6 +3198,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(js, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2154,6 +3209,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(css, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2163,6 +3220,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(react, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2172,6 +3231,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(sass, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2181,6 +3242,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(framer, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2190,6 +3253,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(next, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2199,6 +3264,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(mongodb, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2208,6 +3275,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(git, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2217,6 +3286,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(figma, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2226,6 +3297,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(vscode, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2235,6 +3308,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(vercel, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2244,6 +3319,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(github, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2253,6 +3330,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(ux, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2262,6 +3341,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(ui, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2271,6 +3352,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(responsive, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2280,6 +3363,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(accessibility, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2289,6 +3374,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(design, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2298,6 +3385,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(wireframe, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2307,6 +3396,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(api, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2316,6 +3407,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(redux, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2325,6 +3418,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(devtools, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2334,6 +3429,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(gitkraken, 10rem, 10rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2343,6 +3440,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(python, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2352,6 +3451,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(flask, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2361,6 +3462,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(bootstrap, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2370,6 +3473,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(jquery, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2379,6 +3484,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(node, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2388,6 +3495,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(express, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2397,6 +3506,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(firebase, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2406,6 +3517,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(jinja, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2415,6 +3528,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(sql, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2424,6 +3539,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(turtle, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2433,6 +3550,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(tkinter, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2442,6 +3561,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(soup, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2451,6 +3572,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(pandas, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2460,16 +3583,19 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(seaborn, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
-
 
 .final-item-msoffice {
   position: relative;
   height: 8rem;
   width: 8rem;
   @include heading-logo(msoffice, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2479,6 +3605,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(premiere, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2488,6 +3616,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(terminal, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2497,6 +3627,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(oop, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2506,6 +3638,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(colab, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2515,6 +3649,8 @@ body {
   height: 8rem;
   width: 8rem;
   @include heading-logo(twilio, 8rem, 8rem);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
+  background-image: -o-linear-gradient(left, #ffffff, #ffffff);
   background-image: linear-gradient(to right, #ffffff, #ffffff);
   margin: 1rem auto;
 }
@@ -2523,27 +3659,42 @@ body {
   height: 101vh;
   width: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0rem;
 }
 
 .sect-9-bg {
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  object-position: top;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
   position: absolute;
-  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
 }
 
 .sect-9-headline {
   font-family: "Franklin Gothic Medium";
   font-size: 6.5rem;
   color: #15283b;
-  filter: drop-shadow(-5px 5px 0px #fe4a097e);
+  -webkit-filter: drop-shadow(-5px 5px 0px #fe4a097e);
+          filter: drop-shadow(-5px 5px 0px #fe4a097e);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
   margin: 1rem;
   margin-bottom: 0;
@@ -2553,7 +3704,8 @@ body {
   font-family: "Lato";
   font-size: 4rem;
   color: #15283b;
-  filter: drop-shadow(-3px 3px 0px #fe4a097e) brightness(120%);
+  -webkit-filter: drop-shadow(-3px 3px 0px #fe4a097e) brightness(120%);
+          filter: drop-shadow(-3px 3px 0px #fe4a097e) brightness(120%);
   font-weight: 600;
   z-index: 5;
 }
@@ -2564,23 +3716,31 @@ body {
   height: 8rem;
   border: solid 8px transparent;
   border-radius: 2rem;
+  background-image: -o-linear-gradient(#f7f0e4, #f7f0e4),
+    -o-linear-gradient(45deg, #fe4b09, rgb(255, 234, 113));
   background-image: linear-gradient(#f7f0e4, #f7f0e4),
     linear-gradient(45deg, #fe4b09, rgb(255, 234, 113));
   background-origin: border-box;
   background-clip: content-box, border-box;
   padding: 0rem 2rem;
-  box-shadow: inset 0 0 0 2.2rem #f7f0e4, 0 0 0 2px transparent, 0 0 0 4px #f7f0e4;
+  -webkit-box-shadow: inset 0 0 0 2.2rem #f7f0e4, 0 0 0 2px transparent,
+    0 0 0 4px #f7f0e4;
+          box-shadow: inset 0 0 0 2.2rem #f7f0e4, 0 0 0 2px transparent,
+    0 0 0 4px #f7f0e4;
   outline-color: #fe4b09;
   color: #15283b;
   font-size: 2.5rem;
   font-weight: 700;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
-    font-family: "Lato";
-    opacity: 0.8;
+  font-family: "Lato";
+  opacity: 0.8;
 }
 
 .form-input:focus {
-  filter: brightness(120%);
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
 }
 
 .form-area {
@@ -2589,37 +3749,51 @@ body {
   height: 22rem;
   border: solid 8px transparent;
   border-radius: 2rem;
+  background-image: -o-linear-gradient(#f7f0e4, #f7f0e4),
+    -o-linear-gradient(45deg, #fe4b09, rgb(255, 234, 113));
   background-image: linear-gradient(#f7f0e4, #f7f0e4),
     linear-gradient(45deg, #fe4b09, rgb(255, 234, 113));
   background-origin: border-box;
   background-clip: content-box, border-box;
   padding: 2rem 2rem;
-  box-shadow: inset 0 0 0 2.2rem #f7f0e4, 0 0 0 2px transparent, 0 0 0 4px #f7f0e4;
+  -webkit-box-shadow: inset 0 0 0 2.2rem #f7f0e4, 0 0 0 2px transparent,
+    0 0 0 4px #f7f0e4;
+          box-shadow: inset 0 0 0 2.2rem #f7f0e4, 0 0 0 2px transparent,
+    0 0 0 4px #f7f0e4;
   outline-color: #fe4b09;
   color: #15283b;
   font-size: 2.5rem;
   font-weight: 700;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
-    font-family: "Lato";
-    opacity: 0.8;
-    resize: none;
+  font-family: "Lato";
+  opacity: 0.8;
+  resize: none;
 }
 
 .form-area:focus {
-  filter: brightness(120%);
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
 }
 
-.form-group{
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 60%;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.form-label{
+.form-label {
   font-family: "Lato";
   font-size: 3rem;
   color: #15283b;
-  filter: drop-shadow(-3px 3px 0px #d8eeff) brightness(120%);
+  -webkit-filter: drop-shadow(-3px 3px 0px #d8eeff) brightness(120%);
+          filter: drop-shadow(-3px 3px 0px #d8eeff) brightness(120%);
   font-weight: 600;
   z-index: 5;
   margin: 1rem;
@@ -2627,49 +3801,76 @@ body {
   margin-top: 0.5rem;
 }
 
-.form-label-2{
+.form-label-2 {
   font-family: "Lato";
   font-size: 3rem;
   color: #d8eeff;
-  filter: drop-shadow(-3px 3px 0px #15283b) brightness(120%);
+  -webkit-filter: drop-shadow(-3px 3px 0px #15283b) brightness(120%);
+          filter: drop-shadow(-3px 3px 0px #15283b) brightness(120%);
   font-weight: 600;
   z-index: 5;
   margin: 1rem;
   margin-left: 2rem;
 }
 
-.send-msg{
+.send-msg {
   height: 8rem;
   font-size: 3rem;
   font-weight: 700;
-  background-image: linear-gradient(to bottom right, #fe4b09, rgb(255, 234, 113));
-    z-index: 5;
+  background-image: -webkit-gradient(
+    linear,
+    left top, right bottom,
+    from(#fe4b09),
+    to(rgb(255, 234, 113))
+  );
+  background-image: -o-linear-gradient(
+    top left,
+    #fe4b09,
+    rgb(255, 234, 113)
+  );
+  background-image: linear-gradient(
+    to bottom right,
+    #fe4b09,
+    rgb(255, 234, 113)
+  );
+  z-index: 5;
   margin: 2rem;
   width: 25rem;
   border-radius: 5rem;
-    border: solid 0px transparent;
-      filter: drop-shadow(-5px 5px 0px #15283bb3);
-      transition: all 0.3s;
+  border: solid 0px transparent;
+  -webkit-filter: drop-shadow(-5px 5px 0px #15283bb3);
+          filter: drop-shadow(-5px 5px 0px #15283bb3);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.send-msg:hover{
-  filter: drop-shadow(-1.5rem 1.5rem 0px #15283bb3);
-  transform: translate(1rem, -1rem);
+.send-msg:hover {
+  -webkit-filter: drop-shadow(-1.5rem 1.5rem 0px #15283bb3);
+          filter: drop-shadow(-1.5rem 1.5rem 0px #15283bb3);
+  -webkit-transform: translate(1rem, -1rem);
+      -ms-transform: translate(1rem, -1rem);
+          transform: translate(1rem, -1rem);
 }
 
-.send-msg:active{
-  filter: drop-shadow(-0.3rem 0.3rem 0px #15283bb3) drop-shadow(0rem 0rem 5px rgb(255, 234, 113)) brightness(120%);
-  transform: translate(0rem, -0rem);
+.send-msg:active {
+  -webkit-filter: drop-shadow(-0.3rem 0.3rem 0px #15283bb3)
+    drop-shadow(0rem 0rem 5px rgb(255, 234, 113)) brightness(120%);
+          filter: drop-shadow(-0.3rem 0.3rem 0px #15283bb3)
+    drop-shadow(0rem 0rem 5px rgb(255, 234, 113)) brightness(120%);
+  -webkit-transform: translate(0rem, -0rem);
+      -ms-transform: translate(0rem, -0rem);
+          transform: translate(0rem, -0rem);
 }
 
 .navbutton {
   border-radius: 50%;
   width: 7.5rem;
   height: 7.5rem;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#181818), to(#181818)),
-    -webkit-gradient(linear, left top, right top, from(#181818), to(#181818));
   background-image: -o-linear-gradient(#181818, #181818),
     -o-linear-gradient(left, #181818, #181818);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#181818), to(#181818)),
+    -webkit-gradient(linear, left top, right top, from(#181818), to(#181818));
   background-image: linear-gradient(#181818, #181818),
     linear-gradient(to right, #181818, #181818);
   margin-left: 1rem;
@@ -2737,7 +3938,6 @@ body {
     border-bottom: none;
     border-right: none;
     border-left: none;
-    
   }
 
   &::before,
@@ -2758,7 +3958,7 @@ body {
     bottom: 1.5rem;
   }
 
-  &-2{
+  &-2 {
     position: relative;
     border-radius: 2px;
     &,
@@ -2767,8 +3967,8 @@ body {
       width: 75%;
       height: 5px;
       display: inline-block;
-      background-image: -webkit-gradient(linear, left top, right top, from(white), to(white));
       background-image: -o-linear-gradient(left, white, white);
+      background-image: -webkit-gradient(linear, left top, right top, from(white), to(white));
       background-image: linear-gradient(to right, white, white);
       border-radius: 2px;
       border-bottom: none;
@@ -2778,7 +3978,7 @@ body {
       -o-transition: all 0.1s;
       transition: all 0.1s;
     }
-  
+
     &::before,
     &::after {
       content: "";
@@ -2786,7 +3986,7 @@ body {
       left: 0;
       width: 100%;
     }
-  
+
     &::before {
       bottom: -1.5rem;
     }
@@ -2834,25 +4034,25 @@ body {
     border-left: none;
   }
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 100%;
-      -webkit-transition: all 0.2s;
-      -o-transition: all 0.2s;
-      transition: all 0.2s;
-    }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+  }
 
-    &::before {
-      bottom: 0rem;
-      rotate: 315deg;
-    }
-    &::after {
-      bottom: 0rem;
-      rotate: -315deg;
-    }
+  &::before {
+    bottom: 0rem;
+    rotate: 315deg;
+  }
+  &::after {
+    bottom: 0rem;
+    rotate: -315deg;
+  }
 }
 
 .nav-menu {
@@ -2864,10 +4064,17 @@ body {
   background-color: #181818;
   z-index: 90;
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 2rem;
   padding: 13rem 3rem;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -2883,12 +4090,16 @@ body {
   height: 100vh;
   width: 100vw;
   position: absolute;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(gray));
+  background-image: -o-linear-gradient(top left, white, gray);
   background-image: linear-gradient(to bottom right, white, gray);
   opacity: 0.4;
   top: 0;
   left: 0;
   position: fixed;
   z-index: 80;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   pointer-events: none;
 }
