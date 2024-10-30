@@ -298,12 +298,11 @@ function HomePage() {
   };
 
   return <Fragment>
-    <Head>
-
-      <link rel="preload" href="/hero-img.webp" as="image" type="image/webp" importance="high" />
-
-      <title>{screenWidth}</title>
-    </Head>
+  <Head>
+    <link rel="preload" href="/hero-img.webp" as="image" type="image/webp" importance="high" />
+    <link rel="icon" type="image/webp" href="/logo1.webp" />
+    <title>JM</title>
+  </Head>
 
     {(menuStatus || !navView) && <nav className={`home-navbar ${isNavbarVisible ? 'nav-visible' : 'nav-hidden'} ${initalNavStatus ? '' : 'hidden'}`}>
       {screenWidth <= 600 && <button aria-label="Menu Button" className="navbutton x" onClick={() => { setMenuStatus(!menuStatus) }}>
