@@ -903,9 +903,9 @@ function HomePage() {
       <div className="projects-flex">
         <ProjectItem screenWidth={screenWidth} projectName="MyMart Landing Page" projectNum="01" projectImage={"/pic1.webp"} color1="#449dd1" color2="#1450a3" githubLink="https://github.com/JeyyM/mymart-buyer/blob/main/src/pages/index.js" siteLink="https://mymart-user-eo18zxe3c-jeyym.vercel.app/" />
         <div style={{ marginRight: "10%" }}>
-          <ProjectItem screenWidth={screenWidth} projectName="MyMart Customer" projectNum="02" projectImage={"/pic2.webp"} color1="#5fd0df" color2="#00cd7d" githubLink="https://github.com/JeyyM/mymart-buyer" siteLink="https://mymart-user-o2xvrkg54-jeyyms-projects.vercel.app/64c84adf0cac7b00a22be359" />
+        <ProjectItem screenWidth={screenWidth} projectName="MyMart Admin" projectNum="02" projectImage={"/pic3.webp"} color1="#5fd0df" color2="#00cd7d" githubLink="https://github.com/JeyyM/mymart-seller" siteLink="https://mymart-admin-2s6arc6bl-jeyyms-projects.vercel.app/" />
         </div>
-        <ProjectItem screenWidth={screenWidth} projectName="MyMart Admin" projectNum="03" projectImage={"/pic3.webp"} color1="#fccf3a" color2="#fe4b09" githubLink="https://github.com/JeyyM/mymart-seller" siteLink="https://mymart-admin-2s6arc6bl-jeyyms-projects.vercel.app/" />
+        <ProjectItem screenWidth={screenWidth} projectName="MyMart Customer" projectNum="03" projectImage={"/pic2.webp"} color1="#fccf3a" color2="#fe4b09" githubLink="https://github.com/JeyyM/mymart-buyer" siteLink="https://mymart-user-o2xvrkg54-jeyyms-projects.vercel.app/64c84adf0cac7b00a22be359" />
       </div>
     </section>
 
